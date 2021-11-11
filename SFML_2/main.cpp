@@ -18,8 +18,18 @@ float playerSpriteSpeed = 1;
 int main()
 {
 #pragma region ~ Initialise render window ~
-    sf::RenderWindow window(sf::VideoMode(winWidth, winHeight), "Cop Chase");                            
+    sf::RenderWindow window(sf::VideoMode(winWidth, winHeight), "Coin Chaser");                            
 #pragma endregion
+
+    //Load in font
+    sf::Font font;
+
+    if (!font.loadFromFile(".\\fonts\\arial.ttf"))
+        return EXIT_FAILURE;
+
+    sf::Text txtStart("START!", font, 24); txtStart.setFillColor(sf::Color::Black); txtStart.setPosition(4, 2);
+
+    sf::Text txtEscape("ESCAPE!", font, 24); txtEscape.setFillColor(sf::Color::Black); txtEscape.setPosition(window.getSize().x-110, window.getSize().y-30);
 
 #pragma region ~ Create a square pixel (SFML graphics object), size it, and give it a color ~
     sf::RectangleShape pixel(sf::Vector2f(32.0f, 16.0f));
@@ -147,6 +157,8 @@ int main()
    
         playerSprite.setPosition(x, y);
         window.draw(playerSprite);
+        window.draw(txtStart);
+        window.draw(txtEscape);
 
         window.display();                                               
     }
