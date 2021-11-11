@@ -30,25 +30,6 @@ void drawCells(int num_xCells, int num_yCells, std::vector< std::vector<int> >& 
                 if (!((row == 0 || row == 1 || col == 0 || col==1 || row == num_yCells - 1 || row == num_yCells - 2 || col == num_xCells - 1) || col == 0 && row == 2 || col == 1 && row == 4 || col == 1 && row == 5 || col == num_xCells - 2))
                     _pixel.setFillColor(sf::Color::Black);
 
-               
-
-
-                _window.draw(_pixel);
-            }
-        }
-    }
-}
-
-void drawWater(int num_xCells, int num_yCells, std::vector< std::vector<int> >& cells, sf::RectangleShape _pixel, sf::RenderWindow& _window)
-{
-    _pixel.setFillColor(sf::Color::Color(156, 214, 226));
-    for (int row = 0; row < num_xCells; ++row)
-    {
-        for (int col = 0; col < num_yCells; ++col)
-        {
-            if (cells[row][col] == 1)
-            {
-                _pixel.setPosition(col * _pixel.getSize().x, row * _pixel.getSize().y);
                 _window.draw(_pixel);
             }
         }
