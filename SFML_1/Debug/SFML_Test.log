@@ -1,4 +1,6 @@
-﻿C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\MSBuild\Microsoft\VC\v160\Microsoft.CppBuild.targets(513,5): warning MSB8028: The intermediate directory (Debug\) contains files shared from another project (SFML_Graphics.vcxproj, SFML_Life.vcxproj, SFML_Points.vcxproj, SFML_Test.vcxproj).  This can lead to incorrect clean and rebuild behavior.
+﻿C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\MSBuild\Microsoft\VC\v160\Microsoft.CppBuild.targets(513,5): warning MSB8028: The intermediate directory (Debug\) contains files shared from another project (SFML_Life.vcxproj, SFML_Points.vcxproj, SFML_Test.vcxproj).  This can lead to incorrect clean and rebuild behavior.
+  cells.cpp
   main.cpp
-D:\OneDrive - Ulster University\_Teaching\2021-2022\COM326\_Practicals\SFML_Assignment_2\SFML_1\main.cpp(35,15): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
-  SFML_Test.vcxproj -> D:\OneDrive - Ulster University\_Teaching\2021-2022\COM326\_Practicals\SFML_Assignment_2\Debug\SFML_Life_0.exe
+C:\Users\csf21clc\source\repos\SFML_Assignment_2\SFML_1\main.cpp(35,15): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+  Generating Code...
+  SFML_Test.vcxproj -> C:\Users\csf21clc\Source\Repos\SFML_Assignment_2\Debug\SFML_Life_0.exe

@@ -10,22 +10,22 @@
 #include <SFML/Graphics.hpp> 
 #include "cells.h"
 // define render window size constants
-#define winWidth 800
+#define winWidth 1600
 #define winHeight 800
-const float  PI_F = 3.14159265358979f;
+
+float playerSpriteSpeed = 1;
 
 int main()
 {
 #pragma region ~ Initialise render window ~
-    sf::RenderWindow window(sf::VideoMode(winWidth, winHeight), "Assignment 2");                            
-    // pixel.setOrigin(pixel.getSize().x/2, pixel.getSize().y/2);
+    sf::RenderWindow window(sf::VideoMode(winWidth, winHeight), "Cop Chase");                            
 #pragma endregion
 
 #pragma region ~ Create a square pixel (SFML graphics object), size it, and give it a color ~
-    sf::RectangleShape pixel(sf::Vector2f(16.0f, 16.0f));
+    sf::RectangleShape pixel(sf::Vector2f(32.0f, 16.0f));
     pixel.setFillColor(sf::Color::Black);
-    int num_xCells = int(winWidth / pixel.getSize().x);                         // Get pixel width and height of the 2d grid (based on pixel size)
-    int num_yCells = int(winHeight / pixel.getSize().y);
+    int waterXCells = int(winWidth / pixel.getSize().x);                         // Get pixel width and height of the 2d grid (based on pixel size)
+    int waterYCells = int(winHeight / pixel.getSize().y);
 #pragma endregion
 
     sf::Texture texture;
@@ -34,6 +34,8 @@ int main()
         std::cout << "Could not load player texture" << std::endl;
         return 0;
     }
+
+
 
     sf::Sprite playerSprite;
     playerSprite.setTexture(texture);
@@ -74,8 +76,16 @@ int main()
         }
     }
 #pragma endregion  
-    sf::Vector2f NormalisedVectorToMouse;
 
+    int x = window.getSize().x / 2.;
+    int y = window.getSize().y / 2.;
+
+    bool upFlag = false;
+    bool downFlag = false;
+    bool leftFlag = false;
+    bool rightFlag = false;
+
+    sf::Clock timer;
     while (window.isOpen())                                                    
     {
 #pragma region ~ Check for a close window event ~
@@ -84,31 +94,58 @@ int main()
         {
             if (event.type == sf::Event::Closed)
                 window.close();
+
+            // If a key is pressed
+            if (event.type == sf::Event::KeyPressed)
+            {
+                switch (event.key.code)
+                {
+                    // If escape is pressed, close the application
+                case  sf::Keyboard::Escape: window.close(); break;
+
+                    // Process the up, down, left and right keys
+                case sf::Keyboard::Up:     upFlag = true; break;
+                case sf::Keyboard::Down:    downFlag = true; break;
+                case sf::Keyboard::Left:    leftFlag = true; break;
+                case sf::Keyboard::Right:   rightFlag = true; break;
+                default: break;
+                }
+            }
+
+            // If a key is released
+            if (event.type == sf::Event::KeyReleased)
+            {
+                switch (event.key.code)
+                {
+                    // Process the up, down, left and right keys
+                case sf::Keyboard::Up:     upFlag = false; break;
+                case sf::Keyboard::Down:    downFlag = false; break;
+                case sf::Keyboard::Left:    leftFlag = false; break;
+                case sf::Keyboard::Right:   rightFlag = false; break;
+                default: break;
+                }
+            }
         }
 #pragma endregion
 
-        // get the current mouse position in the window
-        sf::Vector2i mousePixelPos = sf::Mouse::getPosition(window);
-        // convert it to world coordinates
-        sf::Vector2f mouseWorldPos = window.mapPixelToCoords(mousePixelPos);
 
-        sf::Vector2f vectorToMouse = mouseWorldPos - playerSprite.getPosition();
-        float distance = sqrt((vectorToMouse.x * vectorToMouse.x) + (vectorToMouse.y * vectorToMouse.y));
 
-        NormalisedVectorToMouse = sf::Vector2f(vectorToMouse.x / distance, vectorToMouse.y / distance);
+        if (leftFlag) 
+            x -= playerSpriteSpeed;
+        if (rightFlag) 
+            x += playerSpriteSpeed;
+        if (upFlag) 
+            y -= playerSpriteSpeed;
+        if (downFlag)
+            y += playerSpriteSpeed;
 
-        float playerRot = playerSprite.getRotation();
-        float angleToMouse = atan2(NormalisedVectorToMouse.y, NormalisedVectorToMouse.x) * 180 / PI_F;
 
-        if (distance > 4) playerSprite.setRotation(90 + angleToMouse);
-        if (distance > 16) playerSprite.move(NormalisedVectorToMouse.x * playerSpeed, NormalisedVectorToMouse.y * playerSpeed);
-
-        // std::cout << vectorToMouse.x << ", " << vectorToMouse.y << ", " << NormalisedVectorToMouse.x << ", " << NormalisedVectorToMouse.y << std::endl;
 
         window.clear(sf::Color::Color(159, 187, 80));
-
-        drawCells(num_xCells, num_yCells, cellsGrid2D, pixel, window);      
-
+        
+        drawCells(waterXCells, waterYCells, cellsGrid2D, pixel, window);   
+   
+        playerSprite.setPosition(x, y);
         window.draw(playerSprite);
 
         window.display();                                               
