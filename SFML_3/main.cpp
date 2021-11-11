@@ -11,8 +11,8 @@
 #include <SFML/Graphics.hpp> 
 #include "cells.h"
 // define render window size constants
-#define winWidth 800
-#define winHeight 800
+#define winWidth 1600
+#define winHeight 1600
 const float  PI_F = 3.14159265358979f;
 
 int main()
@@ -102,9 +102,10 @@ int main()
 
         // std::cout << vectorToMouse.x << ", " << vectorToMouse.y << ", " << NormalisedVectorToMouse.x << ", " << NormalisedVectorToMouse.y << std::endl;
 
-        window.clear(sf::Color::White);                                                 
+        window.clear(sf::Color(124, 252, 0));
 
         drawCells(num_xCells, num_yCells, cellsGrid2D, pixel, window);
+
         window.draw(playerSprite);
                                                                
         window.display();                                               

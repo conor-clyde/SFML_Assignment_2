@@ -12,6 +12,7 @@
 // define render window size constants
 #define winWidth 800
 #define winHeight 800
+const float  PI_F = 3.14159265358979f;
 
 int main()
 {
@@ -22,10 +23,29 @@ int main()
 
 #pragma region ~ Create a square pixel (SFML graphics object), size it, and give it a color ~
     sf::RectangleShape pixel(sf::Vector2f(16.0f, 16.0f));
-    pixel.setFillColor(sf::Color::Green);
+    pixel.setFillColor(sf::Color::Black);
     int num_xCells = int(winWidth / pixel.getSize().x);                         // Get pixel width and height of the 2d grid (based on pixel size)
     int num_yCells = int(winHeight / pixel.getSize().y);
 #pragma endregion
+
+    sf::Texture texture;
+    if (!texture.loadFromFile("assets/car.jpg"))
+    {
+        std::cout << "Could not load player texture" << std::endl;
+        return 0;
+    }
+
+    sf::Sprite playerSprite;
+    playerSprite.setTexture(texture);
+    playerSprite.setPosition(sf::Vector2f(winWidth / 2, winHeight / 2));
+    playerSprite.setOrigin(playerSprite.getLocalBounds().width / 2, playerSprite.getLocalBounds().height / 2);
+    playerSprite.setScale(4, 4);
+    playerSprite.setRotation(0);
+    float playerSpeed = 0.1f;
+
+    sf::Time elapsed;
+
+
 
 #pragma region ~ Create 2d vector array for holding pixel values (integers) ~
     std::vector<std::vector<int>> cellsGrid2D;                                  // Vector list of map tiles  
@@ -54,6 +74,7 @@ int main()
         }
     }
 #pragma endregion  
+    sf::Vector2f NormalisedVectorToMouse;
 
     while (window.isOpen())                                                    
     {
@@ -66,10 +87,30 @@ int main()
         }
 #pragma endregion
 
-        window.clear();                                                 
+        // get the current mouse position in the window
+        sf::Vector2i mousePixelPos = sf::Mouse::getPosition(window);
+        // convert it to world coordinates
+        sf::Vector2f mouseWorldPos = window.mapPixelToCoords(mousePixelPos);
 
-        drawCells(num_xCells, num_yCells, cellsGrid2D, pixel, window);          
-                                                               
+        sf::Vector2f vectorToMouse = mouseWorldPos - playerSprite.getPosition();
+        float distance = sqrt((vectorToMouse.x * vectorToMouse.x) + (vectorToMouse.y * vectorToMouse.y));
+
+        NormalisedVectorToMouse = sf::Vector2f(vectorToMouse.x / distance, vectorToMouse.y / distance);
+
+        float playerRot = playerSprite.getRotation();
+        float angleToMouse = atan2(NormalisedVectorToMouse.y, NormalisedVectorToMouse.x) * 180 / PI_F;
+
+        if (distance > 4) playerSprite.setRotation(90 + angleToMouse);
+        if (distance > 16) playerSprite.move(NormalisedVectorToMouse.x * playerSpeed, NormalisedVectorToMouse.y * playerSpeed);
+
+        // std::cout << vectorToMouse.x << ", " << vectorToMouse.y << ", " << NormalisedVectorToMouse.x << ", " << NormalisedVectorToMouse.y << std::endl;
+
+        window.clear(sf::Color::Color(159, 187, 80));
+
+        drawCells(num_xCells, num_yCells, cellsGrid2D, pixel, window);      
+
+        window.draw(playerSprite);
+
         window.display();                                               
     }
 
