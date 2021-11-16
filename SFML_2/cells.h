@@ -4,4 +4,3 @@
 
 void randomiseCells(int num_xCells, int num_yCells, std::vector< std::vector<int> >& cells);
 void drawCells(int num_xCells, int num_yCells, std::vector< std::vector<int> >& cells, sf::RectangleShape _pixel, sf::RenderWindow& _window);
-void drawWater(int num_xCells, int num_yCells, std::vector< std::vector<int> >& cells, sf::RectangleShape _pixel, sf::RenderWindow& _window);
