@@ -23,8 +23,8 @@ int columns = 20;
 //boolean[][] grid = new boolean[rows][columns];
 
 //where the player is in the grid
-int playerIndexX = 90;
-int playerIndexY = 90;
+int playerIndexX = 15;
+int playerIndexY = 75;
 
 int main()
 {
@@ -62,7 +62,9 @@ int main()
     playerSprite.setOrigin(playerSprite.getLocalBounds().width / 2, playerSprite.getLocalBounds().height / 2);
     playerSprite.setScale(3, 3);
     playerSprite.setRotation(0);
-  
+
+    std::cout << playerSprite.getLocalBounds().width << std::endl;
+    std::cout << playerSprite.getLocalBounds().height << std::endl;
 
     sf::Time elapsed;
 
@@ -97,6 +99,9 @@ int main()
     int x = playerIndexX;
     int y = playerIndexY;
 
+    int tempStartPlayerIndexX = 0;
+    int tempStartPlayerIndexY = 0;
+
     bool upFlag = false;
     bool downFlag = false;
     bool leftFlag = false;
@@ -115,6 +120,8 @@ int main()
             //If a key is pressed
             if (event.type == sf::Event::KeyPressed)
             {
+
+                //keyCode = event.key.code;
              
                 switch (event.key.code)
                 {
@@ -149,38 +156,39 @@ int main()
             if (event.type == sf::Event::KeyReleased)
             {
                 keyCode = event.key.code;
-                //switch (event.key.code)
-                //{
-                ////Process the up, down, left and right keys
-                //case sf::Keyboard::Up:  
-                //    upFlag = false;
-                //    break;
+                switch (event.key.code)
+                {
+                //Process the up, down, left and right keys
+                case sf::Keyboard::Up:  
+                    upFlag = false;
+                    break;
 
-                //case sf::Keyboard::Down: 
-                //    downFlag = false; 
-                //    break;
+                case sf::Keyboard::Down: 
+                    downFlag = false; 
+                    break;
 
-                //case sf::Keyboard::Left: 
-                //    leftFlag = false; 
-                //    break;
+                case sf::Keyboard::Left: 
+                    leftFlag = false; 
+                    break;
 
-                //case sf::Keyboard::Right:
-                //    rightFlag = false; 
-                //    break;
+                case sf::Keyboard::Right:
+                    rightFlag = false; 
+                    break;
 
-                //default: 
-                //    break;
-                //}
+                default: 
+                    break;
+                }
             }
         }
 #pragma endregion
-       
+        float playerPixelX = playerIndexX * pixel.getSize().x;
+        float playerPixelY = playerIndexY * pixel.getSize().y;
 
         if (keyCode == sf::Keyboard::Up)
         {
             //if we aren't in the top row and the cell above us doesn't contain an obstacle
             //then we can move up
-            if (playerIndexY > 0 && mapGrid[playerIndexY/100 - 1][playerIndexX/100] =={0[0])
+            if (mapGrid[((playerIndexY+14) + 1)/30][playerIndexX/30])
             {
                 playerIndexY--;
             }
@@ -189,7 +197,7 @@ int main()
         {
             //if we aren't in the bottom row and the cell below us doesn't contain an obstacle
             //then we can move down
-            if (playerIndexY < rows - 1 && !mapGrid[playerIndexY + 1][playerIndexX])
+            if (mapGrid[((playerIndexY + 14) - 1) /30][playerIndexX/30])
             {
                 playerIndexY++;
             }
@@ -198,44 +206,23 @@ int main()
         {
             //if we aren't in the left-most column and the cell to our left doesn't contain an obstacle
             //then we can move left
-            if (playerIndexX > 0 && !mapGrid[playerIndexY][playerIndexX - 1])
+            if (mapGrid[playerIndexY/30][((playerIndexX - 14) + 1) /30])
             {
                 playerIndexX--;
             }
         }
-        else if (keyCode == sf::Keyboard::Right)
+        else if (rightFlag==true)
         {
-            //if we aren't in the right-most column and the cell to our right doesn't contain an obstacle
-            //then we can move right
-            if (playerIndexX < columns - 1 && !mapGrid[playerIndexY][playerIndexX + 1])
+            //if we aren't in the right-most column and the cell to our right doesn't contain an obstacle then we can move right
+            if (mapGrid[playerIndexY/30][((playerIndexX+14) + 1)/30])
             {
-                playerIndexX++;
+                    playerIndexX++;
             }
         }
 
-        //background(128);
 
-        //float cellWidth = width / columns;
-        //float cellHeight = height / rows;
-
-
-        }
-
-        //fill the player's cell with green
-        //float playerPixelX = playerIndexX * cellWidth;
-        //float playerPixelY = playerIndexY * cellHeight;
-        //fill(0, 255, 0);
-        //rect(playerPixelX, playerPixelY, cellWidth, cellHeight);
-
-        //if (leftFlag) 
-        //    x -= 1;
-        //if (rightFlag) 
-        //    x += 1;
-        //if (upFlag) 
-        //    y -= 1;
-        //if (downFlag)
-        //    y += 1;
-
+        x = playerIndexX;
+        y = playerIndexY;
 
         window.clear(sf::Color::Color(159, 187, 80));
         
