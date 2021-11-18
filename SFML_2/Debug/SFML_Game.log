@@ -1,23 +1,17 @@
-﻿C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\MSBuild\Microsoft\VC\v160\Microsoft.CppBuild.targets(513,5): warning MSB8028: The intermediate directory (Debug\) contains files shared from another project (SFML_Life.vcxproj, SFML_Life_1.vcxproj, SFML_Points.vcxproj, SFML_Test.vcxproj).  This can lead to incorrect clean and rebuild behavior.
-  cells.cpp
+﻿C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\MSBuild\Microsoft\VC\v160\Microsoft.CppBuild.targets(513,5): warning MSB8028: The intermediate directory (Debug\) contains files shared from another project (SFMAssignmentGame.vcxproj, SFML_Life.vcxproj, SFML_Life_1.vcxproj, SFML_Points.vcxproj, SFML_Test.vcxproj).  This can lead to incorrect clean and rebuild behavior.
   main.cpp
-D:\I\S\U2\OOP\SFML\SFML_Assignment2\SFML_2\main.cpp(32,152): warning C4244: 'argument': conversion from 'T' to 'float', possible loss of data
+D:\I\S\U2\OOP\SFML\SFMLAssignment2\SFML_2\main.cpp(43,152): warning C4244: 'argument': conversion from 'T' to 'float', possible loss of data
           with
           [
               T=unsigned int
           ]
-D:\I\S\U2\OOP\SFML\SFML_Assignment2\SFML_2\main.cpp(32,128): warning C4244: 'argument': conversion from 'T' to 'float', possible loss of data
+D:\I\S\U2\OOP\SFML\SFMLAssignment2\SFML_2\main.cpp(43,128): warning C4244: 'argument': conversion from 'T' to 'float', possible loss of data
           with
           [
               T=unsigned int
           ]
-D:\I\S\U2\OOP\SFML\SFML_Assignment2\SFML_2\main.cpp(90,11): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
-D:\I\S\U2\OOP\SFML\SFML_Assignment2\SFML_2\main.cpp(91,11): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
-D:\I\S\U2\OOP\SFML\SFML_Assignment2\SFML_2\main.cpp(144,35): warning C4244: '-=': conversion from 'float' to 'int', possible loss of data
-D:\I\S\U2\OOP\SFML\SFML_Assignment2\SFML_2\main.cpp(146,35): warning C4244: '+=': conversion from 'float' to 'int', possible loss of data
-D:\I\S\U2\OOP\SFML\SFML_Assignment2\SFML_2\main.cpp(148,35): warning C4244: '-=': conversion from 'float' to 'int', possible loss of data
-D:\I\S\U2\OOP\SFML\SFML_Assignment2\SFML_2\main.cpp(150,35): warning C4244: '+=': conversion from 'float' to 'int', possible loss of data
-D:\I\S\U2\OOP\SFML\SFML_Assignment2\SFML_2\main.cpp(158,37): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-D:\I\S\U2\OOP\SFML\SFML_Assignment2\SFML_2\main.cpp(158,34): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-  Generating Code...
-  SFML_Game.vcxproj -> D:\I\S\U2\OOP\SFML\SFML_Assignment2\Debug\SFMAssignmentGame.exe
+D:\I\S\U2\OOP\SFML\SFMLAssignment2\SFML_2\main.cpp(61,44): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+D:\I\S\U2\OOP\SFML\SFMLAssignment2\SFML_2\main.cpp(61,30): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+D:\I\S\U2\OOP\SFML\SFMLAssignment2\SFML_2\main.cpp(263,37): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+D:\I\S\U2\OOP\SFML\SFMLAssignment2\SFML_2\main.cpp(263,34): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+  SFML_Game.vcxproj -> D:\I\S\U2\OOP\SFML\SFMLAssignment2\Debug\SFMLAssignmentGame.exe
