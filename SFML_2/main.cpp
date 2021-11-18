@@ -99,9 +99,6 @@ int main()
     int x = playerIndexX;
     int y = playerIndexY;
 
-    int tempStartPlayerIndexX = 0;
-    int tempStartPlayerIndexY = 0;
-
     bool upFlag = false;
     bool downFlag = false;
     bool leftFlag = false;
@@ -184,28 +181,25 @@ int main()
         float playerPixelX = playerIndexX * pixel.getSize().x;
         float playerPixelY = playerIndexY * pixel.getSize().y;
 
-        if (keyCode == sf::Keyboard::Up)
+        if (upFlag==true)
         {
-            //if we aren't in the top row and the cell above us doesn't contain an obstacle
-            //then we can move up
-            if (mapGrid[((playerIndexY+14) + 1)/30][playerIndexX/30])
+            //if we aren't in the top row and the cell above us doesn't contain an obstacle then we can move up
+            if (mapGrid[((playerIndexY-14) - 1)/30][playerIndexX/30])
             {
                 playerIndexY--;
             }
         }
-        else if (keyCode == sf::Keyboard::Down)
+        else if (downFlag==true)
         {
-            //if we aren't in the bottom row and the cell below us doesn't contain an obstacle
-            //then we can move down
-            if (mapGrid[((playerIndexY + 14) - 1) /30][playerIndexX/30])
+            //if we aren't in the bottom row and the cell below us doesn't contain an obstacle then we can move down
+            if (mapGrid[((playerIndexY + 14) + 1) /30][playerIndexX/30])
             {
                 playerIndexY++;
             }
         }
-        else if (keyCode == sf::Keyboard::Left)
+        else if (leftFlag==true)
         {
-            //if we aren't in the left-most column and the cell to our left doesn't contain an obstacle
-            //then we can move left
+            //if we aren't in the left-most column and the cell to our left doesn't contain an obstacle then we can move left
             if (mapGrid[playerIndexY/30][((playerIndexX - 14) + 1) /30])
             {
                 playerIndexX--;

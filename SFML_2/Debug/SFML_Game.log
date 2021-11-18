@@ -12,6 +12,6 @@ D:\I\S\U2\OOP\SFML\SFMLAssignment2\SFML_2\main.cpp(43,128): warning C4244: 'argu
           ]
 D:\I\S\U2\OOP\SFML\SFMLAssignment2\SFML_2\main.cpp(61,44): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
 D:\I\S\U2\OOP\SFML\SFMLAssignment2\SFML_2\main.cpp(61,30): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-D:\I\S\U2\OOP\SFML\SFMLAssignment2\SFML_2\main.cpp(254,37): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-D:\I\S\U2\OOP\SFML\SFMLAssignment2\SFML_2\main.cpp(254,34): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+D:\I\S\U2\OOP\SFML\SFMLAssignment2\SFML_2\main.cpp(228,37): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+D:\I\S\U2\OOP\SFML\SFMLAssignment2\SFML_2\main.cpp(228,34): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
   SFML_Game.vcxproj -> D:\I\S\U2\OOP\SFML\SFMLAssignment2\Debug\SFMLAssignmentGame.exe
