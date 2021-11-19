@@ -5,13 +5,13 @@ D:\I\S\U2\OOP\SFML\SFMLAssignment2\SFML_2\main.cpp(43,152): warning C4244: 'argu
           [
               T=unsigned int
           ]
-D:\I\S\U2\OOP\SFML\SFMLAssignment2\SFML_2\main.cpp(43,128): warning C4244: 'argument': conversion from 'T' to 'float', possible loss of data
+D:\I\S\U2\OOP\SFML\SFMLAssignment2\SFML_2\main.cpp(43,126): warning C4244: 'argument': conversion from 'T' to 'float', possible loss of data
           with
           [
               T=unsigned int
           ]
-D:\I\S\U2\OOP\SFML\SFMLAssignment2\SFML_2\main.cpp(61,44): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-D:\I\S\U2\OOP\SFML\SFMLAssignment2\SFML_2\main.cpp(61,30): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-D:\I\S\U2\OOP\SFML\SFMLAssignment2\SFML_2\main.cpp(228,37): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-D:\I\S\U2\OOP\SFML\SFMLAssignment2\SFML_2\main.cpp(228,34): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+D:\I\S\U2\OOP\SFML\SFMLAssignment2\SFML_2\main.cpp(61,41): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+D:\I\S\U2\OOP\SFML\SFMLAssignment2\SFML_2\main.cpp(61,27): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+D:\I\S\U2\OOP\SFML\SFMLAssignment2\SFML_2\main.cpp(292,31): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+D:\I\S\U2\OOP\SFML\SFMLAssignment2\SFML_2\main.cpp(292,28): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
   SFML_Game.vcxproj -> D:\I\S\U2\OOP\SFML\SFMLAssignment2\Debug\SFMLAssignmentGame.exe
