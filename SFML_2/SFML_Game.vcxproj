@@ -153,11 +153,13 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="cells.cpp" />
+    <ClCompile Include="gameAudio.cpp" />
     <ClCompile Include="InputManagement.cpp" />
     <ClCompile Include="main.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="cells.h" />
+    <ClInclude Include="gameAudio.h" />
     <ClInclude Include="InputManagement.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

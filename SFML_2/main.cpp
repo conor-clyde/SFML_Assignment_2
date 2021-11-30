@@ -7,9 +7,11 @@
 #include <iostream>  
 #include <fstream>
 #include <sstream>
+#include<SFML/Audio.hpp>
 #include <SFML/Graphics.hpp> 
 #include "cells.h"
 #include "InputManagement.h"
+#include "gameAudio.h"
 
 #define winWidth 900
 #define winHeight 900
