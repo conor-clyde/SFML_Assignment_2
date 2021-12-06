@@ -31,3 +31,13 @@ void restartGame(float& playerIndexX, float& playerIndexY, bool& upFlag, bool& d
 
 
 }
+
+void moveUp(float& playerIndexX, float& playerIndexY, bool& upFlag, std::vector<std::vector<int>>& mapGrid)
+{
+	if (mapGrid[((playerIndexY - 14) - 1) / 30][playerIndexX / 30])
+	{
+		playerIndexY -= 0.25;
+	}
+	else
+		upFlag = false;
+}

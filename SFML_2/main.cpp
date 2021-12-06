@@ -216,15 +216,9 @@ int main()
 
 		if (upFlag == true)
 		{
+			moveUp(playerIndexX, playerIndexY, upFlag, mapGrid);
 
 
-			//if we aren't in the top row and the cell above us doesn't contain an obstacle then we can move up
-			if (mapGrid[((playerIndexY - 14) - 1) / 30][playerIndexX / 30])
-			{
-				playerIndexY -= 0.25;
-			}
-			else
-				upFlag = false;
 
 
 		}
