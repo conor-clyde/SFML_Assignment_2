@@ -157,7 +157,7 @@ int main()
 			}
 		}
 #pragma endregion
-		//
+		
 		restartGame(playerIndexX, playerIndexY, upFlag, downFlag, leftFlag, rightFlag, upInBuffer, downInBuffer, leftInBuffer, rightInBuffer, previousScore, txtPreviousScore, font, window);
 
 		if (mapGrid[((playerIndexY - 14) - 1) / 30][playerIndexX / 30] && upInBuffer == true)
