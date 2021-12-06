@@ -49,7 +49,7 @@ int main()
 #pragma region ~ Create a square pixel (SFML graphics object), size it, and give it a color ~
 	sf::RectangleShape pixel(sf::Vector2f(30.0f, 30.0f));
 	pixel.setFillColor(sf::Color::Black);
-	int numXCells = int(winWidth / pixel.getSize().x);                         // Get pixel width and height of the 2d grid (based on pixel size)
+	int numXCells = int(winWidth / pixel.getSize().x);                         //Get pixel width and height of the 2d grid (based on pixel size)
 	int numYCells = int(winHeight / pixel.getSize().y);
 #pragma endregion
 
