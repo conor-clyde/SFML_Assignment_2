@@ -25,12 +25,14 @@ int columns = 20;
 //boolean[][] grid = new boolean[rows][columns];
 
 //where the player is in the grid
-int playerIndexX = 15;
-int playerIndexY = 75;
+float playerIndexX = 45;
+float playerIndexY = 75;
 
 int main()
 {
 	sf::Keyboard::Key keyCode{};
+
+	std::string previousScore = "100";
 
 #pragma region ~ Initialise render window ~
 	sf::RenderWindow window(sf::VideoMode(winWidth, winHeight), "Coin Chaser");
@@ -41,8 +43,8 @@ int main()
 		return EXIT_FAILURE;
 
 	sf::Text txtStart("START!", font, 24); txtStart.setFillColor(sf::Color::Black); txtStart.setPosition(4, 2);
-
 	sf::Text txtEscape("ESCAPE!", font, 24); txtEscape.setFillColor(sf::Color::Black); txtEscape.setPosition(window.getSize().x - 110, window.getSize().y - 30);
+	sf::Text txtPreviousScore("", font, 24);
 
 #pragma region ~ Create a square pixel (SFML graphics object), size it, and give it a color ~
 	sf::RectangleShape pixel(sf::Vector2f(30.0f, 30.0f));
@@ -98,8 +100,7 @@ int main()
 	}
 #pragma endregion  
 
-	int x = playerIndexX;
-	int y = playerIndexY;
+	
 
 
 	bool upFlag = false;
@@ -111,6 +112,9 @@ int main()
 	bool downInBuffer = false;
 	bool leftInBuffer = false;
 	bool rightInBuffer = false;
+
+	window.clear(sf::Color::Color(159, 187, 80));
+	drawCells(numXCells, numYCells, mapGrid, pixel, window);
 
 	sf::Clock timer;
 	while (window.isOpen())
@@ -157,36 +161,15 @@ int main()
 					break;
 				}
 			}
-
-			//If a key is released
-			//if (event.type == sf::Event::KeyReleased)
-			//{
-			//    keyCode = event.key.code;
-			//    switch (event.key.code)
-			//    {
-			//    //Process the up, down, left and right keys
-			//    case sf::Keyboard::Up:  
-			//        upFlag = false;
-			//        break;
-
-			//    case sf::Keyboard::Down: 
-			//        downFlag = false; 
-			//        break;
-
-			//    case sf::Keyboard::Left: 
-			//        leftFlag = false; 
-			//        break;
-
-			//    case sf::Keyboard::Right:
-			//        rightFlag = false; 
-			//        break;
-
-			//    default: 
-			//        break;
-			//    }
-			//}
 		}
 #pragma endregion
+
+		
+
+		
+
+
+		restartGame(playerIndexX, playerIndexY, upFlag, downFlag, leftFlag, rightFlag, upInBuffer, downInBuffer, leftInBuffer, rightInBuffer, previousScore, txtPreviousScore, font, window);
 
 
 		//if (mapGrid[((playerIndexY + 14) - 1) / 30][playerIndexX / 30] && upInBuffer == true)
@@ -204,6 +187,7 @@ int main()
 		//		upInBuffer = false;
 		//}
 
+
 		if (mapGrid[((playerIndexY + 14) + 1) / 30][playerIndexX / 30] && downInBuffer == true)
 		{
 			std::cout << "Hi2";
@@ -212,7 +196,7 @@ int main()
 			downFlag = false;
 			rightFlag = false;
 			leftFlag = false;
-			playerIndexY++;
+			playerIndexY += 0.25;
 			//downInBuffer = false;
 
 			if (!mapGrid[((playerIndexY + 14) + 1) / 30][playerIndexX / 30] && downInBuffer == true)
@@ -237,7 +221,7 @@ int main()
 			//if we aren't in the top row and the cell above us doesn't contain an obstacle then we can move up
 			if (mapGrid[((playerIndexY - 14) - 1) / 30][playerIndexX / 30])
 			{
-				playerIndexY--;
+				playerIndexY -= 0.25;
 			}
 			else
 				upFlag = false;
@@ -252,7 +236,7 @@ int main()
 			//if we aren't in the bottom row and the cell below us doesn't contain an obstacle then we can move down
 			if (mapGrid[((playerIndexY + 14) + 1) / 30][playerIndexX / 30])
 			{
-				playerIndexY++;
+				playerIndexY += 0.25;
 			}
 			else
 				downFlag = false;
@@ -262,7 +246,7 @@ int main()
 			//if we aren't in the left-most column and the cell to our left doesn't contain an obstacle then we can move left
 			if (mapGrid[playerIndexY / 30][((playerIndexX - 14) + 1) / 30])
 			{
-				playerIndexX--;
+				playerIndexX -= 0.25;
 			}
 			else
 				leftFlag = false;
@@ -274,7 +258,7 @@ int main()
 			//if we aren't in the right-most column and the cell to our right doesn't contain an obstacle then we can move right
 			if (mapGrid[playerIndexY / 30][((playerIndexX + 14) + 1) / 30])
 			{
-				playerIndexX++;
+				playerIndexX += 0.25;
 			}
 			else
 				rightFlag = false;
@@ -282,19 +266,18 @@ int main()
 
 
 
+		
 
-
-		x = playerIndexX;
-		y = playerIndexY;
-
+		
 		window.clear(sf::Color::Color(159, 187, 80));
-
 		drawCells(numXCells, numYCells, mapGrid, pixel, window);
 
-		playerSprite.setPosition(x, y);
+		playerSprite.setPosition(playerIndexX, playerIndexY);
 		window.draw(playerSprite);
 		window.draw(txtStart);
 		window.draw(txtEscape);
+		window.draw(txtPreviousScore);
+		
 
 		window.display();
 	}
