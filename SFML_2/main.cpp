@@ -224,38 +224,20 @@ int main()
 		}
 		else if (downFlag == true)
 		{
+			moveDown(playerIndexX, playerIndexY, downFlag, mapGrid);
 
 
-
-			//if we aren't in the bottom row and the cell below us doesn't contain an obstacle then we can move down
-			if (mapGrid[((playerIndexY + 14) + 1) / 30][playerIndexX / 30])
-			{
-				playerIndexY += 0.25;
-			}
-			else
-				downFlag = false;
 		}
 		else if (leftFlag == true)
 		{
-			//if we aren't in the left-most column and the cell to our left doesn't contain an obstacle then we can move left
-			if (mapGrid[playerIndexY / 30][((playerIndexX - 14) + 1) / 30])
-			{
-				playerIndexX -= 0.25;
-			}
-			else
-				leftFlag = false;
+			moveLeft(playerIndexX, playerIndexY, leftFlag, mapGrid);
+
 		}
 		else if (rightFlag == true)
 		{
+			moveRight(playerIndexX, playerIndexY, rightFlag, mapGrid);
 
 
-			//if we aren't in the right-most column and the cell to our right doesn't contain an obstacle then we can move right
-			if (mapGrid[playerIndexY / 30][((playerIndexX + 14) + 1) / 30])
-			{
-				playerIndexX += 0.25;
-			}
-			else
-				rightFlag = false;
 		}
 
 
