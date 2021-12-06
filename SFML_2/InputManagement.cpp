@@ -32,6 +32,19 @@ void restartGame(float& playerIndexX, float& playerIndexY, bool& upFlag, bool& d
 
 }
 
+void moveUpNextTurn(float& playerIndexX, float& playerIndexY, bool& upFlag, bool& downFlag, bool& leftFlag, bool& rightFlag, bool& upInBuffer, std::vector<std::vector<int>>& mapGrid)
+{
+	upFlag = false;
+	downFlag = false;
+	rightFlag = false;
+	leftFlag = false;
+	playerIndexY -= 0.3;
+
+
+	if (!mapGrid[((playerIndexY - 14) - 1) / 30][playerIndexX / 30] && upInBuffer == true)
+		upInBuffer = false;
+}
+
 void moveDownNextTurn(float& playerIndexX, float& playerIndexY, bool& downFlag, bool& upFlag, bool& leftFlag, bool&  rightFlag, bool& downInBuffer, std::vector<std::vector<int>>& mapGrid)
 {
 	upFlag = false;
