@@ -168,6 +168,17 @@ int main()
 		if (mapGrid[((playerIndexY + 14) + 1) / 30][playerIndexX / 30] && downInBuffer == true)
 		{
 			moveDownNextTurn(playerIndexX, playerIndexY, upFlag, downFlag, leftFlag, rightFlag, downInBuffer, mapGrid);
+			rightInBuffer = false;
+		}
+
+		if (mapGrid[playerIndexY / 30][((playerIndexX - 14) + 1) / 30] && leftInBuffer == true)
+		{
+			moveLeftNextTurn(playerIndexX, playerIndexY, upFlag, downFlag, leftFlag, rightFlag, leftInBuffer, mapGrid);
+		}
+
+		if (mapGrid[playerIndexY / 30][((playerIndexX + 14) + 1) / 30] && rightInBuffer == true)
+		{
+			moveRightNextTurn(playerIndexX, playerIndexY, upFlag, downFlag, leftFlag, rightFlag, rightInBuffer, mapGrid);
 		}
 
 		if (upFlag == true)
@@ -177,6 +188,7 @@ int main()
 		else if (downFlag == true)
 		{
 			moveDown(playerIndexX, playerIndexY, downFlag, mapGrid);
+
 		}
 		else if (leftFlag == true)
 		{

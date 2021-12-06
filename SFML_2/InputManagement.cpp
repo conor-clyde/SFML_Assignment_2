@@ -11,7 +11,7 @@ void checkIfAtStart()
 void restartGame(float& playerIndexX, float& playerIndexY, bool& upFlag, bool& downFlag, bool& leftFlag, bool& rightFlag, bool& upInBuffer, bool& downInBuffer, bool& leftInBuffer, bool& rightInBuffer, std::string previousScore, sf::Text& txtPreviousScore, sf::Font font, sf::RenderWindow&_window)
 {
 
-	if (playerIndexX == 860 && playerIndexY >= 810 && playerIndexY <= 840)
+	if (playerIndexX >= 870 && playerIndexY >= 810 && playerIndexY <= 840)
 	{
 		playerIndexX = 15;
 		playerIndexY = 75;
@@ -45,7 +45,7 @@ void moveUpNextTurn(float& playerIndexX, float& playerIndexY, bool& upFlag, bool
 		upInBuffer = false;
 }
 
-void moveDownNextTurn(float& playerIndexX, float& playerIndexY, bool& downFlag, bool& upFlag, bool& leftFlag, bool&  rightFlag, bool& downInBuffer, std::vector<std::vector<int>>& mapGrid)
+void moveDownNextTurn(float& playerIndexX, float& playerIndexY, bool& downFlag, bool& upFlag, bool& leftFlag, bool& rightFlag, bool& downInBuffer, std::vector<std::vector<int>>& mapGrid)
 {
 	upFlag = false;
 	downFlag = false;
@@ -58,11 +58,37 @@ void moveDownNextTurn(float& playerIndexX, float& playerIndexY, bool& downFlag, 
 		downInBuffer = false;
 }
 
+void moveLeftNextTurn(float& playerIndexX, float& playerIndexY, bool& downFlag, bool& upFlag, bool& leftFlag, bool& rightFlag, bool& leftInBuffer, std::vector<std::vector<int>>& mapGrid)
+{
+	upFlag = false;
+	downFlag = false;
+	rightFlag = false;
+	leftFlag = false;
+	playerIndexX -= 0.3;
+
+
+	if (!mapGrid[playerIndexY / 30][((playerIndexX - 14) - 1) / 30] && leftInBuffer == true)
+		leftInBuffer = false;
+}
+
+void moveRightNextTurn(float& playerIndexX, float& playerIndexY, bool& downFlag, bool& upFlag, bool& leftFlag, bool& rightFlag, bool& rightInBuffer, std::vector<std::vector<int>>& mapGrid)
+{
+	upFlag = false;
+	downFlag = false;
+	rightFlag = false;
+	leftFlag = false;
+	playerIndexX += 0.3;
+
+
+	if (!mapGrid[playerIndexY / 30][((playerIndexX + 14) + 1) / 30] && rightInBuffer == true)
+		rightInBuffer = false;
+}
+
 void moveUp(float& playerIndexX, float& playerIndexY, bool& upFlag, std::vector<std::vector<int>>& mapGrid)
 {
 	if (mapGrid[((playerIndexY - 14) - 1) / 30][playerIndexX / 30])
 	{
-		playerIndexY -= 03;
+		playerIndexY -= 0.3;
 	}
 	else
 		upFlag = false;
@@ -73,7 +99,7 @@ void moveDown(float& playerIndexX, float& playerIndexY, bool& downFlag, std::vec
 	//if we aren't in the bottom row and the cell below us doesn't contain an obstacle then we can move down
 	if (mapGrid[((playerIndexY + 14) + 1) / 30][playerIndexX / 30])
 	{
-		playerIndexY += 045;
+		playerIndexY += 0.3;
 	}
 	else
 		downFlag = false;
