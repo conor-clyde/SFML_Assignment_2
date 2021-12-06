@@ -1,19 +1,17 @@
 ﻿C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\MSBuild\Microsoft\VC\v160\Microsoft.CppBuild.targets(513,5): warning MSB8028: The intermediate directory (Debug\) contains files shared from another project (SFML_Life.vcxproj, SFML_Life_1.vcxproj, SFML_Points.vcxproj, SFML_Test.vcxproj).  This can lead to incorrect clean and rebuild behavior.
-  InputManagement.cpp
-D:\I\S\U2\OOP\SFML\Assignment2\SFML_2\InputManagement.cpp(41,21): warning C4305: '-=': truncation from 'double' to 'float'
-D:\I\S\U2\OOP\SFML\Assignment2\SFML_2\InputManagement.cpp(44,41): warning C4244: 'argument': conversion from 'float' to 'const unsigned int', possible loss of data
-D:\I\S\U2\OOP\SFML\Assignment2\SFML_2\InputManagement.cpp(44,60): warning C4244: 'argument': conversion from 'float' to 'const unsigned int', possible loss of data
-D:\I\S\U2\OOP\SFML\Assignment2\SFML_2\InputManagement.cpp(54,21): warning C4305: '+=': truncation from 'double' to 'float'
-D:\I\S\U2\OOP\SFML\Assignment2\SFML_2\InputManagement.cpp(57,41): warning C4244: 'argument': conversion from 'float' to 'const unsigned int', possible loss of data
-D:\I\S\U2\OOP\SFML\Assignment2\SFML_2\InputManagement.cpp(57,60): warning C4244: 'argument': conversion from 'float' to 'const unsigned int', possible loss of data
-D:\I\S\U2\OOP\SFML\Assignment2\SFML_2\InputManagement.cpp(63,40): warning C4244: 'argument': conversion from 'float' to 'const unsigned int', possible loss of data
-D:\I\S\U2\OOP\SFML\Assignment2\SFML_2\InputManagement.cpp(63,59): warning C4244: 'argument': conversion from 'float' to 'const unsigned int', possible loss of data
-D:\I\S\U2\OOP\SFML\Assignment2\SFML_2\InputManagement.cpp(74,40): warning C4244: 'argument': conversion from 'float' to 'const unsigned int', possible loss of data
-D:\I\S\U2\OOP\SFML\Assignment2\SFML_2\InputManagement.cpp(74,59): warning C4244: 'argument': conversion from 'float' to 'const unsigned int', possible loss of data
-D:\I\S\U2\OOP\SFML\Assignment2\SFML_2\InputManagement.cpp(87,27): warning C4244: 'argument': conversion from 'float' to 'const unsigned int', possible loss of data
-D:\I\S\U2\OOP\SFML\Assignment2\SFML_2\InputManagement.cpp(87,59): warning C4244: 'argument': conversion from 'float' to 'const unsigned int', possible loss of data
-D:\I\S\U2\OOP\SFML\Assignment2\SFML_2\InputManagement.cpp(89,22): warning C4305: '-=': truncation from 'double' to 'float'
-D:\I\S\U2\OOP\SFML\Assignment2\SFML_2\InputManagement.cpp(98,27): warning C4244: 'argument': conversion from 'float' to 'const unsigned int', possible loss of data
-D:\I\S\U2\OOP\SFML\Assignment2\SFML_2\InputManagement.cpp(98,59): warning C4244: 'argument': conversion from 'float' to 'const unsigned int', possible loss of data
-D:\I\S\U2\OOP\SFML\Assignment2\SFML_2\InputManagement.cpp(100,22): warning C4305: '+=': truncation from 'double' to 'float'
+  main.cpp
+D:\I\S\U2\OOP\SFML\Assignment2\SFML_2\main.cpp(46,152): warning C4244: 'argument': conversion from 'T' to 'float', possible loss of data
+          with
+          [
+              T=unsigned int
+          ]
+D:\I\S\U2\OOP\SFML\Assignment2\SFML_2\main.cpp(46,126): warning C4244: 'argument': conversion from 'T' to 'float', possible loss of data
+          with
+          [
+              T=unsigned int
+          ]
+D:\I\S\U2\OOP\SFML\Assignment2\SFML_2\main.cpp(163,41): warning C4244: 'argument': conversion from 'float' to 'const unsigned int', possible loss of data
+D:\I\S\U2\OOP\SFML\Assignment2\SFML_2\main.cpp(163,60): warning C4244: 'argument': conversion from 'float' to 'const unsigned int', possible loss of data
+D:\I\S\U2\OOP\SFML\Assignment2\SFML_2\main.cpp(168,41): warning C4244: 'argument': conversion from 'float' to 'const unsigned int', possible loss of data
+D:\I\S\U2\OOP\SFML\Assignment2\SFML_2\main.cpp(168,60): warning C4244: 'argument': conversion from 'float' to 'const unsigned int', possible loss of data
   SFML_Game.vcxproj -> D:\I\S\U2\OOP\SFML\Assignment2\Debug\SFMLAssignmentGame.exe

@@ -160,12 +160,12 @@ int main()
 
 		restartGame(playerIndexX, playerIndexY, upFlag, downFlag, leftFlag, rightFlag, upInBuffer, downInBuffer, leftInBuffer, rightInBuffer, previousScore, txtPreviousScore, font, window);
 
-		if (mapGrid[((playerIndexY + 14) + 1) / 30][playerIndexX / 30] && upInBuffer == true)
+		if (mapGrid[((playerIndexY - 14) - 1) / 30][playerIndexX / 30] && upInBuffer == true)
 		{
 			moveUpNextTurn(playerIndexX, playerIndexY, upFlag, downFlag, leftFlag, rightFlag, upInBuffer, mapGrid);
 		}
 
-		if (mapGrid[((playerIndexY - 14) - 1) / 30][playerIndexX / 30] && downInBuffer == true)
+		if (mapGrid[((playerIndexY + 14) + 1) / 30][playerIndexX / 30] && downInBuffer == true)
 		{
 			moveDownNextTurn(playerIndexX, playerIndexY, upFlag, downFlag, leftFlag, rightFlag, downInBuffer, mapGrid);
 		}
