@@ -100,9 +100,6 @@ int main()
 	}
 #pragma endregion  
 
-	
-
-
 	bool upFlag = false;
 	bool downFlag = false;
 	bool leftFlag = false;
@@ -112,9 +109,6 @@ int main()
 	bool downInBuffer = false;
 	bool leftInBuffer = false;
 	bool rightInBuffer = false;
-
-	window.clear(sf::Color::Color(159, 187, 80));
-	drawCells(numXCells, numYCells, mapGrid, pixel, window);
 
 	sf::Clock timer;
 	while (window.isOpen())
