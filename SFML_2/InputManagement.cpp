@@ -32,11 +32,24 @@ void restartGame(float& playerIndexX, float& playerIndexY, bool& upFlag, bool& d
 
 }
 
+void moveDownNextTurn(float& playerIndexX, float& playerIndexY, bool& downFlag, bool& upFlag, bool& leftFlag, bool&  rightFlag, bool& downInBuffer, std::vector<std::vector<int>>& mapGrid)
+{
+	upFlag = false;
+	downFlag = false;
+	rightFlag = false;
+	leftFlag = false;
+	playerIndexY += 0.3;
+	
+
+	if (!mapGrid[((playerIndexY + 14) + 1) / 30][playerIndexX / 30] && downInBuffer == true)
+		downInBuffer = false;
+}
+
 void moveUp(float& playerIndexX, float& playerIndexY, bool& upFlag, std::vector<std::vector<int>>& mapGrid)
 {
 	if (mapGrid[((playerIndexY - 14) - 1) / 30][playerIndexX / 30])
 	{
-		playerIndexY -= 0.25;
+		playerIndexY -= 03;
 	}
 	else
 		upFlag = false;
@@ -47,7 +60,7 @@ void moveDown(float& playerIndexX, float& playerIndexY, bool& downFlag, std::vec
 	//if we aren't in the bottom row and the cell below us doesn't contain an obstacle then we can move down
 	if (mapGrid[((playerIndexY + 14) + 1) / 30][playerIndexX / 30])
 	{
-		playerIndexY += 0.25;
+		playerIndexY += 045;
 	}
 	else
 		downFlag = false;
@@ -60,7 +73,7 @@ void moveLeft(float& playerIndexX, float& playerIndexY, bool& leftFlag, std::vec
 	//if we aren't in the left-most column and the cell to our left doesn't contain an obstacle then we can move left
 	if (mapGrid[playerIndexY / 30][((playerIndexX - 14) + 1) / 30])
 	{
-		playerIndexX -= 0.25;
+		playerIndexX -= 0.3;
 	}
 	else
 		leftFlag = false;
@@ -71,8 +84,9 @@ void moveRight(float& playerIndexX, float& playerIndexY, bool& rightFlag, std::v
 	//if we aren't in the right-most column and the cell to our right doesn't contain an obstacle then we can move right
 	if (mapGrid[playerIndexY / 30][((playerIndexX + 14) + 1) / 30])
 	{
-		playerIndexX += 0.25;
+		playerIndexX += 0.3;
 	}
 	else
 		rightFlag = false;
 }
+

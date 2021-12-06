@@ -30,7 +30,7 @@ float playerIndexY = 75;
 
 int main()
 {
-	sf::Keyboard::Key keyCode{};
+
 
 	std::string previousScore = "100";
 
@@ -164,101 +164,41 @@ int main()
 		}
 #pragma endregion
 
-		
-
-		
-
-
 		restartGame(playerIndexX, playerIndexY, upFlag, downFlag, leftFlag, rightFlag, upInBuffer, downInBuffer, leftInBuffer, rightInBuffer, previousScore, txtPreviousScore, font, window);
-
-
-		//if (mapGrid[((playerIndexY + 14) - 1) / 30][playerIndexX / 30] && upInBuffer == true)
-		//{
-		//	std::cout << "Hi1";
-
-		//	upFlag = false;
-		//	downFlag = false;
-		//	rightFlag = false;
-		//	leftFlag = false;
-		//	playerIndexY--;
-		//	//downInBuffer = false;
-
-		//	if (!mapGrid[((playerIndexY + 14) - 1) / 30][playerIndexX / 30] && upInBuffer == true)
-		//		upInBuffer = false;
-		//}
-
 
 		if (mapGrid[((playerIndexY + 14) + 1) / 30][playerIndexX / 30] && downInBuffer == true)
 		{
-			std::cout << "Hi2";
-
-			upFlag = false;
-			downFlag = false;
-			rightFlag = false;
-			leftFlag = false;
-			playerIndexY += 0.25;
-			//downInBuffer = false;
-
-			if (!mapGrid[((playerIndexY + 14) + 1) / 30][playerIndexX / 30] && downInBuffer == true)
-				downInBuffer = false;
+			moveDownNextTurn(playerIndexX, playerIndexY, upFlag, downFlag, leftFlag, rightFlag, downInBuffer, mapGrid);
 		}
-
-
-
-
-
-
-
-
-
-
-
 
 		if (upFlag == true)
 		{
 			moveUp(playerIndexX, playerIndexY, upFlag, mapGrid);
-
-
-
-
 		}
 		else if (downFlag == true)
 		{
 			moveDown(playerIndexX, playerIndexY, downFlag, mapGrid);
-
-
 		}
 		else if (leftFlag == true)
 		{
 			moveLeft(playerIndexX, playerIndexY, leftFlag, mapGrid);
-
 		}
 		else if (rightFlag == true)
 		{
 			moveRight(playerIndexX, playerIndexY, rightFlag, mapGrid);
-
-
 		}
-
-
-
-		
-
 		
 		window.clear(sf::Color::Color(159, 187, 80));
-		drawCells(numXCells, numYCells, mapGrid, pixel, window);
 
+		drawCells(numXCells, numYCells, mapGrid, pixel, window);
 		playerSprite.setPosition(playerIndexX, playerIndexY);
 		window.draw(playerSprite);
 		window.draw(txtStart);
 		window.draw(txtEscape);
 		window.draw(txtPreviousScore);
 		
-
 		window.display();
 	}
 
 	return 0;
-
-
 }
