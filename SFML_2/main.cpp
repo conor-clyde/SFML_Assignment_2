@@ -54,7 +54,7 @@ int main()
 #pragma endregion
 
 	sf::Texture texture;
-	if (!texture.loadFromFile("assets/car.jpg"))
+	if (!texture.loadFromFile("assets/carSpriteRight.tif"))
 	{
 		std::cout << "Could not load player texture" << std::endl;
 		return 0;
