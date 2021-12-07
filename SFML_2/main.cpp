@@ -311,7 +311,7 @@ int main()
 
 		restartGame(playerIndexX, playerIndexY, upFlag, downFlag, leftFlag, rightFlag, upInBuffer, downInBuffer, leftInBuffer, rightInBuffer, font, score, highScore, txtCurrentScore, txtPreviousScore, txtHighScore, txtRoundInfo, window, playerSprite);
 		
-		checkForCoin(coinSprite1);
+		checkForCoin(score, playerSprite, coinSprite1);
 
 		if (mapGrid[((playerIndexY - 14) - 1) / 30][playerIndexX / 30] && upInBuffer == true && downFlag == false)
 		{

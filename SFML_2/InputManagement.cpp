@@ -93,8 +93,12 @@ void restartGame(float& playerIndexX, float& playerIndexY, bool& upFlag, bool& d
 
 
 }
-void checkForCoin(sf::Sprite coinSprite1)
+void checkForCoin(int& score, sf::Sprite playerSprite, sf::Sprite coinSprite1)
 {
+	if (playerSprite.getGlobalBounds().intersects(coinSprite1.getGlobalBounds()))
+	{
+		score += 100;
+	}
 
 }
 

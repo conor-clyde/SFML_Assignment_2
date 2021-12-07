@@ -6,7 +6,7 @@ void checkIfAtWater(float& playerIndexX, float& playerIndexY, bool& upFlag, bool
 
 void restartGame(float& playerIndexX, float& playerIndexY, bool& upFlag, bool& downFlag, bool& leftFlag, bool& rightFlag, bool& upInBuffer, bool& downInBuffer, bool& leftInBuffer, bool& rightInBuffer, sf::Font font, int& score, int& highScore, sf::Text& txtCurrentScore, sf::Text& txtPreviousScore, sf::Text& txtHighScore, sf::Text& txtRoundInfo, sf::RenderWindow& _window, sf::Sprite& playerSprite);
 
-void checkForCoin(sf::Sprite coinSprite1);
+void checkForCoin(int& score, sf::Sprite playerSprite, sf::Sprite coinSprite1);
 
 void moveUpNextTurn(int& counter, float& playerIndexX, float& playerIndexY, bool& upFlag, bool& downFlag, bool& leftFlag, bool& rightFlag, bool& upInBuffer, bool& downInBuffer, bool& leftInBuffer, bool& rightInBuffer, std::vector<std::vector<int>>& mapGrid, sf::Sprite& playerSprite);
 
