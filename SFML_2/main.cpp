@@ -188,7 +188,7 @@ int main()
 
 	
 #pragma region ~Load music from files ~
-	{
+	
 		// Loads the background music from the audio folder 
 
 		sf::Music music;
@@ -202,7 +202,7 @@ int main()
 		//This will loop the background music
 
 		music.setLoop(true);
-	}
+	
 #pragma endregion  
 
 
