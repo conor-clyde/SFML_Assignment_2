@@ -210,34 +210,18 @@ int main1() {
 
 		drawCells(numXCells, numYCells, mapGrid, pixel, window);
 
-		CarSpriteRight.setPosition(x, y);
 		window.draw(CarSpriteRight);
-
-
-
-		CarSpriteLeft.setPosition(x, y);
 		window.draw(CarSpriteLeft);
-
-		CarSpriteUp.setPosition(x, y);
 		window.draw(CarSpriteUp);
-
-		CarSprite2.setPosition(x, y);
 		window.draw(CarSprite2);
-
-		//CoinSprite.setPosition(x, y);
 		window.draw(CoinSprite);
-
-		//CoinSprite2.setPosition(x, y);
 		window.draw(CoinSprite2);
-		CoinSprite3.setPosition(x, y);
 		window.draw(CoinSprite3);
 		window.draw(CoinSprite4);
 		window.draw(CoinSprite5);
 		window.draw(CoinSprite6);
-
 		window.draw(txtStart);
 		window.draw(txtEscape);
-
 		window.display();
 	}
 
