@@ -30,9 +30,8 @@ float playerIndexY = 75;
 
 int main()
 {
-
-
 	std::string previousScore = "100";
+	int score = 1000;
 
 #pragma region ~ Initialise render window ~
 	sf::RenderWindow window(sf::VideoMode(winWidth, winHeight), "Coin Chaser");
@@ -44,7 +43,9 @@ int main()
 
 	sf::Text txtStart("START!", font, 24); txtStart.setFillColor(sf::Color::Black); txtStart.setPosition(4, 2);
 	sf::Text txtEscape("ESCAPE!", font, 24); txtEscape.setFillColor(sf::Color::Black); txtEscape.setPosition(window.getSize().x - 110, window.getSize().y - 30);
-	sf::Text  txtRoundInfo("ESCAPE!", font, 24);  txtRoundInfo.setFillColor(sf::Color::Black);  txtRoundInfo.setPosition(20,20);
+	sf::Text txtPreviousScore("Previous Score: 00000 ", font, 18); txtPreviousScore.setFillColor(sf::Color::Black); txtPreviousScore.setPosition(150, 4);
+	sf::Text txtCurrentScore("Current Score: 00000", font, 18); txtCurrentScore.setFillColor(sf::Color::Black); txtCurrentScore.setPosition(400, 4);
+	sf::Text txtHighScore("High Score: 00000", font, 18); txtHighScore.setFillColor(sf::Color::Black); txtHighScore.setPosition(650, 4); 
 
 #pragma region ~ Create a square pixel (SFML graphics object), size it, and give it a color ~
 	sf::RectangleShape pixel(sf::Vector2f(30.0f, 30.0f));
@@ -159,7 +160,7 @@ int main()
 #pragma endregion
 
 		//Input Management
-		checkIfAtWater(playerIndexX, playerIndexY, upFlag, downFlag, leftFlag, rightFlag, upInBuffer, downInBuffer, leftInBuffer, rightInBuffer, txtRoundInfo, font, window);
+		checkIfAtWater(playerIndexX, playerIndexY, upFlag, downFlag, leftFlag, rightFlag, upInBuffer, downInBuffer, leftInBuffer, rightInBuffer, font, window);
 
 		checkIfAtStart(playerIndexX, playerIndexY, upFlag, downFlag, leftFlag, rightFlag, upInBuffer, downInBuffer, leftInBuffer, rightInBuffer, font, window);
 		
@@ -204,6 +205,7 @@ int main()
 			moveRight(playerIndexX, playerIndexY, rightFlag, mapGrid);
 		}
 
+		txtCurrentScore.setString("Current Score: " + std::to_string(score));
 
 		playerSprite.setPosition(playerIndexX, playerIndexY);
 		
@@ -215,7 +217,9 @@ int main()
 		window.draw(playerSprite);
 		window.draw(txtStart);
 		window.draw(txtEscape);
-		window.draw(txtRoundInfo);
+		window.draw(txtPreviousScore);
+		window.draw(txtCurrentScore);
+		window.draw(txtHighScore);
 		
 		//Display game
 		window.display();
