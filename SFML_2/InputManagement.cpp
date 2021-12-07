@@ -93,8 +93,10 @@ void restartGame(float& playerIndexX, float& playerIndexY, bool& upFlag, bool& d
 
 
 }
+void checkForCoin()
+{
 
-void checkForCoin();
+}
 
 void moveUpNextTurn(int& counter, float& playerIndexX, float& playerIndexY, bool& upFlag, bool& downFlag, bool& leftFlag, bool& rightFlag, bool& upInBuffer, bool& downInBuffer, bool& leftInBuffer, bool& rightInBuffer, std::vector<std::vector<int>>& mapGrid, sf::Sprite& playerSprite)
 {
