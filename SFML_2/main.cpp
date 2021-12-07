@@ -56,25 +56,121 @@ int main()
 	int numXCells = int(winWidth / pixel.getSize().x);                         //Get pixel width and height of the 2d grid (based on pixel size)
 	int numYCells = int(winHeight / pixel.getSize().y);
 #pragma endregion
-
-	sf::Texture texture;
-	if (!texture.loadFromFile("assets/car.jpg"))
+	sf::Texture texture1;
+	if (!texture1.loadFromFile("assets/CoinSprite.png"))
 	{
 		std::cout << "Could not load player texture" << std::endl;
 		return 0;
 	}
+	sf::Texture texture;
+	if (!texture.loadFromFile("assets/carSpriteRight.png"))
+	{
+		std::cout << "Could not load player texture" << std::endl;
+		return 0;
+	}
+	
+	sf::Sprite carSpriteRight;
+	carSpriteRight.setTexture(texture);
+	carSpriteRight.setPosition(playerIndexX, playerIndexY);
+	carSpriteRight.setOrigin(carSpriteRight.getLocalBounds().width / 2, carSpriteRight.getLocalBounds().height / 2);
+	carSpriteRight.setScale(0.101111, 0.101111);
+	carSpriteRight.setRotation(0);
 
-	sf::Sprite playerSprite;
-	playerSprite.setTexture(texture);
-	playerSprite.setPosition(playerIndexX, playerIndexY);
-	playerSprite.setOrigin(playerSprite.getLocalBounds().width / 2, playerSprite.getLocalBounds().height / 2);
-	playerSprite.setScale(3, 3);
-	playerSprite.setRotation(0);
+	std::cout << carSpriteRight.getLocalBounds().width << std::endl;
+	std::cout << carSpriteRight.getLocalBounds().height << std::endl;
 
-	std::cout << playerSprite.getLocalBounds().width << std::endl;
-	std::cout << playerSprite.getLocalBounds().height << std::endl;
 
 	sf::Time elapsed;
+	sf::Sprite coinSprite;
+	coinSprite.setTexture(texture1);
+	coinSprite.setPosition(playerIndexX, playerIndexY);
+	coinSprite.setOrigin(coinSprite.getLocalBounds().width / 2, coinSprite.getLocalBounds().height / 2);
+	coinSprite.setScale(0.03, 0.03);
+	coinSprite.setRotation(0);
+
+	std::cout << coinSprite.getLocalBounds().width << std::endl;
+	std::cout << coinSprite.getLocalBounds().height << std::endl;
+
+
+	sf::Time elapsed1;
+
+	sf::Sprite CarSpriteLeft;
+	CarSpriteLeft.setTexture(texture);
+	CarSpriteLeft.setPosition(playerIndexX, playerIndexY);
+	CarSpriteLeft.setOrigin(carSpriteRight.getLocalBounds().width / 2, CarSpriteLeft.getLocalBounds().height / 2);
+	CarSpriteLeft.setScale(3, 3);
+	CarSpriteLeft.setRotation(0);
+
+	std::cout << CarSpriteLeft.getLocalBounds().width << std::endl;
+	std::cout << CarSpriteLeft.getLocalBounds().height << std::endl;
+
+	sf::Time elapsed2;
+
+	sf::Sprite CarSpriteUp;
+	CarSpriteUp.setTexture(texture);
+	CarSpriteUp.setPosition(playerIndexX, playerIndexY);
+	CarSpriteUp.setOrigin(CarSpriteUp.getLocalBounds().width / 2, CarSpriteUp.getLocalBounds().height / 2);
+	CarSpriteUp.setScale(3, 3);
+	CarSpriteUp.setRotation(0);
+
+	std::cout << CarSpriteUp.getLocalBounds().width << std::endl;
+	std::cout << CarSpriteUp.getLocalBounds().height << std::endl;
+	sf::Time lapsed3;
+
+	sf::Sprite CarSprite2;
+	CarSprite2.setTexture(texture);
+	CarSprite2.setPosition(playerIndexX, playerIndexY);
+	CarSprite2.setOrigin(CarSprite2.getLocalBounds().width / 2, CarSprite2.getLocalBounds().height / 2);
+	CarSprite2.setScale(3, 3);
+	CarSprite2.setRotation(0);
+
+	std::cout << CarSprite2.getLocalBounds().width << std::endl;
+	std::cout << CarSprite2.getLocalBounds().height << std::endl;
+	sf::Time lapsed4;
+
+	sf::Sprite CoinSprite;
+	CoinSprite.setTexture(texture);
+	CoinSprite.setPosition(playerIndexX, playerIndexY);
+	CoinSprite.setOrigin(CoinSprite.getLocalBounds().width / 2, CoinSprite.getLocalBounds().height / 2);
+	CoinSprite.setScale(3, 3);
+	CoinSprite.setRotation(0);
+
+	sf::Sprite CoinSprite2;
+	CoinSprite2.setTexture(texture);
+	CoinSprite2.setPosition(playerIndexX, playerIndexY);
+	CoinSprite2.setOrigin(CoinSprite2.getLocalBounds().width / 2, CoinSprite2.getLocalBounds().height / 2);
+	CoinSprite2.setScale(3, 3);
+	CoinSprite2.setRotation(0);
+
+	sf::Sprite CoinSprite3;
+	CoinSprite3.setTexture(texture);
+	CoinSprite3.setPosition(playerIndexX, playerIndexY);
+	CoinSprite3.setOrigin(CoinSprite3.getLocalBounds().width / 2, CoinSprite3.getLocalBounds().height / 2);
+	CoinSprite3.setScale(3, 3);
+	CoinSprite3.setRotation(0);
+
+	sf::Sprite CoinSprite4;
+	CoinSprite4.setTexture(texture);
+	CoinSprite4.setPosition(playerIndexX, playerIndexY);
+	CoinSprite4.setOrigin(CoinSprite4.getLocalBounds().width / 2, CoinSprite4.getLocalBounds().height / 2);
+	CoinSprite4.setScale(3, 3);
+	CoinSprite4.setRotation(0);
+
+	sf::Sprite CoinSprite5;
+	CoinSprite5.setTexture(texture);
+	CoinSprite5.setPosition(playerIndexX, playerIndexY);
+	CoinSprite5.setOrigin(CoinSprite5.getLocalBounds().width / 2, CoinSprite5.getLocalBounds().height / 2);
+	CoinSprite5.setScale(3, 3);
+	CoinSprite5.setRotation(0);
+
+	sf::Sprite CoinSprite6;
+	CoinSprite6.setTexture(texture);
+	CoinSprite6.setPosition(playerIndexX, playerIndexY);
+	CoinSprite6.setOrigin(CoinSprite6.getLocalBounds().width / 2, CoinSprite6.getLocalBounds().height / 2);
+	CoinSprite6.setScale(3, 3);
+	CoinSprite6.setRotation(0);
+
+
 
 #pragma region ~ Create 2d vector array for holding pixel values (integers) ~
 	std::vector<std::vector<int>> mapGrid;                                  // Vector list of map tiles 
@@ -241,14 +337,15 @@ int main()
 
 		txtCurrentScore.setString("Current Score: " + std::to_string(score));
 
-		playerSprite.setPosition(playerIndexX, playerIndexY);
+		
 
 		//Clear window
 		window.clear(sf::Color::Color(159, 187, 80));
 
 		//Draw game
 		drawCells(numXCells, numYCells, mapGrid, pixel, window);
-		window.draw(playerSprite);
+		window.draw(carSpriteRight);
+		window.draw(coinSprite);
 		window.draw(txtStart);
 		window.draw(txtEscape);
 		window.draw(txtPreviousScore);
