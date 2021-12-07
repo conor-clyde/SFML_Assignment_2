@@ -9,11 +9,11 @@
 #define winWidth 900
 #define winHeight 900
 
-float playerSpriteSpeed = 1;
+float playerSpriteSpeed1 = 1;
 
 //build a grid
-int rows = 20;
-int columns = 20;
+int rows1 = 20;
+int columns1 = 20;
 //if a cell is true it's an obstacle
 //boolean[][] grid = new boolean[rows][columns];
 
@@ -44,10 +44,10 @@ int main1() {
 #pragma endregion
 
 	sf::Texture texture;
-	if (!texture.loadFromFile("assets/car.jpg"))
+	//if (!texture.loadFromFile("assets/car.jpg"))
 	{
-		std::cout << "Could not load player texture" << std::endl;
-		return 0;
+		//std::cout << "Could not load player texture" << std::endl;
+		//return 0;
 	}
 	if (!texture.loadFromFile("assets/CoinSprite.tif"))
 	{
@@ -224,11 +224,16 @@ int main1() {
 		CarSprite2.setPosition(x, y);
 		window.draw(CarSprite2);
 
-		CoinSprite.setPosition(x, y);
+		//CoinSprite.setPosition(x, y);
 		window.draw(CoinSprite);
 
-		CoinSprite2.setPosition(x, y);
+		//CoinSprite2.setPosition(x, y);
 		window.draw(CoinSprite2);
+		CoinSprite3.setPosition(x, y);
+		window.draw(CoinSprite3);
+		window.draw(CoinSprite4);
+		window.draw(CoinSprite5);
+		window.draw(CoinSprite6);
 
 		window.draw(txtStart);
 		window.draw(txtEscape);
