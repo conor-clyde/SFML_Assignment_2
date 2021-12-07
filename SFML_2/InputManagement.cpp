@@ -37,7 +37,7 @@ void checkIfAtWater(float& playerIndexX, float& playerIndexY, bool& upFlag, bool
 	}
 }
 
-void restartGame(float& playerIndexX, float& playerIndexY, bool& upFlag, bool& downFlag, bool& leftFlag, bool& rightFlag, bool& upInBuffer, bool& downInBuffer, bool& leftInBuffer, bool& rightInBuffer, sf::Font font, sf::RenderWindow&_window)
+void restartGame(float& playerIndexX, float& playerIndexY, bool& upFlag, bool& downFlag, bool& leftFlag, bool& rightFlag, bool& upInBuffer, bool& downInBuffer, bool& leftInBuffer, bool& rightInBuffer, sf::Font font, int score, sf::Text& txtPreviousScore, sf::RenderWindow&_window)
 {
 
 	if (playerIndexX >= 870 && playerIndexY >= 810 && playerIndexY <= 840)
@@ -54,6 +54,8 @@ void restartGame(float& playerIndexX, float& playerIndexY, bool& upFlag, bool& d
 		downInBuffer = false;
 		leftInBuffer = false;
 		rightInBuffer = false;
+
+		txtPreviousScore.setString("Previous Score: " + std::to_string(score));
 
 	
 	}

@@ -164,7 +164,7 @@ int main()
 
 		checkIfAtStart(playerIndexX, playerIndexY, upFlag, downFlag, leftFlag, rightFlag, upInBuffer, downInBuffer, leftInBuffer, rightInBuffer, font, window);
 		
-		restartGame(playerIndexX, playerIndexY, upFlag, downFlag, leftFlag, rightFlag, upInBuffer, downInBuffer, leftInBuffer, rightInBuffer, font, window);
+		restartGame(playerIndexX, playerIndexY, upFlag, downFlag, leftFlag, rightFlag, upInBuffer, downInBuffer, leftInBuffer, rightInBuffer, font, score, txtPreviousScore, window);
 
 		if (mapGrid[((playerIndexY - 14) - 1) / 30][playerIndexX / 30] && upInBuffer == true)
 		{
