@@ -31,9 +31,9 @@ float playerIndexY = 75;
 
 int main()
 {
-	std::string previousScore = "100";
 	int score = 0;
 	int highScore = 0;
+	int counter = 0;
 
 #pragma region ~ Initialise render window ~
 	sf::RenderWindow window(sf::VideoMode(winWidth, winHeight), "Coin Chaser");
@@ -63,29 +63,28 @@ int main()
 		return 0;
 	}
 	sf::Texture texture;
-	if (!texture.loadFromFile("assets/carSpriteRight.png"))
+	if (!texture.loadFromFile("assets/playerSprite.png"))
 	{
 		std::cout << "Could not load player texture" << std::endl;
 		return 0;
 	}
 	
-	sf::Sprite carSpriteRight;
-	carSpriteRight.setTexture(texture);
-	carSpriteRight.setPosition(playerIndexX, playerIndexY);
-	carSpriteRight.setOrigin(carSpriteRight.getLocalBounds().width / 2, carSpriteRight.getLocalBounds().height / 2);
-	carSpriteRight.setScale(0.101111, 0.101111);
-	carSpriteRight.setRotation(0);
+	sf::Sprite playerSprite;
+	playerSprite.setTexture(texture);
+	playerSprite.setPosition(playerIndexX, playerIndexY);
+	playerSprite.setOrigin(playerSprite.getLocalBounds().width / 2, playerSprite.getLocalBounds().height / 2);
+	playerSprite.setScale(1,1);
+	playerSprite.setRotation(0);
 
-	std::cout << carSpriteRight.getLocalBounds().width << std::endl;
-	std::cout << carSpriteRight.getLocalBounds().height << std::endl;
-
+	//std::cout << carSpriteRight.getLocalBounds().width << std::endl;
+	//std::cout << carSpriteRight.getLocalBounds().height << std::endl;
 
 	sf::Time elapsed;
 	sf::Sprite coinSprite;
 	coinSprite.setTexture(texture1);
-	coinSprite.setPosition(playerIndexX, playerIndexY);
+	coinSprite.setPosition(playerIndexX+40, playerIndexY);
 	coinSprite.setOrigin(coinSprite.getLocalBounds().width / 2, coinSprite.getLocalBounds().height / 2);
-	coinSprite.setScale(0.03, 0.03);
+	coinSprite.setScale(0.05, 0.05);
 	coinSprite.setRotation(0);
 
 	std::cout << coinSprite.getLocalBounds().width << std::endl;
@@ -97,7 +96,7 @@ int main()
 	sf::Sprite CarSpriteLeft;
 	CarSpriteLeft.setTexture(texture);
 	CarSpriteLeft.setPosition(playerIndexX, playerIndexY);
-	CarSpriteLeft.setOrigin(carSpriteRight.getLocalBounds().width / 2, CarSpriteLeft.getLocalBounds().height / 2);
+	//CarSpriteLeft.setOrigin(carSpriteRight.getLocalBounds().width / 2, CarSpriteLeft.getLocalBounds().height / 2);
 	CarSpriteLeft.setScale(3, 3);
 	CarSpriteLeft.setRotation(0);
 
@@ -287,33 +286,34 @@ int main()
 #pragma endregion
 
 		//Input Management
-		checkIfAtWater(playerIndexX, playerIndexY, upFlag, downFlag, leftFlag, rightFlag, upInBuffer, downInBuffer, leftInBuffer, rightInBuffer, font, score, highScore, txtCurrentScore, txtPreviousScore, txtHighScore, txtRoundInfo, window);
+		checkIfAtWater(playerIndexX, playerIndexY, upFlag, downFlag, leftFlag, rightFlag, upInBuffer, downInBuffer, leftInBuffer, rightInBuffer, font, score, highScore, txtCurrentScore, txtPreviousScore, txtHighScore, txtRoundInfo, window, playerSprite);
 
 		checkIfAtStart(playerIndexX, playerIndexY, upFlag, downFlag, leftFlag, rightFlag, upInBuffer, downInBuffer, leftInBuffer, rightInBuffer, font, window);
 
-		restartGame(playerIndexX, playerIndexY, upFlag, downFlag, leftFlag, rightFlag, upInBuffer, downInBuffer, leftInBuffer, rightInBuffer, font, score, highScore, txtCurrentScore, txtPreviousScore, txtHighScore, txtRoundInfo, window);
+		restartGame(playerIndexX, playerIndexY, upFlag, downFlag, leftFlag, rightFlag, upInBuffer, downInBuffer, leftInBuffer, rightInBuffer, font, score, highScore, txtCurrentScore, txtPreviousScore, txtHighScore, txtRoundInfo, window, playerSprite);
 
 		if (mapGrid[((playerIndexY - 14) - 1) / 30][playerIndexX / 30] && upInBuffer == true && downFlag == false)
 		{
-			moveUpNextTurn(playerIndexX, playerIndexY, upFlag, downFlag, leftFlag, rightFlag, upInBuffer, mapGrid);
+			moveUpNextTurn(counter, playerIndexX, playerIndexY, upFlag, downFlag, leftFlag, rightFlag, upInBuffer, downInBuffer, leftInBuffer, rightInBuffer,mapGrid, playerSprite);
 			downInBuffer = false;
 		}
 
 		if (mapGrid[((playerIndexY + 14) + 1) / 30][playerIndexX / 30] && downInBuffer == true && upFlag == false)
 		{
-			moveDownNextTurn(playerIndexX, playerIndexY, upFlag, downFlag, leftFlag, rightFlag, downInBuffer, mapGrid);
+
+			moveDownNextTurn(counter, playerIndexX, playerIndexY, upFlag, downFlag, leftFlag, rightFlag, upInBuffer, downInBuffer, leftInBuffer, rightInBuffer, mapGrid, playerSprite);
 			upInBuffer = false;
 		}
 
 		if (mapGrid[playerIndexY / 30][((playerIndexX - 14) + 1) / 30] && leftInBuffer == true && rightFlag == false)
 		{
-			moveLeftNextTurn(playerIndexX, playerIndexY, upFlag, downFlag, leftFlag, rightFlag, leftInBuffer, mapGrid);
+			moveLeftNextTurn(playerIndexX, playerIndexY, upFlag, downFlag, leftFlag, rightFlag, leftInBuffer, mapGrid, playerSprite);
 			rightInBuffer = false;
 		}
 
 		if (mapGrid[playerIndexY / 30][((playerIndexX + 14) + 1) / 30] && rightInBuffer == true && leftFlag == false)
 		{
-			moveRightNextTurn(playerIndexX, playerIndexY, upFlag, downFlag, leftFlag, rightFlag, rightInBuffer, mapGrid);
+			moveRightNextTurn(playerIndexX, playerIndexY, upFlag, downFlag, leftFlag, rightFlag, rightInBuffer, mapGrid, playerSprite);
 			leftInBuffer = false;
 		}
 
@@ -337,14 +337,14 @@ int main()
 
 		txtCurrentScore.setString("Current Score: " + std::to_string(score));
 
-		
+		playerSprite.setPosition(playerIndexX, playerIndexY);
 
 		//Clear window
 		window.clear(sf::Color::Color(159, 187, 80));
 
 		//Draw game
 		drawCells(numXCells, numYCells, mapGrid, pixel, window);
-		window.draw(carSpriteRight);
+		window.draw(playerSprite);
 		window.draw(coinSprite);
 		window.draw(txtStart);
 		window.draw(txtEscape);

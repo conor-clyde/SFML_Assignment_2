@@ -1,6 +1,7 @@
 #include <iostream>
 #include <SFML/Graphics/Text.hpp>
 #include <SFML/Graphics/RenderWindow.hpp>
+#include <SFML/Graphics/Sprite.hpp>
 
 
 void checkIfAtStart(float& playerIndexX, float& playerIndexY, bool& upFlag, bool& downFlag, bool& leftFlag, bool& rightFlag, bool& upInBuffer, bool& downInBuffer, bool& leftInBuffer, bool& rightInBuffer, sf::Font font, sf::RenderWindow& _window)
@@ -12,7 +13,7 @@ void checkIfAtStart(float& playerIndexX, float& playerIndexY, bool& upFlag, bool
 	}
 }
 
-void checkIfAtWater(float& playerIndexX, float& playerIndexY, bool& upFlag, bool& downFlag, bool& leftFlag, bool& rightFlag, bool& upInBuffer, bool& downInBuffer, bool& leftInBuffer, bool& rightInBuffer, sf::Font font, int& score, int& highScore, sf::Text& txtCurrentScore, sf::Text& txtPreviousScore, sf::Text& txtHighScore, sf::Text& txtRoundInfo, sf::RenderWindow& _window)
+void checkIfAtWater(float& playerIndexX, float& playerIndexY, bool& upFlag, bool& downFlag, bool& leftFlag, bool& rightFlag, bool& upInBuffer, bool& downInBuffer, bool& leftInBuffer, bool& rightInBuffer, sf::Font font, int& score, int& highScore, sf::Text& txtCurrentScore, sf::Text& txtPreviousScore, sf::Text& txtHighScore, sf::Text& txtRoundInfo, sf::RenderWindow& _window, sf::Sprite& playerSprite)
 {
 	if (!((playerIndexX - 15) <= 30 && playerIndexY >= 60 && playerIndexY <= 90) && !((playerIndexX + 15) >= 870 && playerIndexY >= 810 && playerIndexY <= 840) && ((playerIndexX - 15) <= 30 || (playerIndexX + 15) >= 870 || (playerIndexY - 15) <= 30 || (playerIndexY + 15) >= 870))
 	{
@@ -35,7 +36,7 @@ void checkIfAtWater(float& playerIndexX, float& playerIndexY, bool& upFlag, bool
 		}
 
 
-		playerIndexX = 15;
+		playerIndexX = 45;
 		playerIndexY = 75;
 
 		upFlag = false;
@@ -48,11 +49,13 @@ void checkIfAtWater(float& playerIndexX, float& playerIndexY, bool& upFlag, bool
 		leftInBuffer = false;
 		rightInBuffer = false;
 
+		playerSprite.setRotation(0);
+
 		score = 0;
 	}
 }
 
-void restartGame(float& playerIndexX, float& playerIndexY, bool& upFlag, bool& downFlag, bool& leftFlag, bool& rightFlag, bool& upInBuffer, bool& downInBuffer, bool& leftInBuffer, bool& rightInBuffer, sf::Font font, int& score, int& highScore, sf::Text& txtCurrentScore, sf::Text& txtPreviousScore, sf::Text& txtHighScore, sf::Text& txtRoundInfo, sf::RenderWindow& _window)
+void restartGame(float& playerIndexX, float& playerIndexY, bool& upFlag, bool& downFlag, bool& leftFlag, bool& rightFlag, bool& upInBuffer, bool& downInBuffer, bool& leftInBuffer, bool& rightInBuffer, sf::Font font, int& score, int& highScore, sf::Text& txtCurrentScore, sf::Text& txtPreviousScore, sf::Text& txtHighScore, sf::Text& txtRoundInfo, sf::RenderWindow& _window, sf::Sprite& playerSprite)
 {
 
 	if (playerIndexX >= 870 && playerIndexY >= 810 && playerIndexY <= 840)
@@ -66,7 +69,7 @@ void restartGame(float& playerIndexX, float& playerIndexY, bool& upFlag, bool& d
 			txtHighScore.setString("High Score: " + std::to_string(score));
 		}
 
-		playerIndexX = 15;
+		playerIndexX = 45;
 		playerIndexY = 75;
 
 		upFlag = false;
@@ -83,37 +86,67 @@ void restartGame(float& playerIndexX, float& playerIndexY, bool& upFlag, bool& d
 
 		txtCurrentScore.setString("Current Score: 0");
 
+		playerSprite.setRotation(0);
+
 		score = 0;
 	}
 
 
 }
 
-void moveUpNextTurn(float& playerIndexX, float& playerIndexY, bool& upFlag, bool& downFlag, bool& leftFlag, bool& rightFlag, bool& upInBuffer, std::vector<std::vector<int>>& mapGrid)
+void moveUpNextTurn(int& counter, float& playerIndexX, float& playerIndexY, bool& upFlag, bool& downFlag, bool& leftFlag, bool& rightFlag, bool& upInBuffer, bool& downInBuffer, bool& leftInBuffer, bool& rightInBuffer, std::vector<std::vector<int>>& mapGrid, sf::Sprite& playerSprite)
 {
+
+
+	if (counter == 0)
+		rightInBuffer = false;
+
 	upFlag = false;
 	downFlag = false;
 	rightFlag = false;
 	leftFlag = false;
+
 	playerIndexY -= 0.8;
 
+	counter++;
+
+	playerSprite.setRotation(270);
+
 	if (!mapGrid[((playerIndexY - 14) - 1) / 30][playerIndexX / 30] && upInBuffer == true)
+	{
 		upInBuffer = false;
+		counter = 0;
+	
+	}
 }
 
-void moveDownNextTurn(float& playerIndexX, float& playerIndexY, bool& downFlag, bool& upFlag, bool& leftFlag, bool& rightFlag, bool& downInBuffer, std::vector<std::vector<int>>& mapGrid)
+void moveDownNextTurn(int& counter, float& playerIndexX, float& playerIndexY, bool& downFlag, bool& upFlag, bool& leftFlag, bool& rightFlag, bool& upInBuffer, bool& downInBuffer, bool& leftInBuffer, bool& rightInBuffer, std::vector<std::vector<int>>& mapGrid, sf::Sprite& playerSprite)
 {
+	
+
+	if (counter == 0)
+		rightInBuffer = false;
+
 	upFlag = false;
 	//downFlag = false;
 	rightFlag = false;
 	leftFlag = false;
+
+	counter++;
+
 	playerIndexY += 0.8;
 
+	playerSprite.setRotation(90);
+
 	if (!mapGrid[((playerIndexY + 14) + 1) / 30][playerIndexX / 30] && downInBuffer == true)
+	{
 		downInBuffer = false;
+		counter = 0;
+
+	}
 }
 
-void moveLeftNextTurn(float& playerIndexX, float& playerIndexY, bool& downFlag, bool& upFlag, bool& leftFlag, bool& rightFlag, bool& leftInBuffer, std::vector<std::vector<int>>& mapGrid)
+void moveLeftNextTurn(float& playerIndexX, float& playerIndexY, bool& downFlag, bool& upFlag, bool& leftFlag, bool& rightFlag, bool& leftInBuffer, std::vector<std::vector<int>>& mapGrid, sf::Sprite& playerSprite)
 {
 	upFlag = false;
 	downFlag = false;
@@ -121,17 +154,21 @@ void moveLeftNextTurn(float& playerIndexX, float& playerIndexY, bool& downFlag, 
 	leftFlag = false;
 	playerIndexX -= 0.8;
 
+	playerSprite.setRotation(180);
+
 	if (!mapGrid[playerIndexY / 30][((playerIndexX - 14) - 1) / 30] && leftInBuffer == true)
 		leftInBuffer = false;
 }
 
-void moveRightNextTurn(float& playerIndexX, float& playerIndexY, bool& downFlag, bool& upFlag, bool& leftFlag, bool& rightFlag, bool& rightInBuffer, std::vector<std::vector<int>>& mapGrid)
+void moveRightNextTurn(float& playerIndexX, float& playerIndexY, bool& downFlag, bool& upFlag, bool& leftFlag, bool& rightFlag, bool& rightInBuffer, std::vector<std::vector<int>>& mapGrid, sf::Sprite& playerSprite)
 {
 	upFlag = false;
 	downFlag = false;
 	rightFlag = false;
 	leftFlag = false;
 	playerIndexX += 0.8;
+
+	playerSprite.setRotation(0);
 
 	if (!mapGrid[playerIndexY / 30][((playerIndexX + 14) + 1) / 30] && rightInBuffer == true)
 		rightInBuffer = false;
@@ -153,6 +190,7 @@ void moveDown(float& playerIndexX, float& playerIndexY, bool& downFlag, std::vec
 	if (mapGrid[((playerIndexY + 14) + 1) / 30][playerIndexX / 30])
 	{
 		playerIndexY += 0.8;
+		
 	}
 	else
 		downFlag = false;
