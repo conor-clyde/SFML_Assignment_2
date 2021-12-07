@@ -10,24 +10,24 @@ C:\Users\CSF20KED\OneDrive - Ulster University\Documents\GameAssginment\SFML_2\A
           [
               T=unsigned int
           ]
-C:\Users\CSF20KED\OneDrive - Ulster University\Documents\GameAssginment\SFML_2\AnimatedSprite.cpp(65,43): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-C:\Users\CSF20KED\OneDrive - Ulster University\Documents\GameAssginment\SFML_2\AnimatedSprite.cpp(65,29): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-C:\Users\CSF20KED\OneDrive - Ulster University\Documents\GameAssginment\SFML_2\AnimatedSprite.cpp(78,42): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-C:\Users\CSF20KED\OneDrive - Ulster University\Documents\GameAssginment\SFML_2\AnimatedSprite.cpp(78,28): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-C:\Users\CSF20KED\OneDrive - Ulster University\Documents\GameAssginment\SFML_2\AnimatedSprite.cpp(90,40): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-C:\Users\CSF20KED\OneDrive - Ulster University\Documents\GameAssginment\SFML_2\AnimatedSprite.cpp(90,26): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-C:\Users\CSF20KED\OneDrive - Ulster University\Documents\GameAssginment\SFML_2\AnimatedSprite.cpp(101,39): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-C:\Users\CSF20KED\OneDrive - Ulster University\Documents\GameAssginment\SFML_2\AnimatedSprite.cpp(101,25): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-C:\Users\CSF20KED\OneDrive - Ulster University\Documents\GameAssginment\SFML_2\AnimatedSprite.cpp(112,39): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-C:\Users\CSF20KED\OneDrive - Ulster University\Documents\GameAssginment\SFML_2\AnimatedSprite.cpp(112,25): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-C:\Users\CSF20KED\OneDrive - Ulster University\Documents\GameAssginment\SFML_2\AnimatedSprite.cpp(119,40): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-C:\Users\CSF20KED\OneDrive - Ulster University\Documents\GameAssginment\SFML_2\AnimatedSprite.cpp(119,26): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-C:\Users\CSF20KED\OneDrive - Ulster University\Documents\GameAssginment\SFML_2\AnimatedSprite.cpp(126,40): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-C:\Users\CSF20KED\OneDrive - Ulster University\Documents\GameAssginment\SFML_2\AnimatedSprite.cpp(126,26): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-C:\Users\CSF20KED\OneDrive - Ulster University\Documents\GameAssginment\SFML_2\AnimatedSprite.cpp(133,40): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-C:\Users\CSF20KED\OneDrive - Ulster University\Documents\GameAssginment\SFML_2\AnimatedSprite.cpp(133,26): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-C:\Users\CSF20KED\OneDrive - Ulster University\Documents\GameAssginment\SFML_2\AnimatedSprite.cpp(140,40): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-C:\Users\CSF20KED\OneDrive - Ulster University\Documents\GameAssginment\SFML_2\AnimatedSprite.cpp(140,26): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-C:\Users\CSF20KED\OneDrive - Ulster University\Documents\GameAssginment\SFML_2\AnimatedSprite.cpp(147,40): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-C:\Users\CSF20KED\OneDrive - Ulster University\Documents\GameAssginment\SFML_2\AnimatedSprite.cpp(147,26): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\CSF20KED\OneDrive - Ulster University\Documents\GameAssginment\SFML_2\AnimatedSprite.cpp(73,43): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\CSF20KED\OneDrive - Ulster University\Documents\GameAssginment\SFML_2\AnimatedSprite.cpp(73,29): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\CSF20KED\OneDrive - Ulster University\Documents\GameAssginment\SFML_2\AnimatedSprite.cpp(86,42): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\CSF20KED\OneDrive - Ulster University\Documents\GameAssginment\SFML_2\AnimatedSprite.cpp(86,28): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\CSF20KED\OneDrive - Ulster University\Documents\GameAssginment\SFML_2\AnimatedSprite.cpp(98,40): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\CSF20KED\OneDrive - Ulster University\Documents\GameAssginment\SFML_2\AnimatedSprite.cpp(98,26): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\CSF20KED\OneDrive - Ulster University\Documents\GameAssginment\SFML_2\AnimatedSprite.cpp(109,39): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\CSF20KED\OneDrive - Ulster University\Documents\GameAssginment\SFML_2\AnimatedSprite.cpp(109,25): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\CSF20KED\OneDrive - Ulster University\Documents\GameAssginment\SFML_2\AnimatedSprite.cpp(120,39): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\CSF20KED\OneDrive - Ulster University\Documents\GameAssginment\SFML_2\AnimatedSprite.cpp(120,25): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\CSF20KED\OneDrive - Ulster University\Documents\GameAssginment\SFML_2\AnimatedSprite.cpp(127,40): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\CSF20KED\OneDrive - Ulster University\Documents\GameAssginment\SFML_2\AnimatedSprite.cpp(127,26): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\CSF20KED\OneDrive - Ulster University\Documents\GameAssginment\SFML_2\AnimatedSprite.cpp(134,40): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\CSF20KED\OneDrive - Ulster University\Documents\GameAssginment\SFML_2\AnimatedSprite.cpp(134,26): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\CSF20KED\OneDrive - Ulster University\Documents\GameAssginment\SFML_2\AnimatedSprite.cpp(141,40): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\CSF20KED\OneDrive - Ulster University\Documents\GameAssginment\SFML_2\AnimatedSprite.cpp(141,26): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\CSF20KED\OneDrive - Ulster University\Documents\GameAssginment\SFML_2\AnimatedSprite.cpp(148,40): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\CSF20KED\OneDrive - Ulster University\Documents\GameAssginment\SFML_2\AnimatedSprite.cpp(148,26): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\CSF20KED\OneDrive - Ulster University\Documents\GameAssginment\SFML_2\AnimatedSprite.cpp(155,40): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\CSF20KED\OneDrive - Ulster University\Documents\GameAssginment\SFML_2\AnimatedSprite.cpp(155,26): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
   SFML_Game.vcxproj -> C:\Users\CSF20KED\OneDrive - Ulster University\Documents\GameAssginment\Debug\SFMLAssignmentGame.exe

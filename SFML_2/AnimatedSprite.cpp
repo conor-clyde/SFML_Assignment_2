@@ -44,21 +44,29 @@ int main1() {
 #pragma endregion
 
 	sf::Texture texture;
-	//if (!texture.loadFromFile("assets/car.jpg"))
-	{
-		//std::cout << "Could not load player texture" << std::endl;
-		//return 0;
-	}
-	if (!texture.loadFromFile("assets/CoinSprite.tif"))
+
+	if (!texture.loadFromFile("assests/CarSprite.jpg"))
 	{
 		std::cout << "Could not load player texture" << std::endl;
 		return 0;
 	}
-	if (!texture.loadFromFile("assets/coinSprite1.tif"))
+	if (!texture.loadFromFile("assets/CoinSprite.jpg"))
 	{
 		std::cout << "Could not load player texture" << std::endl;
 		return 0;
 	}
+	if (!texture.loadFromFile("assets/coinSprite1.jpg"))
+	{
+		std::cout << "Could not load player texture" << std::endl;
+		return 0;
+	}
+
+	if (!texture.loadFromFile("assets/coinSprite2.jpg"))
+	{
+		std::cout << "Could not load player texture" << std::endl;
+		return 0;
+	}
+
 
 	sf::Sprite CarSpriteRight;
 	CarSpriteRight.setTexture(texture);
