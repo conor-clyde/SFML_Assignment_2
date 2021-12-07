@@ -94,12 +94,19 @@ void restartGame(float& playerIndexX, float& playerIndexY, bool& upFlag, bool& d
 
 }
 
+void checkForCoin();
+
 void moveUpNextTurn(int& counter, float& playerIndexX, float& playerIndexY, bool& upFlag, bool& downFlag, bool& leftFlag, bool& rightFlag, bool& upInBuffer, bool& downInBuffer, bool& leftInBuffer, bool& rightInBuffer, std::vector<std::vector<int>>& mapGrid, sf::Sprite& playerSprite)
 {
 
 
 	if (counter == 0)
+	{
+		leftInBuffer = false;
 		rightInBuffer = false;
+	}
+
+	counter = 1;
 
 	upFlag = false;
 	downFlag = false;
@@ -108,7 +115,7 @@ void moveUpNextTurn(int& counter, float& playerIndexX, float& playerIndexY, bool
 
 	playerIndexY -= 0.8;
 
-	counter++;
+
 
 	playerSprite.setRotation(270);
 
@@ -125,14 +132,17 @@ void moveDownNextTurn(int& counter, float& playerIndexX, float& playerIndexY, bo
 	
 
 	if (counter == 0)
+	{
+		leftInBuffer = false;
 		rightInBuffer = false;
+	}
 
 	upFlag = false;
 	//downFlag = false;
 	rightFlag = false;
 	leftFlag = false;
 
-	counter++;
+	counter=1;
 
 	playerIndexY += 0.8;
 
@@ -146,8 +156,16 @@ void moveDownNextTurn(int& counter, float& playerIndexX, float& playerIndexY, bo
 	}
 }
 
-void moveLeftNextTurn(float& playerIndexX, float& playerIndexY, bool& downFlag, bool& upFlag, bool& leftFlag, bool& rightFlag, bool& leftInBuffer, std::vector<std::vector<int>>& mapGrid, sf::Sprite& playerSprite)
+void moveLeftNextTurn(int& counter, float& playerIndexX, float& playerIndexY, bool& downFlag, bool& upFlag, bool& leftFlag, bool& rightFlag, bool& upInBuffer, bool& downInBuffer, bool& leftInBuffer, bool& rightInBuffer, std::vector<std::vector<int>>& mapGrid, sf::Sprite& playerSprite)
 {
+	if (counter == 0)
+	{
+		upInBuffer = false;
+		downInBuffer = false;
+	}
+
+	counter = 1;
+
 	upFlag = false;
 	downFlag = false;
 	rightFlag = false;
@@ -157,11 +175,22 @@ void moveLeftNextTurn(float& playerIndexX, float& playerIndexY, bool& downFlag, 
 	playerSprite.setRotation(180);
 
 	if (!mapGrid[playerIndexY / 30][((playerIndexX - 14) - 1) / 30] && leftInBuffer == true)
+	{
 		leftInBuffer = false;
+		counter = 0;
+	}
 }
 
-void moveRightNextTurn(float& playerIndexX, float& playerIndexY, bool& downFlag, bool& upFlag, bool& leftFlag, bool& rightFlag, bool& rightInBuffer, std::vector<std::vector<int>>& mapGrid, sf::Sprite& playerSprite)
+void moveRightNextTurn(int& counter, float& playerIndexX, float& playerIndexY, bool& downFlag, bool& upFlag, bool& leftFlag, bool& rightFlag, bool& upInBuffer, bool& downInBuffer, bool& leftInBuffer, bool& rightInBuffer, std::vector<std::vector<int>>& mapGrid, sf::Sprite& playerSprite)
 {
+	if (counter == 0)
+	{
+		upInBuffer = false;
+		downInBuffer = false;
+	}
+
+	counter = 1;
+
 	upFlag = false;
 	downFlag = false;
 	rightFlag = false;
@@ -171,7 +200,10 @@ void moveRightNextTurn(float& playerIndexX, float& playerIndexY, bool& downFlag,
 	playerSprite.setRotation(0);
 
 	if (!mapGrid[playerIndexY / 30][((playerIndexX + 14) + 1) / 30] && rightInBuffer == true)
+	{
 		rightInBuffer = false;
+		counter = 0;
+	}
 }
 
 void moveUp(float& playerIndexX, float& playerIndexY, bool& upFlag, std::vector<std::vector<int>>& mapGrid)
@@ -194,6 +226,7 @@ void moveDown(float& playerIndexX, float& playerIndexY, bool& downFlag, std::vec
 	}
 	else
 		downFlag = false;
+	
 
 }
 

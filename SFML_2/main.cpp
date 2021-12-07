@@ -291,6 +291,8 @@ int main()
 		checkIfAtStart(playerIndexX, playerIndexY, upFlag, downFlag, leftFlag, rightFlag, upInBuffer, downInBuffer, leftInBuffer, rightInBuffer, font, window);
 
 		restartGame(playerIndexX, playerIndexY, upFlag, downFlag, leftFlag, rightFlag, upInBuffer, downInBuffer, leftInBuffer, rightInBuffer, font, score, highScore, txtCurrentScore, txtPreviousScore, txtHighScore, txtRoundInfo, window, playerSprite);
+		
+		checkForCoin();
 
 		if (mapGrid[((playerIndexY - 14) - 1) / 30][playerIndexX / 30] && upInBuffer == true && downFlag == false)
 		{
@@ -307,13 +309,13 @@ int main()
 
 		if (mapGrid[playerIndexY / 30][((playerIndexX - 14) + 1) / 30] && leftInBuffer == true && rightFlag == false)
 		{
-			moveLeftNextTurn(playerIndexX, playerIndexY, upFlag, downFlag, leftFlag, rightFlag, leftInBuffer, mapGrid, playerSprite);
+			moveLeftNextTurn(counter, playerIndexX, playerIndexY, upFlag, downFlag, leftFlag, rightFlag, upInBuffer, downInBuffer, leftInBuffer, rightInBuffer, mapGrid, playerSprite);
 			rightInBuffer = false;
 		}
 
 		if (mapGrid[playerIndexY / 30][((playerIndexX + 14) + 1) / 30] && rightInBuffer == true && leftFlag == false)
 		{
-			moveRightNextTurn(playerIndexX, playerIndexY, upFlag, downFlag, leftFlag, rightFlag, rightInBuffer, mapGrid, playerSprite);
+			moveRightNextTurn(counter, playerIndexX, playerIndexY, upFlag, downFlag, leftFlag, rightFlag, upInBuffer, downInBuffer, leftInBuffer, rightInBuffer, mapGrid, playerSprite);
 			leftInBuffer = false;
 		}
 
