@@ -83,7 +83,7 @@ int main()
 	sf::Time elapsed;
 	sf::Sprite coinSprite1;
 	coinSprite1.setTexture(coinTexture);
-	coinSprite1.setPosition(playerIndexX+40, playerIndexY);
+	coinSprite1.setPosition(555, 605);
 	coinSprite1.setOrigin(coinSprite1.getLocalBounds().width / 2, coinSprite1.getLocalBounds().height / 2);
 	coinSprite1.setScale(0.05, 0.05);
 	coinSprite1.setRotation(0);
@@ -132,21 +132,21 @@ int main()
 
 	sf::Sprite coinSprite8;
 	coinSprite8.setTexture(coinTexture);
-	coinSprite8.setPosition(playerIndexX, playerIndexY);
+	coinSprite8.setPosition(675, 105);
 	coinSprite8.setOrigin(coinSprite8.getLocalBounds().width / 2, coinSprite8.getLocalBounds().height / 2);
 	coinSprite8.setScale(0.05, 0.05);
 	coinSprite8.setRotation(0);
 
 	sf::Sprite coinSprite9;
 	coinSprite9.setTexture(coinTexture);
-	coinSprite9.setPosition(playerIndexX, playerIndexY);
+	coinSprite9.setPosition(255, 555);
 	coinSprite9.setOrigin(coinSprite9.getLocalBounds().width / 2, coinSprite9.getLocalBounds().height / 2);
 	coinSprite9.setScale(0.05, 0.05);
 	coinSprite9.setRotation(0);
 
 	sf::Sprite coinSprite10;
 	coinSprite10.setTexture(coinTexture);
-	coinSprite10.setPosition(playerIndexX, playerIndexY);
+	coinSprite10.setPosition(375, 495);
 	coinSprite10.setOrigin(coinSprite10.getLocalBounds().width / 2, coinSprite10.getLocalBounds().height / 2);
 	coinSprite10.setScale(0.05, 0.05);
 	coinSprite10.setRotation(0);
