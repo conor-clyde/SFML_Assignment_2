@@ -305,6 +305,7 @@ int main()
 		
 		checkForCoin(score, playerSprite, coinSprite1, coinSprite2, coinSprite3, coinSprite4, coinSprite5, coinSprite6, coinSprite7, coinSprite8, coinSprite9, coinSprite10, hideCoin1, hideCoin2, hideCoin3, hideCoin4, hideCoin5, hideCoin6, hideCoin7, hideCoin8, hideCoin9, hideCoin10);
 
+		//Check if a direction is in the buffer because of a key press
 		if (mapGrid[((playerIndexY - 14) - 1) / 30][playerIndexX / 30] && upInBuffer == true && downFlag == false)
 		{
 			moveUpNextTurn(counter, playerIndexX, playerIndexY, upFlag, downFlag, leftFlag, rightFlag, upInBuffer, downInBuffer, leftInBuffer, rightInBuffer, mapGrid, playerSprite);
@@ -329,6 +330,7 @@ int main()
 			leftInBuffer = false;
 		}
 
+		//Check for general direction choices through key presses
 		if (upFlag == true)
 			moveUp(playerIndexX, playerIndexY, upFlag, mapGrid);
 		else if (downFlag == true)
