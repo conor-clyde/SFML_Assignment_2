@@ -32,7 +32,8 @@ float playerIndexY = 75;
 int main()
 {
 	std::string previousScore = "100";
-	int score = 1000;
+	int score = 0;
+	int highScore = 0;
 
 #pragma region ~ Initialise render window ~
 	sf::RenderWindow window(sf::VideoMode(winWidth, winHeight), "Coin Chaser");
@@ -44,9 +45,10 @@ int main()
 
 	sf::Text txtStart("START!", font, 24); txtStart.setFillColor(sf::Color::Black); txtStart.setPosition(4, 2);
 	sf::Text txtEscape("ESCAPE!", font, 24); txtEscape.setFillColor(sf::Color::Black); txtEscape.setPosition(window.getSize().x - 110, window.getSize().y - 30);
-	sf::Text txtPreviousScore("Previous Score: 00000 ", font, 18); txtPreviousScore.setFillColor(sf::Color::Black); txtPreviousScore.setPosition(150, 4);
-	sf::Text txtCurrentScore("Current Score: 00000", font, 18); txtCurrentScore.setFillColor(sf::Color::Black); txtCurrentScore.setPosition(400, 4);
-	sf::Text txtHighScore("High Score: 00000", font, 18); txtHighScore.setFillColor(sf::Color::Black); txtHighScore.setPosition(650, 4); 
+	sf::Text txtPreviousScore("Previous Score: 0 ", font, 18); txtPreviousScore.setFillColor(sf::Color::Black); txtPreviousScore.setPosition(150, 4);
+	sf::Text txtCurrentScore("Current Score: 0", font, 18); txtCurrentScore.setFillColor(sf::Color::Black); txtCurrentScore.setPosition(400, 4);
+	sf::Text txtHighScore("High Score: 0", font, 18); txtHighScore.setFillColor(sf::Color::Black); txtHighScore.setPosition(650, 4);
+	sf::Text txtRoundInfo("", font, 18); txtRoundInfo.setFillColor(sf::Color::Black); txtRoundInfo.setPosition(400, 34); txtRoundInfo.setLineSpacing(1.2);
 
 #pragma region ~ Create a square pixel (SFML graphics object), size it, and give it a color ~
 	sf::RectangleShape pixel(sf::Vector2f(30.0f, 30.0f));
@@ -139,7 +141,10 @@ int main()
 		timerText.setString(std::to_string(countdown));
 		clock.restart();
 	}
-	
+
+	while (window.isOpen())
+	{
+
 #pragma region ~ Check for a close window event ~
 		sf::Event event;
 		while (window.pollEvent(event))
@@ -186,31 +191,34 @@ int main()
 #pragma endregion
 
 		//Input Management
-		checkIfAtWater(playerIndexX, playerIndexY, upFlag, downFlag, leftFlag, rightFlag, upInBuffer, downInBuffer, leftInBuffer, rightInBuffer, font, window);
+		checkIfAtWater(playerIndexX, playerIndexY, upFlag, downFlag, leftFlag, rightFlag, upInBuffer, downInBuffer, leftInBuffer, rightInBuffer, font, score, highScore, txtCurrentScore, txtPreviousScore, txtHighScore, txtRoundInfo, window);
 
 		checkIfAtStart(playerIndexX, playerIndexY, upFlag, downFlag, leftFlag, rightFlag, upInBuffer, downInBuffer, leftInBuffer, rightInBuffer, font, window);
-		
-		restartGame(playerIndexX, playerIndexY, upFlag, downFlag, leftFlag, rightFlag, upInBuffer, downInBuffer, leftInBuffer, rightInBuffer, font, score, txtPreviousScore, window);
 
-		if (mapGrid[((playerIndexY - 14) - 1) / 30][playerIndexX / 30] && upInBuffer == true)
+		restartGame(playerIndexX, playerIndexY, upFlag, downFlag, leftFlag, rightFlag, upInBuffer, downInBuffer, leftInBuffer, rightInBuffer, font, score, highScore, txtCurrentScore, txtPreviousScore, txtHighScore, txtRoundInfo, window);
+
+		if (mapGrid[((playerIndexY - 14) - 1) / 30][playerIndexX / 30] && upInBuffer == true && downFlag == false)
 		{
 			moveUpNextTurn(playerIndexX, playerIndexY, upFlag, downFlag, leftFlag, rightFlag, upInBuffer, mapGrid);
+			downInBuffer = false;
 		}
 
-		if (mapGrid[((playerIndexY + 14) + 1) / 30][playerIndexX / 30] && downInBuffer == true)
+		if (mapGrid[((playerIndexY + 14) + 1) / 30][playerIndexX / 30] && downInBuffer == true && upFlag == false)
 		{
 			moveDownNextTurn(playerIndexX, playerIndexY, upFlag, downFlag, leftFlag, rightFlag, downInBuffer, mapGrid);
-			rightInBuffer = false;
+			upInBuffer = false;
 		}
 
 		if (mapGrid[playerIndexY / 30][((playerIndexX - 14) + 1) / 30] && leftInBuffer == true && rightFlag == false)
 		{
 			moveLeftNextTurn(playerIndexX, playerIndexY, upFlag, downFlag, leftFlag, rightFlag, leftInBuffer, mapGrid);
+			rightInBuffer = false;
 		}
 
-		if (mapGrid[playerIndexY / 30][((playerIndexX + 14) + 1) / 30] && rightInBuffer == true)
+		if (mapGrid[playerIndexY / 30][((playerIndexX + 14) + 1) / 30] && rightInBuffer == true && leftFlag == false)
 		{
 			moveRightNextTurn(playerIndexX, playerIndexY, upFlag, downFlag, leftFlag, rightFlag, rightInBuffer, mapGrid);
+			leftInBuffer = false;
 		}
 
 		if (upFlag == true)
@@ -234,7 +242,7 @@ int main()
 		txtCurrentScore.setString("Current Score: " + std::to_string(score));
 
 		playerSprite.setPosition(playerIndexX, playerIndexY);
-		
+
 		//Clear window
 		window.clear(sf::Color::Color(159, 187, 80));
 
@@ -246,7 +254,8 @@ int main()
 		window.draw(txtPreviousScore);
 		window.draw(txtCurrentScore);
 		window.draw(txtHighScore);
-		
+		window.draw(txtRoundInfo);
+
 		//Display game
 		window.display();
 	}
