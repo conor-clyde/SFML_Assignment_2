@@ -25,10 +25,12 @@ float playerIndexY = 75;
 
 int main()
 {
-	//Variables required for Input Management
+	//Variables required for Input Management - Conor cLYDE
 	int score = 0, highScore = 0, counter = 0;
 	bool hideCoin1 = false, hideCoin2 = false, hideCoin3 = false, hideCoin4 = false, hideCoin5 = false;
 	bool hideCoin6 = false, hideCoin7 = false, hideCoin8 = false, hideCoin9 = false, hideCoin10 = false;
+	bool upFlag = false, downFlag = false, leftFlag = false, rightFlag = false;
+	bool upInBuffer = false, downInBuffer = false, leftInBuffer = false, rightInBuffer = false;
 
 	//Initialise render window
 	sf::RenderWindow window(sf::VideoMode(winWidth, winHeight), "Coin Chaser");
@@ -229,21 +231,11 @@ int main()
 		return -1;
 #pragma endregion  
 
-	bool upFlag = false;
-	bool downFlag = false;
-	bool leftFlag = false;
-	bool rightFlag = false;
-
-	bool upInBuffer = false;
-	bool downInBuffer = false;
-	bool leftInBuffer = false;
-	bool rightInBuffer = false;
-
-	// Game clock and timer by Ryan Featherstone
+	//Game clock and timer - Ryan Featherstone
 	sf::Clock clock;
 	int countdown = 60;
 
-	//making countdown a string
+	//Making countdown a string
 	std::string countdownString;
 	std::ostringstream convert;
 	convert << countdown;
@@ -256,13 +248,11 @@ int main()
 	timerText.setPosition(700, 40);
 	timerText.setCharacterSize(40);
 
-	
-
 	while (window.isOpen())
 	{
-
 #pragma region ~ Check for a close window event ~
 		sf::Event event;
+
 		while (window.pollEvent(event))
 		{
 			if (event.type == sf::Event::Closed)
@@ -278,7 +268,7 @@ int main()
 					window.close();
 					break;
 
-					//Process the up, down, left and right keys
+					//Process up, down, left and right keys
 				case sf::Keyboard::Up:
 					upFlag = true;
 					upInBuffer = true;
