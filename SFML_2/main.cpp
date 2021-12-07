@@ -56,21 +56,21 @@ int main()
 	int numXCells = int(winWidth / pixel.getSize().x);                         //Get pixel width and height of the 2d grid (based on pixel size)
 	int numYCells = int(winHeight / pixel.getSize().y);
 #pragma endregion
-	sf::Texture texture1;
-	if (!texture1.loadFromFile("assets/CoinSprite.png"))
+	sf::Texture coinTexture;
+	if (!coinTexture.loadFromFile("assets/CoinSprite.png"))
 	{
 		std::cout << "Could not load player texture" << std::endl;
 		return 0;
 	}
-	sf::Texture texture;
-	if (!texture.loadFromFile("assets/playerSprite.png"))
+	sf::Texture playerTexture;
+	if (!playerTexture.loadFromFile("assets/playerSprite.png"))
 	{
 		std::cout << "Could not load player texture" << std::endl;
 		return 0;
 	}
 	
 	sf::Sprite playerSprite;
-	playerSprite.setTexture(texture);
+	playerSprite.setTexture(playerTexture);
 	playerSprite.setPosition(playerIndexX, playerIndexY);
 	playerSprite.setOrigin(playerSprite.getLocalBounds().width / 2, playerSprite.getLocalBounds().height / 2);
 	playerSprite.setScale(1,1);
@@ -80,21 +80,80 @@ int main()
 	//std::cout << carSpriteRight.getLocalBounds().height << std::endl;
 
 	sf::Time elapsed;
-	sf::Sprite coinSprite;
-	coinSprite.setTexture(texture1);
-	coinSprite.setPosition(playerIndexX+40, playerIndexY);
-	coinSprite.setOrigin(coinSprite.getLocalBounds().width / 2, coinSprite.getLocalBounds().height / 2);
-	coinSprite.setScale(0.05, 0.05);
-	coinSprite.setRotation(0);
+	sf::Sprite coinSprite1;
+	coinSprite1.setTexture(coinTexture);
+	coinSprite1.setPosition(playerIndexX+40, playerIndexY);
+	coinSprite1.setOrigin(coinSprite1.getLocalBounds().width / 2, coinSprite1.getLocalBounds().height / 2);
+	coinSprite1.setScale(0.05, 0.05);
+	coinSprite1.setRotation(0);
 
-	std::cout << coinSprite.getLocalBounds().width << std::endl;
-	std::cout << coinSprite.getLocalBounds().height << std::endl;
+	sf::Sprite CoinSprite2;
+	CoinSprite2.setTexture(coinTexture);
+	CoinSprite2.setPosition(playerIndexX, playerIndexY);
+	CoinSprite2.setOrigin(CoinSprite2.getLocalBounds().width / 2, CoinSprite2.getLocalBounds().height / 2);
+	CoinSprite2.setScale(0.05, 0.05);
+	CoinSprite2.setRotation(0);
 
+	sf::Sprite CoinSprite3;
+	CoinSprite3.setTexture(coinTexture);
+	CoinSprite3.setPosition(playerIndexX, playerIndexY);
+	CoinSprite3.setOrigin(CoinSprite3.getLocalBounds().width / 2, CoinSprite3.getLocalBounds().height / 2);
+	CoinSprite3.setScale(0.05, 0.05);
+	CoinSprite3.setRotation(0);
+
+	sf::Sprite CoinSprite4;
+	CoinSprite4.setTexture(coinTexture);
+	CoinSprite4.setPosition(playerIndexX, playerIndexY);
+	CoinSprite4.setOrigin(CoinSprite4.getLocalBounds().width / 2, CoinSprite4.getLocalBounds().height / 2);
+	CoinSprite4.setScale(0.05, 0.05);
+	CoinSprite4.setRotation(0);
+
+	sf::Sprite CoinSprite5;
+	CoinSprite5.setTexture(coinTexture);
+	CoinSprite5.setPosition(playerIndexX, playerIndexY);
+	CoinSprite5.setOrigin(CoinSprite5.getLocalBounds().width / 2, CoinSprite5.getLocalBounds().height / 2);
+	CoinSprite5.setScale(0.05, 0.05);
+	CoinSprite5.setRotation(0);
+
+	sf::Sprite CoinSprite6;
+	CoinSprite6.setTexture(coinTexture);
+	CoinSprite6.setPosition(playerIndexX, playerIndexY);
+	CoinSprite6.setOrigin(CoinSprite6.getLocalBounds().width / 2, CoinSprite6.getLocalBounds().height / 2);
+	CoinSprite6.setScale(0.05, 0.05);
+	CoinSprite6.setRotation(0);
+
+	sf::Sprite CoinSprite7;
+	CoinSprite6.setTexture(coinTexture);
+	CoinSprite6.setPosition(playerIndexX, playerIndexY);
+	CoinSprite6.setOrigin(CoinSprite6.getLocalBounds().width / 2, CoinSprite6.getLocalBounds().height / 2);
+	CoinSprite6.setScale(0.05, 0.05);
+	CoinSprite6.setRotation(0);
+
+	sf::Sprite CoinSprite8;
+	CoinSprite6.setTexture(coinTexture);
+	CoinSprite6.setPosition(playerIndexX, playerIndexY);
+	CoinSprite6.setOrigin(CoinSprite6.getLocalBounds().width / 2, CoinSprite6.getLocalBounds().height / 2);
+	CoinSprite6.setScale(0.05, 0.05);
+	CoinSprite6.setRotation(0);
+
+	sf::Sprite CoinSprite9;
+	CoinSprite6.setTexture(coinTexture);
+	CoinSprite6.setPosition(playerIndexX, playerIndexY);
+	CoinSprite6.setOrigin(CoinSprite6.getLocalBounds().width / 2, CoinSprite6.getLocalBounds().height / 2);
+	CoinSprite6.setScale(0.05, 0.05);
+	CoinSprite6.setRotation(0);
+
+	sf::Sprite CoinSprite10;
+	CoinSprite6.setTexture(coinTexture);
+	CoinSprite6.setPosition(playerIndexX, playerIndexY);
+	CoinSprite6.setOrigin(CoinSprite6.getLocalBounds().width / 2, CoinSprite6.getLocalBounds().height / 2);
+	CoinSprite6.setScale(0.05, 0.05);
+	CoinSprite6.setRotation(0);
 
 	sf::Time elapsed1;
 
 	sf::Sprite CarSpriteLeft;
-	CarSpriteLeft.setTexture(texture);
+	CarSpriteLeft.setTexture(playerTexture);
 	CarSpriteLeft.setPosition(playerIndexX, playerIndexY);
 	//CarSpriteLeft.setOrigin(carSpriteRight.getLocalBounds().width / 2, CarSpriteLeft.getLocalBounds().height / 2);
 	CarSpriteLeft.setScale(3, 3);
@@ -106,7 +165,7 @@ int main()
 	sf::Time elapsed2;
 
 	sf::Sprite CarSpriteUp;
-	CarSpriteUp.setTexture(texture);
+	CarSpriteUp.setTexture(playerTexture);
 	CarSpriteUp.setPosition(playerIndexX, playerIndexY);
 	CarSpriteUp.setOrigin(CarSpriteUp.getLocalBounds().width / 2, CarSpriteUp.getLocalBounds().height / 2);
 	CarSpriteUp.setScale(3, 3);
@@ -117,7 +176,7 @@ int main()
 	sf::Time lapsed3;
 
 	sf::Sprite CarSprite2;
-	CarSprite2.setTexture(texture);
+	CarSprite2.setTexture(playerTexture);
 	CarSprite2.setPosition(playerIndexX, playerIndexY);
 	CarSprite2.setOrigin(CarSprite2.getLocalBounds().width / 2, CarSprite2.getLocalBounds().height / 2);
 	CarSprite2.setScale(3, 3);
@@ -127,47 +186,7 @@ int main()
 	std::cout << CarSprite2.getLocalBounds().height << std::endl;
 	sf::Time lapsed4;
 
-	sf::Sprite CoinSprite;
-	CoinSprite.setTexture(texture);
-	CoinSprite.setPosition(playerIndexX, playerIndexY);
-	CoinSprite.setOrigin(CoinSprite.getLocalBounds().width / 2, CoinSprite.getLocalBounds().height / 2);
-	CoinSprite.setScale(3, 3);
-	CoinSprite.setRotation(0);
-
-	sf::Sprite CoinSprite2;
-	CoinSprite2.setTexture(texture);
-	CoinSprite2.setPosition(playerIndexX, playerIndexY);
-	CoinSprite2.setOrigin(CoinSprite2.getLocalBounds().width / 2, CoinSprite2.getLocalBounds().height / 2);
-	CoinSprite2.setScale(3, 3);
-	CoinSprite2.setRotation(0);
-
-	sf::Sprite CoinSprite3;
-	CoinSprite3.setTexture(texture);
-	CoinSprite3.setPosition(playerIndexX, playerIndexY);
-	CoinSprite3.setOrigin(CoinSprite3.getLocalBounds().width / 2, CoinSprite3.getLocalBounds().height / 2);
-	CoinSprite3.setScale(3, 3);
-	CoinSprite3.setRotation(0);
-
-	sf::Sprite CoinSprite4;
-	CoinSprite4.setTexture(texture);
-	CoinSprite4.setPosition(playerIndexX, playerIndexY);
-	CoinSprite4.setOrigin(CoinSprite4.getLocalBounds().width / 2, CoinSprite4.getLocalBounds().height / 2);
-	CoinSprite4.setScale(3, 3);
-	CoinSprite4.setRotation(0);
-
-	sf::Sprite CoinSprite5;
-	CoinSprite5.setTexture(texture);
-	CoinSprite5.setPosition(playerIndexX, playerIndexY);
-	CoinSprite5.setOrigin(CoinSprite5.getLocalBounds().width / 2, CoinSprite5.getLocalBounds().height / 2);
-	CoinSprite5.setScale(3, 3);
-	CoinSprite5.setRotation(0);
-
-	sf::Sprite CoinSprite6;
-	CoinSprite6.setTexture(texture);
-	CoinSprite6.setPosition(playerIndexX, playerIndexY);
-	CoinSprite6.setOrigin(CoinSprite6.getLocalBounds().width / 2, CoinSprite6.getLocalBounds().height / 2);
-	CoinSprite6.setScale(3, 3);
-	CoinSprite6.setRotation(0);
+	
 
 
 
@@ -292,7 +311,7 @@ int main()
 
 		restartGame(playerIndexX, playerIndexY, upFlag, downFlag, leftFlag, rightFlag, upInBuffer, downInBuffer, leftInBuffer, rightInBuffer, font, score, highScore, txtCurrentScore, txtPreviousScore, txtHighScore, txtRoundInfo, window, playerSprite);
 		
-		checkForCoin();
+		checkForCoin(coinSprite1);
 
 		if (mapGrid[((playerIndexY - 14) - 1) / 30][playerIndexX / 30] && upInBuffer == true && downFlag == false)
 		{
@@ -347,7 +366,7 @@ int main()
 		//Draw game
 		drawCells(numXCells, numYCells, mapGrid, pixel, window);
 		window.draw(playerSprite);
-		window.draw(coinSprite);
+		window.draw(coinSprite1);
 		window.draw(txtStart);
 		window.draw(txtEscape);
 		window.draw(txtPreviousScore);

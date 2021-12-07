@@ -93,7 +93,7 @@ void restartGame(float& playerIndexX, float& playerIndexY, bool& upFlag, bool& d
 
 
 }
-void checkForCoin()
+void checkForCoin(sf::Sprite coinSprite1)
 {
 
 }
