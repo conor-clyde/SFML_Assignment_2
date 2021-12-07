@@ -1,11 +1,12 @@
+//Input Management implementation file - Conor Clyde
 #include <iostream>
 #include <SFML/Graphics/Text.hpp>
 #include <SFML/Graphics/RenderWindow.hpp>
 #include <SFML/Graphics/Sprite.hpp>
 
-
 void checkIfAtStart(float& playerIndexX, float& playerIndexY, bool& upFlag, bool& downFlag, bool& leftFlag, bool& rightFlag, bool& upInBuffer, bool& downInBuffer, bool& leftInBuffer, bool& rightInBuffer, sf::Font font)
 {
+	//If at starting position, player sprite can not move left
 	if ((playerIndexX - 15) <= 30 && playerIndexY >= 60 && playerIndexY <= 90)
 	{
 		leftFlag = false;
@@ -17,27 +18,32 @@ void checkIfAtWater(float& playerIndexX, float& playerIndexY, bool& upFlag, bool
 {
 	if (!((playerIndexX - 15) <= 30 && playerIndexY >= 60 && playerIndexY <= 90) && !((playerIndexX + 15) >= 870 && playerIndexY >= 810 && playerIndexY <= 840) && ((playerIndexX - 15) <= 30 || (playerIndexX + 15) >= 870 || (playerIndexY - 15) <= 30 || (playerIndexY + 15) >= 870))
 	{
-
-		txtRoundInfo.setString("You Drowned!!	-500 points");
-
-		txtCurrentScore.setString("Current Score: 0");
-
+		//Adjust score due to falling in water
 		score -= 500;
+
+		//Set previous round info and score
+		txtRoundInfo.setString("You Drowned!!	-500 points");
 
 		if (score < 0)
 			txtPreviousScore.setString("Previous Score: 0");
 		else
 			txtPreviousScore.setString("Previous Score: " + std::to_string(score));
 
+		//Set high score if score is higher than current high score
 		if (score > highScore)
 		{
 			highScore = score;
 			txtHighScore.setString("High Score: " + std::to_string(score));
 		}
 
+		//Reset score, player starting position and key presses
+		txtCurrentScore.setString("Current Score: 0");
+		score = 0;
 
 		playerIndexX = 45;
 		playerIndexY = 75;
+
+		playerSprite.setRotation(0);
 
 		upFlag = false;
 		downFlag = false;
@@ -48,16 +54,11 @@ void checkIfAtWater(float& playerIndexX, float& playerIndexY, bool& upFlag, bool
 		downInBuffer = false;
 		leftInBuffer = false;
 		rightInBuffer = false;
-
-		playerSprite.setRotation(0);
-
-		score = 0;
 	}
 }
 
 void escapeRestart(float& playerIndexX, float& playerIndexY, bool& upFlag, bool& downFlag, bool& leftFlag, bool& rightFlag, bool& upInBuffer, bool& downInBuffer, bool& leftInBuffer, bool& rightInBuffer, sf::Font font, int& score, int& highScore, sf::Text& txtCurrentScore, sf::Text& txtPreviousScore, sf::Text& txtHighScore, sf::Text& txtRoundInfo, sf::Sprite& playerSprite)
 {
-
 	if (playerIndexX >= 870 && playerIndexY >= 810 && playerIndexY <= 840)
 	{
 		txtRoundInfo.setString("You Escaped!!	+1000 points");
@@ -122,7 +123,6 @@ void timerRestart(float& playerIndexX, float& playerIndexY, bool& upFlag, bool& 
 		playerSprite.setRotation(0);
 
 		score = 0;
-	
 }
 
 
@@ -191,8 +191,6 @@ void checkForCoin(int& score, sf::Sprite playerSprite, sf::Sprite coinSprite1, s
 
 void moveUpNextTurn(int& counter, float& playerIndexX, float& playerIndexY, bool& upFlag, bool& downFlag, bool& leftFlag, bool& rightFlag, bool& upInBuffer, bool& downInBuffer, bool& leftInBuffer, bool& rightInBuffer, std::vector<std::vector<int>>& mapGrid, sf::Sprite& playerSprite)
 {
-
-
 	if (counter == 0)
 	{
 		leftInBuffer = false;
@@ -208,22 +206,17 @@ void moveUpNextTurn(int& counter, float& playerIndexX, float& playerIndexY, bool
 
 	playerIndexY -= 0.8;
 
-
-
 	playerSprite.setRotation(270);
 
 	if (!mapGrid[((playerIndexY - 14) - 1) / 30][playerIndexX / 30] && upInBuffer == true)
 	{
 		upInBuffer = false;
 		counter = 0;
-	
 	}
 }
 
 void moveDownNextTurn(int& counter, float& playerIndexX, float& playerIndexY, bool& downFlag, bool& upFlag, bool& leftFlag, bool& rightFlag, bool& upInBuffer, bool& downInBuffer, bool& leftInBuffer, bool& rightInBuffer, std::vector<std::vector<int>>& mapGrid, sf::Sprite& playerSprite)
 {
-	
-
 	if (counter == 0)
 	{
 		leftInBuffer = false;
@@ -231,7 +224,6 @@ void moveDownNextTurn(int& counter, float& playerIndexX, float& playerIndexY, bo
 	}
 
 	upFlag = false;
-	//downFlag = false;
 	rightFlag = false;
 	leftFlag = false;
 
@@ -245,7 +237,6 @@ void moveDownNextTurn(int& counter, float& playerIndexX, float& playerIndexY, bo
 	{
 		downInBuffer = false;
 		counter = 0;
-
 	}
 }
 
@@ -313,14 +304,9 @@ void moveDown(float& playerIndexX, float& playerIndexY, bool& downFlag, std::vec
 {
 	//if we aren't in the bottom row and the cell below us doesn't contain an obstacle then we can move down
 	if (mapGrid[((playerIndexY + 14) + 1) / 30][playerIndexX / 30])
-	{
 		playerIndexY += 0.8;
-		
-	}
 	else
 		downFlag = false;
-	
-
 }
 
 
@@ -328,9 +314,7 @@ void moveLeft(float& playerIndexX, float& playerIndexY, bool& leftFlag, std::vec
 {
 	//if we aren't in the left-most column and the cell to our left doesn't contain an obstacle then we can move left
 	if (mapGrid[playerIndexY / 30][((playerIndexX - 14) + 1) / 30])
-	{
 		playerIndexX -= 0.8;
-	}
 	else
 		leftFlag = false;
 }
@@ -339,10 +323,7 @@ void moveRight(float& playerIndexX, float& playerIndexY, bool& rightFlag, std::v
 {
 	//if we aren't in the right-most column and the cell to our right doesn't contain an obstacle then we can move right
 	if (mapGrid[playerIndexY / 30][((playerIndexX + 14) + 1) / 30])
-	{
 		playerIndexX += 0.8;
-	}
 	else
 		rightFlag = false;
 }
-

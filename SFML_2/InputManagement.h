@@ -1,3 +1,4 @@
+//Input Managment header file - Conor Clyde
 #pragma once
 
 void checkIfAtStart(float& playerIndexX, float& playerIndexY, bool& upFlag, bool& downFlag, bool& leftFlag, bool& rightFlag, bool& upInBuffer, bool& downInBuffer, bool& leftInBuffer, bool& rightInBuffer, sf::Font font);
@@ -25,5 +26,3 @@ void moveDown(float& playerIndexX, float& playerIndexY, bool& downFlag, std::vec
 void moveLeft(float& playerIndexX, float& playerIndexY, bool& leftFlag, std::vector<std::vector<int>>& mapGrid);
 
 void moveRight(float& playerIndexX, float& playerIndexY, bool& rightFlag, std::vector<std::vector<int>>& mapGrid);
-
-
