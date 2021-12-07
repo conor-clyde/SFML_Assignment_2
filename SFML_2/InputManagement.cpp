@@ -3,9 +3,13 @@
 #include <SFML/Graphics/RenderWindow.hpp>
 
 
-void checkIfAtStart()
+void checkIfAtStart(float& playerIndexX, float& playerIndexY, bool& upFlag, bool& downFlag, bool& leftFlag, bool& rightFlag, bool& upInBuffer, bool& downInBuffer, bool& leftInBuffer, bool& rightInBuffer, std::string previousScore, sf::Text& txtPreviousScore, sf::Font font, sf::RenderWindow& _window)
 {
-
+	if ((playerIndexX-15) <= 30 && playerIndexY >= 60 && playerIndexY <= 90)
+	{
+		leftFlag = false;
+		leftInBuffer = false;
+	}
 }
 
 void restartGame(float& playerIndexX, float& playerIndexY, bool& upFlag, bool& downFlag, bool& leftFlag, bool& rightFlag, bool& upInBuffer, bool& downInBuffer, bool& leftInBuffer, bool& rightInBuffer, std::string previousScore, sf::Text& txtPreviousScore, sf::Font font, sf::RenderWindow&_window)
