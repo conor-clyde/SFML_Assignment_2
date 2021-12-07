@@ -15,10 +15,11 @@
 #include "gameAudio.h"
 #include "tilemap.cpp"
 
+//Width and Height of window
 #define winWidth 900
 #define winHeight 900
 
-//Player starting position
+//Player Sprite starting position
 float playerIndexX = 45;
 float playerIndexY = 75;
 
@@ -29,14 +30,15 @@ int main()
 	bool hideCoin1 = false, hideCoin2 = false, hideCoin3 = false, hideCoin4 = false, hideCoin5 = false;
 	bool hideCoin6 = false, hideCoin7 = false, hideCoin8 = false, hideCoin9 = false, hideCoin10 = false;
 
-#pragma region ~ Initialise render window ~
+	//Initialise render window
 	sf::RenderWindow window(sf::VideoMode(winWidth, winHeight), "Coin Chaser");
-#pragma endregion
 
+	//Load in font
 	sf::Font font;
 	if (!font.loadFromFile(".\\fonts\\arial.ttf"))
 		return EXIT_FAILURE;
 
+	//Text labels required for game - Conor Clyde
 	sf::Text txtStart("START!", font, 24); txtStart.setFillColor(sf::Color::Black); txtStart.setPosition(4, 2);
 	sf::Text txtEscape("ESCAPE!", font, 24); txtEscape.setFillColor(sf::Color::Black); txtEscape.setPosition(window.getSize().x - 110, window.getSize().y - 30);
 	sf::Text txtPreviousScore("Previous Score: 0 ", font, 18); txtPreviousScore.setFillColor(sf::Color::Black); txtPreviousScore.setPosition(150, 4);
@@ -47,9 +49,13 @@ int main()
 #pragma region ~ Create a square pixel (SFML graphics object), size it, and give it a color ~
 	sf::RectangleShape pixel(sf::Vector2f(30.0f, 30.0f));
 	pixel.setFillColor(sf::Color::Black);
-	int numXCells = int(winWidth / pixel.getSize().x);                         //Get pixel width and height of the 2d grid (based on pixel size)
+
+	//Get pixel width and height of the 2d grid (based on pixel size)
+	int numXCells = int(winWidth / pixel.getSize().x);
 	int numYCells = int(winHeight / pixel.getSize().y);
 #pragma endregion
+
+	//Load in textures - Daniel Kelly
 	sf::Texture coinTexture;
 	if (!coinTexture.loadFromFile("assets/CoinSprite.png"))
 	{
@@ -63,15 +69,13 @@ int main()
 		return 0;
 	}
 	
+	//Sprites - Daniel Kelly
 	sf::Sprite playerSprite;
 	playerSprite.setTexture(playerTexture);
 	playerSprite.setPosition(playerIndexX, playerIndexY);
 	playerSprite.setOrigin(playerSprite.getLocalBounds().width / 2, playerSprite.getLocalBounds().height / 2);
 	playerSprite.setScale(1,1);
 	playerSprite.setRotation(0);
-
-	//std::cout << carSpriteRight.getLocalBounds().width << std::endl;
-	//std::cout << carSpriteRight.getLocalBounds().height << std::endl;
 
 	sf::Time elapsed;
 	sf::Sprite coinSprite1;
@@ -149,7 +153,7 @@ int main()
 	sf::Sprite CarSpriteLeft;
 	CarSpriteLeft.setTexture(playerTexture);
 	CarSpriteLeft.setPosition(playerIndexX, playerIndexY);
-	//CarSpriteLeft.setOrigin(carSpriteRight.getLocalBounds().width / 2, CarSpriteLeft.getLocalBounds().height / 2);
+	CarSpriteLeft.setOrigin(CarSpriteLeft.getLocalBounds().width / 2, CarSpriteLeft.getLocalBounds().height / 2);
 	CarSpriteLeft.setScale(3, 3);
 	CarSpriteLeft.setRotation(0);
 
@@ -180,25 +184,17 @@ int main()
 	std::cout << CarSprite2.getLocalBounds().height << std::endl;
 	sf::Time lapsed4;
 
-	
 #pragma region ~Load music from files ~
-	
-		// Loads the background music from the audio folder 
-
+		//Load background music from audio folder 
 		sf::Music music;
 		if (!music.openFromFile(".\\audio\\background music.wav"))
-		{
 			std::cout << "Could not load background music" << std::endl;
 
-		}
-
 		music.play();
-		//This will loop the background music
 
+		//Loop background music
 		music.setLoop(true);
-	
 #pragma endregion  
-
 
 #pragma region ~ Create 2d vector array for holding pixel values (integers) ~
 	std::vector<std::vector<int>> mapGrid;                                  // Vector list of map tiles 

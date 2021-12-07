@@ -112,35 +112,34 @@ C:\Users\clyde\source\repos\A0\SFML_2\tilemap.cpp(55,53): warning C4244: 'argume
           [
               T=float
           ]
-C:\Users\clyde\source\repos\A0\SFML_2\main.cpp(45,152): warning C4244: 'argument': conversion from 'T' to 'float', possible loss of data
+C:\Users\clyde\source\repos\A0\SFML_2\main.cpp(44,152): warning C4244: 'argument': conversion from 'T' to 'float', possible loss of data
           with
           [
               T=unsigned int
           ]
-C:\Users\clyde\source\repos\A0\SFML_2\main.cpp(45,126): warning C4244: 'argument': conversion from 'T' to 'float', possible loss of data
+C:\Users\clyde\source\repos\A0\SFML_2\main.cpp(44,126): warning C4244: 'argument': conversion from 'T' to 'float', possible loss of data
           with
           [
               T=unsigned int
           ]
-C:\Users\clyde\source\repos\A0\SFML_2\main.cpp(49,150): warning C4305: 'argument': truncation from 'double' to 'float'
-C:\Users\clyde\source\repos\A0\SFML_2\main.cpp(85,33): warning C4305: 'argument': truncation from 'double' to 'float'
-C:\Users\clyde\source\repos\A0\SFML_2\main.cpp(92,33): warning C4305: 'argument': truncation from 'double' to 'float'
-C:\Users\clyde\source\repos\A0\SFML_2\main.cpp(99,33): warning C4305: 'argument': truncation from 'double' to 'float'
-C:\Users\clyde\source\repos\A0\SFML_2\main.cpp(106,33): warning C4305: 'argument': truncation from 'double' to 'float'
-C:\Users\clyde\source\repos\A0\SFML_2\main.cpp(113,33): warning C4305: 'argument': truncation from 'double' to 'float'
-C:\Users\clyde\source\repos\A0\SFML_2\main.cpp(120,33): warning C4305: 'argument': truncation from 'double' to 'float'
-C:\Users\clyde\source\repos\A0\SFML_2\main.cpp(127,33): warning C4305: 'argument': truncation from 'double' to 'float'
-C:\Users\clyde\source\repos\A0\SFML_2\main.cpp(134,33): warning C4305: 'argument': truncation from 'double' to 'float'
-C:\Users\clyde\source\repos\A0\SFML_2\main.cpp(141,33): warning C4305: 'argument': truncation from 'double' to 'float'
-C:\Users\clyde\source\repos\A0\SFML_2\main.cpp(148,34): warning C4305: 'argument': truncation from 'double' to 'float'
-C:\Users\clyde\source\repos\A0\SFML_2\main.cpp(325,41): warning C4244: 'argument': conversion from 'float' to 'const unsigned int', possible loss of data
-C:\Users\clyde\source\repos\A0\SFML_2\main.cpp(325,60): warning C4244: 'argument': conversion from 'float' to 'const unsigned int', possible loss of data
-C:\Users\clyde\source\repos\A0\SFML_2\main.cpp(331,41): warning C4244: 'argument': conversion from 'float' to 'const unsigned int', possible loss of data
-C:\Users\clyde\source\repos\A0\SFML_2\main.cpp(331,60): warning C4244: 'argument': conversion from 'float' to 'const unsigned int', possible loss of data
-C:\Users\clyde\source\repos\A0\SFML_2\main.cpp(338,28): warning C4244: 'argument': conversion from 'float' to 'const unsigned int', possible loss of data
-C:\Users\clyde\source\repos\A0\SFML_2\main.cpp(338,60): warning C4244: 'argument': conversion from 'float' to 'const unsigned int', possible loss of data
-C:\Users\clyde\source\repos\A0\SFML_2\main.cpp(344,28): warning C4244: 'argument': conversion from 'float' to 'const unsigned int', possible loss of data
-C:\Users\clyde\source\repos\A0\SFML_2\main.cpp(344,60): warning C4244: 'argument': conversion from 'float' to 'const unsigned int', possible loss of data
-C:\Users\clyde\source\repos\A0\SFML_2\main.cpp(369,13): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
-C:\Users\clyde\source\repos\A0\SFML_2\main.cpp(33,7): warning C4101: 'drawCoin': unreferenced local variable
+C:\Users\clyde\source\repos\A0\SFML_2\main.cpp(48,150): warning C4305: 'argument': truncation from 'double' to 'float'
+C:\Users\clyde\source\repos\A0\SFML_2\main.cpp(83,33): warning C4305: 'argument': truncation from 'double' to 'float'
+C:\Users\clyde\source\repos\A0\SFML_2\main.cpp(90,33): warning C4305: 'argument': truncation from 'double' to 'float'
+C:\Users\clyde\source\repos\A0\SFML_2\main.cpp(97,33): warning C4305: 'argument': truncation from 'double' to 'float'
+C:\Users\clyde\source\repos\A0\SFML_2\main.cpp(104,33): warning C4305: 'argument': truncation from 'double' to 'float'
+C:\Users\clyde\source\repos\A0\SFML_2\main.cpp(111,33): warning C4305: 'argument': truncation from 'double' to 'float'
+C:\Users\clyde\source\repos\A0\SFML_2\main.cpp(118,33): warning C4305: 'argument': truncation from 'double' to 'float'
+C:\Users\clyde\source\repos\A0\SFML_2\main.cpp(125,33): warning C4305: 'argument': truncation from 'double' to 'float'
+C:\Users\clyde\source\repos\A0\SFML_2\main.cpp(132,33): warning C4305: 'argument': truncation from 'double' to 'float'
+C:\Users\clyde\source\repos\A0\SFML_2\main.cpp(139,33): warning C4305: 'argument': truncation from 'double' to 'float'
+C:\Users\clyde\source\repos\A0\SFML_2\main.cpp(146,34): warning C4305: 'argument': truncation from 'double' to 'float'
+C:\Users\clyde\source\repos\A0\SFML_2\main.cpp(315,41): warning C4244: 'argument': conversion from 'float' to 'const unsigned int', possible loss of data
+C:\Users\clyde\source\repos\A0\SFML_2\main.cpp(315,60): warning C4244: 'argument': conversion from 'float' to 'const unsigned int', possible loss of data
+C:\Users\clyde\source\repos\A0\SFML_2\main.cpp(321,41): warning C4244: 'argument': conversion from 'float' to 'const unsigned int', possible loss of data
+C:\Users\clyde\source\repos\A0\SFML_2\main.cpp(321,60): warning C4244: 'argument': conversion from 'float' to 'const unsigned int', possible loss of data
+C:\Users\clyde\source\repos\A0\SFML_2\main.cpp(328,28): warning C4244: 'argument': conversion from 'float' to 'const unsigned int', possible loss of data
+C:\Users\clyde\source\repos\A0\SFML_2\main.cpp(328,60): warning C4244: 'argument': conversion from 'float' to 'const unsigned int', possible loss of data
+C:\Users\clyde\source\repos\A0\SFML_2\main.cpp(334,28): warning C4244: 'argument': conversion from 'float' to 'const unsigned int', possible loss of data
+C:\Users\clyde\source\repos\A0\SFML_2\main.cpp(334,60): warning C4244: 'argument': conversion from 'float' to 'const unsigned int', possible loss of data
+C:\Users\clyde\source\repos\A0\SFML_2\main.cpp(359,13): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
   SFML_Game.vcxproj -> C:\Users\clyde\source\repos\A0\Debug\SFMLAssignmentGame.exe
