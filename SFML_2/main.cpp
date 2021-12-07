@@ -36,6 +36,7 @@ int main()
 	int highScore = 0;
 	int counter = 0;
 	bool drawCoin[9];
+	bool hideCoin1 = false, hideCoin2 = false, hideCoin3 = false, hideCoin4 = false, hideCoin5 = false, hideCoin6 = false, hideCoin7 = false, hideCoin8 = false, hideCoin9 = false, hideCoin10 = false;
 
 #pragma region ~ Initialise render window ~
 	sf::RenderWindow window(sf::VideoMode(winWidth, winHeight), "Coin Chaser");
@@ -324,7 +325,7 @@ int main()
 
 		restartGame(playerIndexX, playerIndexY, upFlag, downFlag, leftFlag, rightFlag, upInBuffer, downInBuffer, leftInBuffer, rightInBuffer, font, score, highScore, txtCurrentScore, txtPreviousScore, txtHighScore, txtRoundInfo, window, playerSprite);
 		
-		checkForCoin(score, playerSprite, drawCoin, coinSprite1);
+		checkForCoin(score, playerSprite, coinSprite1, coinSprite2, coinSprite3, coinSprite4, coinSprite5, coinSprite6, coinSprite7, coinSprite8, coinSprite9, coinSprite10, hideCoin1, hideCoin2, hideCoin3, hideCoin4, hideCoin5, hideCoin6, hideCoin7, hideCoin8, hideCoin9, hideCoin10);
 
 		if (mapGrid[((playerIndexY - 14) - 1) / 30][playerIndexX / 30] && upInBuffer == true && downFlag == false)
 		{
@@ -388,20 +389,42 @@ int main()
 		window.clear(sf::Color::Color(159, 187, 80));
 
 		//Draw game
+
 		drawCells(numXCells, numYCells, mapGrid, pixel, window);
 		window.draw(map);
 		window.draw(playerSprite);
 		window.draw(timerText);
-		window.draw(coinSprite1);
-		window.draw(coinSprite2);
-		window.draw(coinSprite3);
-		window.draw(coinSprite4);
-		window.draw(coinSprite5);
-		window.draw(coinSprite6);
-		window.draw(coinSprite7);
-		window.draw(coinSprite8);
-		window.draw(coinSprite9);
-		window.draw(coinSprite10);
+
+		if (!hideCoin1)
+			window.draw(coinSprite1);
+
+		if (!hideCoin2)
+			window.draw(coinSprite2);
+
+		if (!hideCoin3)
+			window.draw(coinSprite3);
+
+		if (!hideCoin4)
+			window.draw(coinSprite4);
+
+		if (!hideCoin5)
+			window.draw(coinSprite5);
+
+		if (!hideCoin6)
+			window.draw(coinSprite6);
+
+		if (!hideCoin7)
+			window.draw(coinSprite7);
+
+		if (!hideCoin8)
+			window.draw(coinSprite8);
+
+		if (!hideCoin9)
+			window.draw(coinSprite9);
+
+		if (!hideCoin10)
+			window.draw(coinSprite10);
+
 		window.draw(txtStart);
 		window.draw(txtEscape);
 		window.draw(txtPreviousScore);

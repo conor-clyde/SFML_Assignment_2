@@ -126,14 +126,67 @@ void timerRestart(float& playerIndexX, float& playerIndexY, bool& upFlag, bool& 
 }
 
 
-void checkForCoin(int& score, sf::Sprite playerSprite, bool drawCoin[9], sf::Sprite coinSprite1)
+void checkForCoin(int& score, sf::Sprite playerSprite, sf::Sprite coinSprite1, sf::Sprite coinSprite2, sf::Sprite coinSprite3, sf::Sprite coinSprite4, sf::Sprite coinSprite5, sf::Sprite coinSprite6, sf::Sprite coinSprite7, sf::Sprite coinSprite8, sf::Sprite coinSprite9, sf::Sprite coinSprite10, bool& hideCoin1, bool& hideCoin2, bool& hideCoin3, bool& hideCoin4, bool& hideCoin5, bool& hideCoin6, bool& hideCoin7, bool& hideCoin8, bool& hideCoin9, bool& hideCoin10)
 {
-	if (playerSprite.getGlobalBounds().intersects(coinSprite1.getGlobalBounds()))
+	if (playerSprite.getGlobalBounds().intersects(coinSprite1.getGlobalBounds()) && hideCoin1 == false)
 	{
 		score += 100;
-		//drawSprite1 = false;
+		hideCoin1 = true;
 	}
 
+	if (playerSprite.getGlobalBounds().intersects(coinSprite2.getGlobalBounds()) && hideCoin2 == false)
+	{
+		score += 100;
+		hideCoin2 = true;
+	}
+
+	if (playerSprite.getGlobalBounds().intersects(coinSprite3.getGlobalBounds()) && hideCoin3 == false)
+	{
+		score += 100;
+		hideCoin3 = true;
+	}
+
+	if (playerSprite.getGlobalBounds().intersects(coinSprite4.getGlobalBounds()) && hideCoin4 == false)
+	{
+		score += 100;
+		hideCoin4 = true;
+	}
+
+	if (playerSprite.getGlobalBounds().intersects(coinSprite5.getGlobalBounds()) && hideCoin5 == false)
+	{
+		score += 100;
+		hideCoin5 = true;
+	}
+
+	if (playerSprite.getGlobalBounds().intersects(coinSprite6.getGlobalBounds()) && hideCoin6 == false)
+	{
+		score += 100;
+		hideCoin6 = true;
+	}
+
+	if (playerSprite.getGlobalBounds().intersects(coinSprite7.getGlobalBounds()) && hideCoin7 == false)
+	{
+		score += 100;
+		hideCoin7 = true;
+	}
+
+	if (playerSprite.getGlobalBounds().intersects(coinSprite8.getGlobalBounds()) && hideCoin8 == false)
+	{
+		score += 100;
+		hideCoin8 = true;
+	}
+
+	if (playerSprite.getGlobalBounds().intersects(coinSprite9.getGlobalBounds()) && hideCoin9 == false)
+	{
+		score += 100;
+		hideCoin9 = true;
+	}
+
+	if (playerSprite.getGlobalBounds().intersects(coinSprite10.getGlobalBounds()) && hideCoin10 == false)
+	{
+		score += 100;
+		hideCoin10 = true;
+	}
 }
 
 void moveUpNextTurn(int& counter, float& playerIndexX, float& playerIndexY, bool& upFlag, bool& downFlag, bool& leftFlag, bool& rightFlag, bool& upInBuffer, bool& downInBuffer, bool& leftInBuffer, bool& rightInBuffer, std::vector<std::vector<int>>& mapGrid, sf::Sprite& playerSprite)

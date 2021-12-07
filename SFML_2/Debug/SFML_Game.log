@@ -1,46 +1,46 @@
 ﻿C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\MSBuild\Microsoft\VC\v160\Microsoft.CppBuild.targets(513,5): warning MSB8028: The intermediate directory (Debug\) contains files shared from another project (SFML_Life.vcxproj, SFML_Life_1.vcxproj, SFML_Points.vcxproj, SFML_Test.vcxproj).  This can lead to incorrect clean and rebuild behavior.
   main.cpp
-D:\Documents\Object Oriented Programming\group task\SFML_2\tilemap.cpp(46,67): warning C4244: 'argument': conversion from 'unsigned int' to 'T', possible loss of data
+C:\Users\clyde\source\repos\A0\SFML_2\tilemap.cpp(46,67): warning C4244: 'argument': conversion from 'unsigned int' to 'T', possible loss of data
           with
           [
               T=float
           ]
-D:\Documents\Object Oriented Programming\group task\SFML_2\tilemap.cpp(46,51): warning C4244: 'argument': conversion from 'unsigned int' to 'T', possible loss of data
+C:\Users\clyde\source\repos\A0\SFML_2\tilemap.cpp(46,51): warning C4244: 'argument': conversion from 'unsigned int' to 'T', possible loss of data
           with
           [
               T=float
           ]
-D:\Documents\Object Oriented Programming\group task\SFML_2\tilemap.cpp(47,73): warning C4244: 'argument': conversion from 'unsigned int' to 'T', possible loss of data
+C:\Users\clyde\source\repos\A0\SFML_2\tilemap.cpp(47,73): warning C4244: 'argument': conversion from 'unsigned int' to 'T', possible loss of data
           with
           [
               T=float
           ]
-D:\Documents\Object Oriented Programming\group task\SFML_2\tilemap.cpp(47,57): warning C4244: 'argument': conversion from 'unsigned int' to 'T', possible loss of data
+C:\Users\clyde\source\repos\A0\SFML_2\tilemap.cpp(47,57): warning C4244: 'argument': conversion from 'unsigned int' to 'T', possible loss of data
           with
           [
               T=float
           ]
-D:\Documents\Object Oriented Programming\group task\SFML_2\tilemap.cpp(48,79): warning C4244: 'argument': conversion from 'unsigned int' to 'T', possible loss of data
+C:\Users\clyde\source\repos\A0\SFML_2\tilemap.cpp(48,79): warning C4244: 'argument': conversion from 'unsigned int' to 'T', possible loss of data
           with
           [
               T=float
           ]
-D:\Documents\Object Oriented Programming\group task\SFML_2\tilemap.cpp(48,57): warning C4244: 'argument': conversion from 'unsigned int' to 'T', possible loss of data
+C:\Users\clyde\source\repos\A0\SFML_2\tilemap.cpp(48,57): warning C4244: 'argument': conversion from 'unsigned int' to 'T', possible loss of data
           with
           [
               T=float
           ]
-D:\Documents\Object Oriented Programming\group task\SFML_2\tilemap.cpp(49,73): warning C4244: 'argument': conversion from 'unsigned int' to 'T', possible loss of data
+C:\Users\clyde\source\repos\A0\SFML_2\tilemap.cpp(49,73): warning C4244: 'argument': conversion from 'unsigned int' to 'T', possible loss of data
           with
           [
               T=float
           ]
-D:\Documents\Object Oriented Programming\group task\SFML_2\tilemap.cpp(49,51): warning C4244: 'argument': conversion from 'unsigned int' to 'T', possible loss of data
+C:\Users\clyde\source\repos\A0\SFML_2\tilemap.cpp(49,51): warning C4244: 'argument': conversion from 'unsigned int' to 'T', possible loss of data
           with
           [
               T=float
           ]
-D:\Documents\Object Oriented Programming\group task\SFML_2\tilemap.cpp(52,70): warning C4244: 'argument': conversion from 'T' to 'T', possible loss of data
+C:\Users\clyde\source\repos\A0\SFML_2\tilemap.cpp(52,70): warning C4244: 'argument': conversion from 'T' to 'T', possible loss of data
           with
           [
               T=unsigned int
@@ -49,7 +49,7 @@ D:\Documents\Object Oriented Programming\group task\SFML_2\tilemap.cpp(52,70): w
           [
               T=float
           ]
-D:\Documents\Object Oriented Programming\group task\SFML_2\tilemap.cpp(52,53): warning C4244: 'argument': conversion from 'T' to 'T', possible loss of data
+C:\Users\clyde\source\repos\A0\SFML_2\tilemap.cpp(52,53): warning C4244: 'argument': conversion from 'T' to 'T', possible loss of data
           with
           [
               T=unsigned int
@@ -58,7 +58,7 @@ D:\Documents\Object Oriented Programming\group task\SFML_2\tilemap.cpp(52,53): w
           [
               T=float
           ]
-D:\Documents\Object Oriented Programming\group task\SFML_2\tilemap.cpp(53,76): warning C4244: 'argument': conversion from 'T' to 'T', possible loss of data
+C:\Users\clyde\source\repos\A0\SFML_2\tilemap.cpp(53,76): warning C4244: 'argument': conversion from 'T' to 'T', possible loss of data
           with
           [
               T=unsigned int
@@ -67,7 +67,7 @@ D:\Documents\Object Oriented Programming\group task\SFML_2\tilemap.cpp(53,76): w
           [
               T=float
           ]
-D:\Documents\Object Oriented Programming\group task\SFML_2\tilemap.cpp(53,59): warning C4244: 'argument': conversion from 'T' to 'T', possible loss of data
+C:\Users\clyde\source\repos\A0\SFML_2\tilemap.cpp(53,59): warning C4244: 'argument': conversion from 'T' to 'T', possible loss of data
           with
           [
               T=unsigned int
@@ -76,7 +76,7 @@ D:\Documents\Object Oriented Programming\group task\SFML_2\tilemap.cpp(53,59): w
           [
               T=float
           ]
-D:\Documents\Object Oriented Programming\group task\SFML_2\tilemap.cpp(54,82): warning C4244: 'argument': conversion from 'T' to 'T', possible loss of data
+C:\Users\clyde\source\repos\A0\SFML_2\tilemap.cpp(54,82): warning C4244: 'argument': conversion from 'T' to 'T', possible loss of data
           with
           [
               T=unsigned int
@@ -85,7 +85,7 @@ D:\Documents\Object Oriented Programming\group task\SFML_2\tilemap.cpp(54,82): w
           [
               T=float
           ]
-D:\Documents\Object Oriented Programming\group task\SFML_2\tilemap.cpp(54,59): warning C4244: 'argument': conversion from 'T' to 'T', possible loss of data
+C:\Users\clyde\source\repos\A0\SFML_2\tilemap.cpp(54,59): warning C4244: 'argument': conversion from 'T' to 'T', possible loss of data
           with
           [
               T=unsigned int
@@ -94,7 +94,7 @@ D:\Documents\Object Oriented Programming\group task\SFML_2\tilemap.cpp(54,59): w
           [
               T=float
           ]
-D:\Documents\Object Oriented Programming\group task\SFML_2\tilemap.cpp(55,76): warning C4244: 'argument': conversion from 'T' to 'T', possible loss of data
+C:\Users\clyde\source\repos\A0\SFML_2\tilemap.cpp(55,76): warning C4244: 'argument': conversion from 'T' to 'T', possible loss of data
           with
           [
               T=unsigned int
@@ -103,7 +103,7 @@ D:\Documents\Object Oriented Programming\group task\SFML_2\tilemap.cpp(55,76): w
           [
               T=float
           ]
-D:\Documents\Object Oriented Programming\group task\SFML_2\tilemap.cpp(55,53): warning C4244: 'argument': conversion from 'T' to 'T', possible loss of data
+C:\Users\clyde\source\repos\A0\SFML_2\tilemap.cpp(55,53): warning C4244: 'argument': conversion from 'T' to 'T', possible loss of data
           with
           [
               T=unsigned int
@@ -112,34 +112,35 @@ D:\Documents\Object Oriented Programming\group task\SFML_2\tilemap.cpp(55,53): w
           [
               T=float
           ]
-D:\Documents\Object Oriented Programming\group task\SFML_2\main.cpp(49,152): warning C4244: 'argument': conversion from 'T' to 'float', possible loss of data
+C:\Users\clyde\source\repos\A0\SFML_2\main.cpp(50,152): warning C4244: 'argument': conversion from 'T' to 'float', possible loss of data
           with
           [
               T=unsigned int
           ]
-D:\Documents\Object Oriented Programming\group task\SFML_2\main.cpp(49,126): warning C4244: 'argument': conversion from 'T' to 'float', possible loss of data
+C:\Users\clyde\source\repos\A0\SFML_2\main.cpp(50,126): warning C4244: 'argument': conversion from 'T' to 'float', possible loss of data
           with
           [
               T=unsigned int
           ]
-D:\Documents\Object Oriented Programming\group task\SFML_2\main.cpp(53,150): warning C4305: 'argument': truncation from 'double' to 'float'
-D:\Documents\Object Oriented Programming\group task\SFML_2\main.cpp(89,33): warning C4305: 'argument': truncation from 'double' to 'float'
-D:\Documents\Object Oriented Programming\group task\SFML_2\main.cpp(96,33): warning C4305: 'argument': truncation from 'double' to 'float'
-D:\Documents\Object Oriented Programming\group task\SFML_2\main.cpp(103,33): warning C4305: 'argument': truncation from 'double' to 'float'
-D:\Documents\Object Oriented Programming\group task\SFML_2\main.cpp(110,33): warning C4305: 'argument': truncation from 'double' to 'float'
-D:\Documents\Object Oriented Programming\group task\SFML_2\main.cpp(117,33): warning C4305: 'argument': truncation from 'double' to 'float'
-D:\Documents\Object Oriented Programming\group task\SFML_2\main.cpp(124,33): warning C4305: 'argument': truncation from 'double' to 'float'
-D:\Documents\Object Oriented Programming\group task\SFML_2\main.cpp(131,33): warning C4305: 'argument': truncation from 'double' to 'float'
-D:\Documents\Object Oriented Programming\group task\SFML_2\main.cpp(138,33): warning C4305: 'argument': truncation from 'double' to 'float'
-D:\Documents\Object Oriented Programming\group task\SFML_2\main.cpp(145,33): warning C4305: 'argument': truncation from 'double' to 'float'
-D:\Documents\Object Oriented Programming\group task\SFML_2\main.cpp(152,34): warning C4305: 'argument': truncation from 'double' to 'float'
-D:\Documents\Object Oriented Programming\group task\SFML_2\main.cpp(329,41): warning C4244: 'argument': conversion from 'float' to 'const unsigned int', possible loss of data
-D:\Documents\Object Oriented Programming\group task\SFML_2\main.cpp(329,60): warning C4244: 'argument': conversion from 'float' to 'const unsigned int', possible loss of data
-D:\Documents\Object Oriented Programming\group task\SFML_2\main.cpp(335,41): warning C4244: 'argument': conversion from 'float' to 'const unsigned int', possible loss of data
-D:\Documents\Object Oriented Programming\group task\SFML_2\main.cpp(335,60): warning C4244: 'argument': conversion from 'float' to 'const unsigned int', possible loss of data
-D:\Documents\Object Oriented Programming\group task\SFML_2\main.cpp(342,28): warning C4244: 'argument': conversion from 'float' to 'const unsigned int', possible loss of data
-D:\Documents\Object Oriented Programming\group task\SFML_2\main.cpp(342,60): warning C4244: 'argument': conversion from 'float' to 'const unsigned int', possible loss of data
-D:\Documents\Object Oriented Programming\group task\SFML_2\main.cpp(348,28): warning C4244: 'argument': conversion from 'float' to 'const unsigned int', possible loss of data
-D:\Documents\Object Oriented Programming\group task\SFML_2\main.cpp(348,60): warning C4244: 'argument': conversion from 'float' to 'const unsigned int', possible loss of data
-D:\Documents\Object Oriented Programming\group task\SFML_2\main.cpp(373,13): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
-  SFML_Game.vcxproj -> D:\Documents\Object Oriented Programming\group task\Debug\SFMLAssignmentGame.exe
+C:\Users\clyde\source\repos\A0\SFML_2\main.cpp(54,150): warning C4305: 'argument': truncation from 'double' to 'float'
+C:\Users\clyde\source\repos\A0\SFML_2\main.cpp(90,33): warning C4305: 'argument': truncation from 'double' to 'float'
+C:\Users\clyde\source\repos\A0\SFML_2\main.cpp(97,33): warning C4305: 'argument': truncation from 'double' to 'float'
+C:\Users\clyde\source\repos\A0\SFML_2\main.cpp(104,33): warning C4305: 'argument': truncation from 'double' to 'float'
+C:\Users\clyde\source\repos\A0\SFML_2\main.cpp(111,33): warning C4305: 'argument': truncation from 'double' to 'float'
+C:\Users\clyde\source\repos\A0\SFML_2\main.cpp(118,33): warning C4305: 'argument': truncation from 'double' to 'float'
+C:\Users\clyde\source\repos\A0\SFML_2\main.cpp(125,33): warning C4305: 'argument': truncation from 'double' to 'float'
+C:\Users\clyde\source\repos\A0\SFML_2\main.cpp(132,33): warning C4305: 'argument': truncation from 'double' to 'float'
+C:\Users\clyde\source\repos\A0\SFML_2\main.cpp(139,33): warning C4305: 'argument': truncation from 'double' to 'float'
+C:\Users\clyde\source\repos\A0\SFML_2\main.cpp(146,33): warning C4305: 'argument': truncation from 'double' to 'float'
+C:\Users\clyde\source\repos\A0\SFML_2\main.cpp(153,34): warning C4305: 'argument': truncation from 'double' to 'float'
+C:\Users\clyde\source\repos\A0\SFML_2\main.cpp(330,41): warning C4244: 'argument': conversion from 'float' to 'const unsigned int', possible loss of data
+C:\Users\clyde\source\repos\A0\SFML_2\main.cpp(330,60): warning C4244: 'argument': conversion from 'float' to 'const unsigned int', possible loss of data
+C:\Users\clyde\source\repos\A0\SFML_2\main.cpp(336,41): warning C4244: 'argument': conversion from 'float' to 'const unsigned int', possible loss of data
+C:\Users\clyde\source\repos\A0\SFML_2\main.cpp(336,60): warning C4244: 'argument': conversion from 'float' to 'const unsigned int', possible loss of data
+C:\Users\clyde\source\repos\A0\SFML_2\main.cpp(343,28): warning C4244: 'argument': conversion from 'float' to 'const unsigned int', possible loss of data
+C:\Users\clyde\source\repos\A0\SFML_2\main.cpp(343,60): warning C4244: 'argument': conversion from 'float' to 'const unsigned int', possible loss of data
+C:\Users\clyde\source\repos\A0\SFML_2\main.cpp(349,28): warning C4244: 'argument': conversion from 'float' to 'const unsigned int', possible loss of data
+C:\Users\clyde\source\repos\A0\SFML_2\main.cpp(349,60): warning C4244: 'argument': conversion from 'float' to 'const unsigned int', possible loss of data
+C:\Users\clyde\source\repos\A0\SFML_2\main.cpp(374,13): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+C:\Users\clyde\source\repos\A0\SFML_2\main.cpp(38,7): warning C4101: 'drawCoin': unreferenced local variable
+  SFML_Game.vcxproj -> C:\Users\clyde\source\repos\A0\Debug\SFMLAssignmentGame.exe
