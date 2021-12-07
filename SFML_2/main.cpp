@@ -13,6 +13,7 @@
 #include "AnimatedSprite.h"
 #include "InputManagement.h"
 #include "gameAudio.h"
+#include "tilemap.cpp"
 
 #define winWidth 900
 #define winHeight 900
@@ -233,6 +234,10 @@ int main()
 			mapGrid.push_back(parsedRow);
 		}
 	}
+	// create the tilemap from the level definition
+	tileMap map;
+	if (!map.load("assets/tileset.png", sf::Vector2u(30, 30)))
+		return -1;
 #pragma endregion  
 
 	bool upFlag = false;
@@ -384,6 +389,7 @@ int main()
 
 		//Draw game
 		drawCells(numXCells, numYCells, mapGrid, pixel, window);
+		window.draw(map);
 		window.draw(playerSprite);
 		window.draw(timerText);
 		window.draw(coinSprite1);
@@ -402,7 +408,7 @@ int main()
 		window.draw(txtCurrentScore);
 		window.draw(txtHighScore);
 		window.draw(txtRoundInfo);
-
+		
 		//Display game
 		window.display();
 	}
