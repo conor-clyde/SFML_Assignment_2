@@ -4,7 +4,7 @@
 #include <SFML/Graphics/Sprite.hpp>
 
 
-void checkIfAtStart(float& playerIndexX, float& playerIndexY, bool& upFlag, bool& downFlag, bool& leftFlag, bool& rightFlag, bool& upInBuffer, bool& downInBuffer, bool& leftInBuffer, bool& rightInBuffer, sf::Font font, sf::RenderWindow& _window)
+void checkIfAtStart(float& playerIndexX, float& playerIndexY, bool& upFlag, bool& downFlag, bool& leftFlag, bool& rightFlag, bool& upInBuffer, bool& downInBuffer, bool& leftInBuffer, bool& rightInBuffer, sf::Font font)
 {
 	if ((playerIndexX - 15) <= 30 && playerIndexY >= 60 && playerIndexY <= 90)
 	{
@@ -13,12 +13,12 @@ void checkIfAtStart(float& playerIndexX, float& playerIndexY, bool& upFlag, bool
 	}
 }
 
-void checkIfAtWater(float& playerIndexX, float& playerIndexY, bool& upFlag, bool& downFlag, bool& leftFlag, bool& rightFlag, bool& upInBuffer, bool& downInBuffer, bool& leftInBuffer, bool& rightInBuffer, sf::Font font, int& score, int& highScore, sf::Text& txtCurrentScore, sf::Text& txtPreviousScore, sf::Text& txtHighScore, sf::Text& txtRoundInfo, sf::RenderWindow& _window, sf::Sprite& playerSprite)
+void checkIfAtWater(float& playerIndexX, float& playerIndexY, bool& upFlag, bool& downFlag, bool& leftFlag, bool& rightFlag, bool& upInBuffer, bool& downInBuffer, bool& leftInBuffer, bool& rightInBuffer, sf::Font font, int& score, int& highScore, sf::Text& txtCurrentScore, sf::Text& txtPreviousScore, sf::Text& txtHighScore, sf::Text& txtRoundInfo, sf::Sprite& playerSprite)
 {
 	if (!((playerIndexX - 15) <= 30 && playerIndexY >= 60 && playerIndexY <= 90) && !((playerIndexX + 15) >= 870 && playerIndexY >= 810 && playerIndexY <= 840) && ((playerIndexX - 15) <= 30 || (playerIndexX + 15) >= 870 || (playerIndexY - 15) <= 30 || (playerIndexY + 15) >= 870))
 	{
 
-		txtRoundInfo.setString("You Drowned!!\n-500 points");
+		txtRoundInfo.setString("You Drowned!!	-500 points");
 
 		txtCurrentScore.setString("Current Score: 0");
 
@@ -55,12 +55,12 @@ void checkIfAtWater(float& playerIndexX, float& playerIndexY, bool& upFlag, bool
 	}
 }
 
-void restartGame(float& playerIndexX, float& playerIndexY, bool& upFlag, bool& downFlag, bool& leftFlag, bool& rightFlag, bool& upInBuffer, bool& downInBuffer, bool& leftInBuffer, bool& rightInBuffer, sf::Font font, int& score, int& highScore, sf::Text& txtCurrentScore, sf::Text& txtPreviousScore, sf::Text& txtHighScore, sf::Text& txtRoundInfo, sf::RenderWindow& _window, sf::Sprite& playerSprite)
+void escapeRestart(float& playerIndexX, float& playerIndexY, bool& upFlag, bool& downFlag, bool& leftFlag, bool& rightFlag, bool& upInBuffer, bool& downInBuffer, bool& leftInBuffer, bool& rightInBuffer, sf::Font font, int& score, int& highScore, sf::Text& txtCurrentScore, sf::Text& txtPreviousScore, sf::Text& txtHighScore, sf::Text& txtRoundInfo, sf::Sprite& playerSprite)
 {
 
 	if (playerIndexX >= 870 && playerIndexY >= 810 && playerIndexY <= 840)
 	{
-		txtRoundInfo.setString("You Escaped!!\n+1000 points");
+		txtRoundInfo.setString("You Escaped!!	+1000 points");
 		score += 1000;
 
 		if (score > highScore)
@@ -92,7 +92,7 @@ void restartGame(float& playerIndexX, float& playerIndexY, bool& upFlag, bool& d
 	}
 }
 
-void timerRestart(float& playerIndexX, float& playerIndexY, bool& upFlag, bool& downFlag, bool& leftFlag, bool& rightFlag, bool& upInBuffer, bool& downInBuffer, bool& leftInBuffer, bool& rightInBuffer, sf::Font font, int& score, int& highScore, sf::Text& txtCurrentScore, sf::Text& txtPreviousScore, sf::Text& txtHighScore, sf::Text& txtRoundInfo, sf::RenderWindow& _window, sf::Sprite& playerSprite)
+void timerRestart(float& playerIndexX, float& playerIndexY, bool& upFlag, bool& downFlag, bool& leftFlag, bool& rightFlag, bool& upInBuffer, bool& downInBuffer, bool& leftInBuffer, bool& rightInBuffer, sf::Font font, int& score, int& highScore, sf::Text& txtCurrentScore, sf::Text& txtPreviousScore, sf::Text& txtHighScore, sf::Text& txtRoundInfo, sf::Sprite& playerSprite)
 {
 		txtRoundInfo.setString("Timer Ran out!!");
 

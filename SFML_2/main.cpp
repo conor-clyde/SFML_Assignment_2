@@ -296,24 +296,23 @@ int main()
 		}
 #pragma endregion
 
-		//Input Management
-		checkIfAtWater(playerIndexX, playerIndexY, upFlag, downFlag, leftFlag, rightFlag, upInBuffer, downInBuffer, leftInBuffer, rightInBuffer, font, score, highScore, txtCurrentScore, txtPreviousScore, txtHighScore, txtRoundInfo, window, playerSprite);
+		//Input Management - Conor Clyde
+		checkIfAtWater(playerIndexX, playerIndexY, upFlag, downFlag, leftFlag, rightFlag, upInBuffer, downInBuffer, leftInBuffer, rightInBuffer, font, score, highScore, txtCurrentScore, txtPreviousScore, txtHighScore, txtRoundInfo, playerSprite);
 
-		checkIfAtStart(playerIndexX, playerIndexY, upFlag, downFlag, leftFlag, rightFlag, upInBuffer, downInBuffer, leftInBuffer, rightInBuffer, font, window);
+		checkIfAtStart(playerIndexX, playerIndexY, upFlag, downFlag, leftFlag, rightFlag, upInBuffer, downInBuffer, leftInBuffer, rightInBuffer, font);
 
-		restartGame(playerIndexX, playerIndexY, upFlag, downFlag, leftFlag, rightFlag, upInBuffer, downInBuffer, leftInBuffer, rightInBuffer, font, score, highScore, txtCurrentScore, txtPreviousScore, txtHighScore, txtRoundInfo, window, playerSprite);
+		escapeRestart(playerIndexX, playerIndexY, upFlag, downFlag, leftFlag, rightFlag, upInBuffer, downInBuffer, leftInBuffer, rightInBuffer, font, score, highScore, txtCurrentScore, txtPreviousScore, txtHighScore, txtRoundInfo, playerSprite);
 		
 		checkForCoin(score, playerSprite, coinSprite1, coinSprite2, coinSprite3, coinSprite4, coinSprite5, coinSprite6, coinSprite7, coinSprite8, coinSprite9, coinSprite10, hideCoin1, hideCoin2, hideCoin3, hideCoin4, hideCoin5, hideCoin6, hideCoin7, hideCoin8, hideCoin9, hideCoin10);
 
 		if (mapGrid[((playerIndexY - 14) - 1) / 30][playerIndexX / 30] && upInBuffer == true && downFlag == false)
 		{
-			moveUpNextTurn(counter, playerIndexX, playerIndexY, upFlag, downFlag, leftFlag, rightFlag, upInBuffer, downInBuffer, leftInBuffer, rightInBuffer,mapGrid, playerSprite);
+			moveUpNextTurn(counter, playerIndexX, playerIndexY, upFlag, downFlag, leftFlag, rightFlag, upInBuffer, downInBuffer, leftInBuffer, rightInBuffer, mapGrid, playerSprite);
 			downInBuffer = false;
 		}
 
 		if (mapGrid[((playerIndexY + 14) + 1) / 30][playerIndexX / 30] && downInBuffer == true && upFlag == false)
 		{
-
 			moveDownNextTurn(counter, playerIndexX, playerIndexY, upFlag, downFlag, leftFlag, rightFlag, upInBuffer, downInBuffer, leftInBuffer, rightInBuffer, mapGrid, playerSprite);
 			upInBuffer = false;
 		}
@@ -331,24 +330,15 @@ int main()
 		}
 
 		if (upFlag == true)
-		{
 			moveUp(playerIndexX, playerIndexY, upFlag, mapGrid);
-		}
 		else if (downFlag == true)
-		{
 			moveDown(playerIndexX, playerIndexY, downFlag, mapGrid);
-
-		}
 		else if (leftFlag == true)
-		{
 			moveLeft(playerIndexX, playerIndexY, leftFlag, mapGrid);
-		}
 		else if (rightFlag == true)
-		{
 			moveRight(playerIndexX, playerIndexY, rightFlag, mapGrid);
-		}
 
-		//TIMER - 60 SECONDS by Ryan Featherstone
+		//TIMER - 60 SECONDS - Ryan Featherstone
 		int timer = clock.getElapsedTime().asSeconds();
 		std::cout << timer << std::endl;
 
@@ -359,21 +349,22 @@ int main()
 			clock.restart();
 		}
 
-
+		//Set currrent score
 		txtCurrentScore.setString("Current Score: " + std::to_string(score));
 
+		//Set player sprite position
 		playerSprite.setPosition(playerIndexX, playerIndexY);
 
 		//Clear window
 		window.clear(sf::Color::Color(159, 187, 80));
 
 		//Draw game
-
 		drawCells(numXCells, numYCells, mapGrid, pixel, window);
 		window.draw(map);
 		window.draw(playerSprite);
 		window.draw(timerText);
 
+		//Draw coins
 		if (!hideCoin1)
 			window.draw(coinSprite1);
 
