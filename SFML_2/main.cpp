@@ -187,7 +187,23 @@ int main()
 	sf::Time lapsed4;
 
 	
+#pragma region ~Load music from files ~
+	{
+		// Loads the background music from the audio folder 
 
+		sf::Music music;
+		if (!music.openFromFile(".\\audio\\background music.wav"))
+		{
+			std::cout << "Could not load background music" << std::endl;
+
+		}
+
+		music.play();
+		//This will loop the background music
+
+		music.setLoop(true);
+	}
+#pragma endregion  
 
 
 #pragma region ~ Create 2d vector array for holding pixel values (integers) ~
