@@ -22,7 +22,7 @@ void checkIfAtWater(float& playerIndexX, float& playerIndexY, bool& upFlag, bool
 
 		txtCurrentScore.setString("Current Score: 0");
 
-		score -= 1000;
+		score -= 500;
 
 		if (score < 0)
 			txtPreviousScore.setString("Previous Score: 0");
@@ -126,7 +126,7 @@ void timerRestart(float& playerIndexX, float& playerIndexY, bool& upFlag, bool& 
 }
 
 
-void checkForCoin(int& score, sf::Sprite playerSprite, sf::Sprite coinSprite1)
+void checkForCoin(int& score, sf::Sprite playerSprite, bool drawCoin[9], sf::Sprite coinSprite1)
 {
 	if (playerSprite.getGlobalBounds().intersects(coinSprite1.getGlobalBounds()))
 	{
