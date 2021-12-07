@@ -3,7 +3,7 @@
 #include <SFML/Graphics/RenderWindow.hpp>
 
 
-void checkIfAtStart(float& playerIndexX, float& playerIndexY, bool& upFlag, bool& downFlag, bool& leftFlag, bool& rightFlag, bool& upInBuffer, bool& downInBuffer, bool& leftInBuffer, bool& rightInBuffer, std::string previousScore, sf::Text& txtPreviousScore, sf::Font font, sf::RenderWindow& _window)
+void checkIfAtStart(float& playerIndexX, float& playerIndexY, bool& upFlag, bool& downFlag, bool& leftFlag, bool& rightFlag, bool& upInBuffer, bool& downInBuffer, bool& leftInBuffer, bool& rightInBuffer, sf::Font font, sf::RenderWindow& _window)
 {
 	if ((playerIndexX-15) <= 30 && playerIndexY >= 60 && playerIndexY <= 90)
 	{
@@ -12,7 +12,32 @@ void checkIfAtStart(float& playerIndexX, float& playerIndexY, bool& upFlag, bool
 	}
 }
 
-void restartGame(float& playerIndexX, float& playerIndexY, bool& upFlag, bool& downFlag, bool& leftFlag, bool& rightFlag, bool& upInBuffer, bool& downInBuffer, bool& leftInBuffer, bool& rightInBuffer, std::string previousScore, sf::Text& txtPreviousScore, sf::Font font, sf::RenderWindow&_window)
+void checkIfAtWater(float& playerIndexX, float& playerIndexY, bool& upFlag, bool& downFlag, bool& leftFlag, bool& rightFlag, bool& upInBuffer, bool& downInBuffer, bool& leftInBuffer, bool& rightInBuffer, sf::Text& txtRoundInfo, sf::Font font, sf::RenderWindow& _window)
+{
+	if (!((playerIndexX - 15) <= 30 && playerIndexY >= 60 && playerIndexY <= 90) && !(playerIndexX >= 870 && playerIndexY >= 810 && playerIndexY <= 840) && ( (playerIndexX - 15) <= 30 || (playerIndexX + 15) >= 870 || (playerIndexY - 15 ) <= 30 || (playerIndexY+15) >= 870        ))
+	{
+		std::cout << std::endl << "Testing123!!";
+
+		txtRoundInfo.setString("You died!");
+
+
+
+		playerIndexX = 15;
+		playerIndexY = 75;
+
+		upFlag = false;
+		downFlag = false;
+		leftFlag = false;
+		rightFlag = false;
+
+		upInBuffer = false;
+		downInBuffer = false;
+		leftInBuffer = false;
+		rightInBuffer = false;
+	}
+}
+
+void restartGame(float& playerIndexX, float& playerIndexY, bool& upFlag, bool& downFlag, bool& leftFlag, bool& rightFlag, bool& upInBuffer, bool& downInBuffer, bool& leftInBuffer, bool& rightInBuffer, sf::Font font, sf::RenderWindow&_window)
 {
 
 	if (playerIndexX >= 870 && playerIndexY >= 810 && playerIndexY <= 840)
@@ -44,7 +69,6 @@ void moveUpNextTurn(float& playerIndexX, float& playerIndexY, bool& upFlag, bool
 	leftFlag = false;
 	playerIndexY -= 0.3;
 
-
 	if (!mapGrid[((playerIndexY - 14) - 1) / 30][playerIndexX / 30] && upInBuffer == true)
 		upInBuffer = false;
 }
@@ -56,7 +80,6 @@ void moveDownNextTurn(float& playerIndexX, float& playerIndexY, bool& downFlag, 
 	rightFlag = false;
 	leftFlag = false;
 	playerIndexY += 0.3;
-	
 
 	if (!mapGrid[((playerIndexY + 14) + 1) / 30][playerIndexX / 30] && downInBuffer == true)
 		downInBuffer = false;
@@ -70,7 +93,6 @@ void moveLeftNextTurn(float& playerIndexX, float& playerIndexY, bool& downFlag, 
 	leftFlag = false;
 	playerIndexX -= 0.3;
 
-
 	if (!mapGrid[playerIndexY / 30][((playerIndexX - 14) - 1) / 30] && leftInBuffer == true)
 		leftInBuffer = false;
 }
@@ -82,7 +104,6 @@ void moveRightNextTurn(float& playerIndexX, float& playerIndexY, bool& downFlag,
 	rightFlag = false;
 	leftFlag = false;
 	playerIndexX += 0.3;
-
 
 	if (!mapGrid[playerIndexY / 30][((playerIndexX + 14) + 1) / 30] && rightInBuffer == true)
 		rightInBuffer = false;

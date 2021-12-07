@@ -44,7 +44,7 @@ int main()
 
 	sf::Text txtStart("START!", font, 24); txtStart.setFillColor(sf::Color::Black); txtStart.setPosition(4, 2);
 	sf::Text txtEscape("ESCAPE!", font, 24); txtEscape.setFillColor(sf::Color::Black); txtEscape.setPosition(window.getSize().x - 110, window.getSize().y - 30);
-	sf::Text txtPreviousScore("", font, 24);
+	sf::Text  txtRoundInfo("ESCAPE!", font, 24);  txtRoundInfo.setFillColor(sf::Color::Black);  txtRoundInfo.setPosition(20,20);
 
 #pragma region ~ Create a square pixel (SFML graphics object), size it, and give it a color ~
 	sf::RectangleShape pixel(sf::Vector2f(30.0f, 30.0f));
@@ -158,9 +158,12 @@ int main()
 		}
 #pragma endregion
 
-		checkIfAtStart(playerIndexX, playerIndexY, upFlag, downFlag, leftFlag, rightFlag, upInBuffer, downInBuffer, leftInBuffer, rightInBuffer, previousScore, txtPreviousScore, font, window);
+		//Input Management
+		checkIfAtWater(playerIndexX, playerIndexY, upFlag, downFlag, leftFlag, rightFlag, upInBuffer, downInBuffer, leftInBuffer, rightInBuffer, txtRoundInfo, font, window);
+
+		checkIfAtStart(playerIndexX, playerIndexY, upFlag, downFlag, leftFlag, rightFlag, upInBuffer, downInBuffer, leftInBuffer, rightInBuffer, font, window);
 		
-		restartGame(playerIndexX, playerIndexY, upFlag, downFlag, leftFlag, rightFlag, upInBuffer, downInBuffer, leftInBuffer, rightInBuffer, previousScore, txtPreviousScore, font, window);
+		restartGame(playerIndexX, playerIndexY, upFlag, downFlag, leftFlag, rightFlag, upInBuffer, downInBuffer, leftInBuffer, rightInBuffer, font, window);
 
 		if (mapGrid[((playerIndexY - 14) - 1) / 30][playerIndexX / 30] && upInBuffer == true)
 		{
@@ -173,7 +176,7 @@ int main()
 			rightInBuffer = false;
 		}
 
-		if (mapGrid[playerIndexY / 30][((playerIndexX - 14) + 1) / 30] && leftInBuffer == true)
+		if (mapGrid[playerIndexY / 30][((playerIndexX - 14) + 1) / 30] && leftInBuffer == true && rightFlag == false)
 		{
 			moveLeftNextTurn(playerIndexX, playerIndexY, upFlag, downFlag, leftFlag, rightFlag, leftInBuffer, mapGrid);
 		}
@@ -200,16 +203,21 @@ int main()
 		{
 			moveRight(playerIndexX, playerIndexY, rightFlag, mapGrid);
 		}
+
+
+		playerSprite.setPosition(playerIndexX, playerIndexY);
 		
+		//Clear window
 		window.clear(sf::Color::Color(159, 187, 80));
 
+		//Draw game
 		drawCells(numXCells, numYCells, mapGrid, pixel, window);
-		playerSprite.setPosition(playerIndexX, playerIndexY);
 		window.draw(playerSprite);
 		window.draw(txtStart);
 		window.draw(txtEscape);
-		window.draw(txtPreviousScore);
+		window.draw(txtRoundInfo);
 		
+		//Display game
 		window.display();
 	}
 
