@@ -381,6 +381,7 @@ int main()
 			clock.restart();
 		}
 
+
 		txtCurrentScore.setString("Current Score: " + std::to_string(score));
 
 		playerSprite.setPosition(playerIndexX, playerIndexY);
