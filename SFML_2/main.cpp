@@ -387,6 +387,12 @@ int main()
 		window.draw(coinSprite2);
 		window.draw(coinSprite3);
 		window.draw(coinSprite4);
+		window.draw(coinSprite5);
+		window.draw(coinSprite6);
+		window.draw(coinSprite7);
+		window.draw(coinSprite8);
+		window.draw(coinSprite9);
+		window.draw(coinSprite10);
 		window.draw(txtStart);
 		window.draw(txtEscape);
 		window.draw(txtPreviousScore);
