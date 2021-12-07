@@ -90,14 +90,48 @@ void restartGame(float& playerIndexX, float& playerIndexY, bool& upFlag, bool& d
 
 		score = 0;
 	}
-
-
 }
+
+void timerRestart(float& playerIndexX, float& playerIndexY, bool& upFlag, bool& downFlag, bool& leftFlag, bool& rightFlag, bool& upInBuffer, bool& downInBuffer, bool& leftInBuffer, bool& rightInBuffer, sf::Font font, int& score, int& highScore, sf::Text& txtCurrentScore, sf::Text& txtPreviousScore, sf::Text& txtHighScore, sf::Text& txtRoundInfo, sf::RenderWindow& _window, sf::Sprite& playerSprite)
+{
+		txtRoundInfo.setString("Timer Ran out!!");
+
+		if (score > highScore)
+		{
+			highScore = score;
+			txtHighScore.setString("High Score: " + std::to_string(score));
+		}
+
+		playerIndexX = 45;
+		playerIndexY = 75;
+
+		upFlag = false;
+		downFlag = false;
+		leftFlag = false;
+		rightFlag = false;
+
+		upInBuffer = false;
+		downInBuffer = false;
+		leftInBuffer = false;
+		rightInBuffer = false;
+
+		txtPreviousScore.setString("Previous Score: " + std::to_string(score));
+
+		txtCurrentScore.setString("Current Score: 0");
+
+		playerSprite.setRotation(0);
+
+		score = 0;
+	
+}
+
+
 void checkForCoin(int& score, sf::Sprite playerSprite, sf::Sprite coinSprite1)
 {
 	if (playerSprite.getGlobalBounds().intersects(coinSprite1.getGlobalBounds()))
 	{
 		score += 100;
+		//drawSprite1 = false;
 	}
 
 }
