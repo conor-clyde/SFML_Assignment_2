@@ -62,6 +62,7 @@ int main()
 		std::cout << "Could not load player texture" << std::endl;
 		return 0;
 	}
+
 	sf::Texture playerTexture;
 	if (!playerTexture.loadFromFile("assets/playerSprite.png"))
 	{
@@ -196,10 +197,8 @@ int main()
 		music.setLoop(true);
 #pragma endregion  
 
-#pragma region ~ Create 2d vector array for holding pixel values (integers) ~
-	std::vector<std::vector<int>> mapGrid;                                  // Vector list of map tiles 
-
-#pragma endregion
+	//Vector list of map tiles
+	std::vector<std::vector<int>> mapGrid;  
 
 #pragma region ~ Load map from file ~
 	std::ifstream dataStream;
@@ -218,11 +217,13 @@ int main()
 				parsedRow.push_back(std::stoi(character));
 				std::cout << std::stoi(character);
 			}
+
 			std::cout << std::endl;
 			mapGrid.push_back(parsedRow);
 		}
 	}
-	// create the tilemap from the level definition
+
+	//Create tilemap from level definition
 	tileMap map;
 	if (!map.load("assets/tileset.png", sf::Vector2u(30, 30)))
 		return -1;
