@@ -259,19 +259,10 @@ int main()
 	sf::Text timerText;
 	timerText.setFont(font);
 	timerText.setString(countdownString);
-	timerText.setPosition(10, 0);
+	timerText.setPosition(700, 40);
 	timerText.setCharacterSize(40);
 
-	//TIMER - 60 SECONDS
-	int timer = clock.getElapsedTime().asSeconds();
-	std::cout << timer << std::endl;
-
-	if (timer > 0)
-	{
-		countdown--;
-		timerText.setString(std::to_string(countdown));
-		clock.restart();
-	}
+	
 
 	while (window.isOpen())
 	{
@@ -373,6 +364,17 @@ int main()
 			moveRight(playerIndexX, playerIndexY, rightFlag, mapGrid);
 		}
 
+		//TIMER - 60 SECONDS by Ryan Featherstone
+		int timer = clock.getElapsedTime().asSeconds();
+		std::cout << timer << std::endl;
+
+		if (timer > 0)
+		{
+			countdown--;
+			timerText.setString(std::to_string(countdown));
+			clock.restart();
+		}
+
 		txtCurrentScore.setString("Current Score: " + std::to_string(score));
 
 		playerSprite.setPosition(playerIndexX, playerIndexY);
@@ -383,6 +385,7 @@ int main()
 		//Draw game
 		drawCells(numXCells, numYCells, mapGrid, pixel, window);
 		window.draw(playerSprite);
+		window.draw(timerText);
 		window.draw(coinSprite1);
 		window.draw(coinSprite2);
 		window.draw(coinSprite3);
