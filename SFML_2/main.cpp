@@ -112,9 +112,34 @@ int main()
 	bool leftInBuffer = false;
 	bool rightInBuffer = false;
 
-	sf::Clock timer;
-	while (window.isOpen())
+	// Game clock and timer by Ryan Featherstone
+	sf::Clock clock;
+	int countdown = 60;
+
+	//making countdown a string
+	std::string countdownString;
+	std::ostringstream convert;
+	convert << countdown;
+	countdownString = convert.str();
+
+	//Setting timer font and text
+	sf::Text timerText;
+	timerText.setFont(font);
+	timerText.setString(countdownString);
+	timerText.setPosition(10, 0);
+	timerText.setCharacterSize(40);
+
+	//TIMER - 60 SECONDS
+	int timer = clock.getElapsedTime().asSeconds();
+	std::cout << timer << std::endl;
+
+	if (timer > 0)
 	{
+		countdown--;
+		timerText.setString(std::to_string(countdown));
+		clock.restart();
+	}
+	
 #pragma region ~ Check for a close window event ~
 		sf::Event event;
 		while (window.pollEvent(event))
