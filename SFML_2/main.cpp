@@ -1,7 +1,7 @@
 /*
-* An SFML application using a vector list to store point data - Darryl Charles
-* SFML Documentation https://www.sfml-dev.org/documentation/2.5.1/
-* Set up your own VS2019 project https://www.youtube.com/watch?v=lFzpkvrscs4
+* An SFML application displaying a game - Developed by Conor Clyde, Ryan Featherstone, Joshua Hill,  Daniel Kelly, Caomhan McMonagle
+* Game name: Coin Chase
+* Last updated on 07/12/2021
 */
 
 #include <iostream>  
@@ -18,25 +18,16 @@
 #define winWidth 900
 #define winHeight 900
 
-float playerSpriteSpeed = 1;
-
-//build a grid
-int rows = 20;
-int columns = 20;
-//if a cell is true it's an obstacle
-//boolean[][] grid = new boolean[rows][columns];
-
-//where the player is in the grid
+//Player starting position
 float playerIndexX = 45;
 float playerIndexY = 75;
 
 int main()
 {
-	int score = 0;
-	int highScore = 0;
-	int counter = 0;
-	bool drawCoin[9];
-	bool hideCoin1 = false, hideCoin2 = false, hideCoin3 = false, hideCoin4 = false, hideCoin5 = false, hideCoin6 = false, hideCoin7 = false, hideCoin8 = false, hideCoin9 = false, hideCoin10 = false;
+	//Variables required for Input Management
+	int score = 0, highScore = 0, counter = 0;
+	bool hideCoin1 = false, hideCoin2 = false, hideCoin3 = false, hideCoin4 = false, hideCoin5 = false;
+	bool hideCoin6 = false, hideCoin7 = false, hideCoin8 = false, hideCoin9 = false, hideCoin10 = false;
 
 #pragma region ~ Initialise render window ~
 	sf::RenderWindow window(sf::VideoMode(winWidth, winHeight), "Coin Chaser");
