@@ -152,12 +152,14 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="AnimatedSprite.cpp" />
     <ClCompile Include="cells.cpp" />
     <ClCompile Include="gameAudio.cpp" />
     <ClCompile Include="InputManagement.cpp" />
     <ClCompile Include="main.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="AnimatedSprite.h" />
     <ClInclude Include="cells.h" />
     <ClInclude Include="gameAudio.h" />
     <ClInclude Include="InputManagement.h" />
