@@ -34,6 +34,7 @@ int main()
 	int score = 0;
 	int highScore = 0;
 	int counter = 0;
+	bool drawCoin[9];
 
 #pragma region ~ Initialise render window ~
 	sf::RenderWindow window(sf::VideoMode(winWidth, winHeight), "Coin Chaser");
@@ -87,68 +88,68 @@ int main()
 	coinSprite1.setScale(0.05, 0.05);
 	coinSprite1.setRotation(0);
 
-	sf::Sprite CoinSprite2;
-	CoinSprite2.setTexture(coinTexture);
-	CoinSprite2.setPosition(playerIndexX, playerIndexY);
-	CoinSprite2.setOrigin(CoinSprite2.getLocalBounds().width / 2, CoinSprite2.getLocalBounds().height / 2);
-	CoinSprite2.setScale(0.05, 0.05);
-	CoinSprite2.setRotation(0);
+	sf::Sprite coinSprite2;
+	coinSprite2.setTexture(coinTexture);
+	coinSprite2.setPosition(105, 735);
+	coinSprite2.setOrigin(coinSprite2.getLocalBounds().width / 2, coinSprite2.getLocalBounds().height / 2);
+	coinSprite2.setScale(0.05, 0.05);
+	coinSprite2.setRotation(0);
 
-	sf::Sprite CoinSprite3;
-	CoinSprite3.setTexture(coinTexture);
-	CoinSprite3.setPosition(playerIndexX, playerIndexY);
-	CoinSprite3.setOrigin(CoinSprite3.getLocalBounds().width / 2, CoinSprite3.getLocalBounds().height / 2);
-	CoinSprite3.setScale(0.05, 0.05);
-	CoinSprite3.setRotation(0);
+	sf::Sprite coinSprite3;
+	coinSprite3.setTexture(coinTexture);
+	coinSprite3.setPosition(195, 195);
+	coinSprite3.setOrigin(coinSprite3.getLocalBounds().width / 2, coinSprite3.getLocalBounds().height / 2);
+	coinSprite3.setScale(0.05, 0.05);
+	coinSprite3.setRotation(0);
 
-	sf::Sprite CoinSprite4;
-	CoinSprite4.setTexture(coinTexture);
-	CoinSprite4.setPosition(playerIndexX, playerIndexY);
-	CoinSprite4.setOrigin(CoinSprite4.getLocalBounds().width / 2, CoinSprite4.getLocalBounds().height / 2);
-	CoinSprite4.setScale(0.05, 0.05);
-	CoinSprite4.setRotation(0);
+	sf::Sprite coinSprite4;
+	coinSprite4.setTexture(coinTexture);
+	coinSprite4.setPosition(825, 225);
+	coinSprite4.setOrigin(coinSprite4.getLocalBounds().width / 2, coinSprite4.getLocalBounds().height / 2);
+	coinSprite4.setScale(0.05, 0.05);
+	coinSprite4.setRotation(0);
 
-	sf::Sprite CoinSprite5;
-	CoinSprite5.setTexture(coinTexture);
-	CoinSprite5.setPosition(playerIndexX, playerIndexY);
-	CoinSprite5.setOrigin(CoinSprite5.getLocalBounds().width / 2, CoinSprite5.getLocalBounds().height / 2);
-	CoinSprite5.setScale(0.05, 0.05);
-	CoinSprite5.setRotation(0);
+	sf::Sprite coinSprite5;
+	coinSprite5.setTexture(coinTexture);
+	coinSprite5.setPosition(playerIndexX, playerIndexY);
+	coinSprite5.setOrigin(coinSprite5.getLocalBounds().width / 2, coinSprite5.getLocalBounds().height / 2);
+	coinSprite5.setScale(0.05, 0.05);
+	coinSprite5.setRotation(0);
 
-	sf::Sprite CoinSprite6;
-	CoinSprite6.setTexture(coinTexture);
-	CoinSprite6.setPosition(playerIndexX, playerIndexY);
-	CoinSprite6.setOrigin(CoinSprite6.getLocalBounds().width / 2, CoinSprite6.getLocalBounds().height / 2);
-	CoinSprite6.setScale(0.05, 0.05);
-	CoinSprite6.setRotation(0);
+	sf::Sprite coinSprite6;
+	coinSprite6.setTexture(coinTexture);
+	coinSprite6.setPosition(playerIndexX, playerIndexY);
+	coinSprite6.setOrigin(coinSprite6.getLocalBounds().width / 2, coinSprite6.getLocalBounds().height / 2);
+	coinSprite6.setScale(0.05, 0.05);
+	coinSprite6.setRotation(0);
 
-	sf::Sprite CoinSprite7;
-	CoinSprite6.setTexture(coinTexture);
-	CoinSprite6.setPosition(playerIndexX, playerIndexY);
-	CoinSprite6.setOrigin(CoinSprite6.getLocalBounds().width / 2, CoinSprite6.getLocalBounds().height / 2);
-	CoinSprite6.setScale(0.05, 0.05);
-	CoinSprite6.setRotation(0);
+	sf::Sprite coinSprite7;
+	coinSprite7.setTexture(coinTexture);
+	coinSprite7.setPosition(playerIndexX, playerIndexY);
+	coinSprite7.setOrigin(coinSprite7.getLocalBounds().width / 2, coinSprite7.getLocalBounds().height / 2);
+	coinSprite7.setScale(0.05, 0.05);
+	coinSprite7.setRotation(0);
 
-	sf::Sprite CoinSprite8;
-	CoinSprite6.setTexture(coinTexture);
-	CoinSprite6.setPosition(playerIndexX, playerIndexY);
-	CoinSprite6.setOrigin(CoinSprite6.getLocalBounds().width / 2, CoinSprite6.getLocalBounds().height / 2);
-	CoinSprite6.setScale(0.05, 0.05);
-	CoinSprite6.setRotation(0);
+	sf::Sprite coinSprite8;
+	coinSprite8.setTexture(coinTexture);
+	coinSprite8.setPosition(playerIndexX, playerIndexY);
+	coinSprite8.setOrigin(coinSprite8.getLocalBounds().width / 2, coinSprite8.getLocalBounds().height / 2);
+	coinSprite8.setScale(0.05, 0.05);
+	coinSprite8.setRotation(0);
 
-	sf::Sprite CoinSprite9;
-	CoinSprite6.setTexture(coinTexture);
-	CoinSprite6.setPosition(playerIndexX, playerIndexY);
-	CoinSprite6.setOrigin(CoinSprite6.getLocalBounds().width / 2, CoinSprite6.getLocalBounds().height / 2);
-	CoinSprite6.setScale(0.05, 0.05);
-	CoinSprite6.setRotation(0);
+	sf::Sprite coinSprite9;
+	coinSprite9.setTexture(coinTexture);
+	coinSprite9.setPosition(playerIndexX, playerIndexY);
+	coinSprite9.setOrigin(coinSprite9.getLocalBounds().width / 2, coinSprite9.getLocalBounds().height / 2);
+	coinSprite9.setScale(0.05, 0.05);
+	coinSprite9.setRotation(0);
 
-	sf::Sprite CoinSprite10;
-	CoinSprite6.setTexture(coinTexture);
-	CoinSprite6.setPosition(playerIndexX, playerIndexY);
-	CoinSprite6.setOrigin(CoinSprite6.getLocalBounds().width / 2, CoinSprite6.getLocalBounds().height / 2);
-	CoinSprite6.setScale(0.05, 0.05);
-	CoinSprite6.setRotation(0);
+	sf::Sprite coinSprite10;
+	coinSprite10.setTexture(coinTexture);
+	coinSprite10.setPosition(playerIndexX, playerIndexY);
+	coinSprite10.setOrigin(coinSprite10.getLocalBounds().width / 2, coinSprite10.getLocalBounds().height / 2);
+	coinSprite10.setScale(0.05, 0.05);
+	coinSprite10.setRotation(0);
 
 	sf::Time elapsed1;
 
@@ -327,7 +328,7 @@ int main()
 
 		restartGame(playerIndexX, playerIndexY, upFlag, downFlag, leftFlag, rightFlag, upInBuffer, downInBuffer, leftInBuffer, rightInBuffer, font, score, highScore, txtCurrentScore, txtPreviousScore, txtHighScore, txtRoundInfo, window, playerSprite);
 		
-		checkForCoin(score, playerSprite, coinSprite1);
+		checkForCoin(score, playerSprite, drawCoin, coinSprite1);
 
 		if (mapGrid[((playerIndexY - 14) - 1) / 30][playerIndexX / 30] && upInBuffer == true && downFlag == false)
 		{
@@ -383,6 +384,9 @@ int main()
 		drawCells(numXCells, numYCells, mapGrid, pixel, window);
 		window.draw(playerSprite);
 		window.draw(coinSprite1);
+		window.draw(coinSprite2);
+		window.draw(coinSprite3);
+		window.draw(coinSprite4);
 		window.draw(txtStart);
 		window.draw(txtEscape);
 		window.draw(txtPreviousScore);
