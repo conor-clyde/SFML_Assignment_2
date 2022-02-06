@@ -3,13 +3,9 @@
 
 **To run project from Visual Studio, clone the repository, then double click on the SFML_Assignment_2 solution in the Solution Explorer**
 
-Group Project. Submitted as part of my Object-Oriented Programming class.
-The purpose of the project was to develop an simple window game using SFML.
-
-<br />I received 82% for this assignment.
-
-**See LibraryAppReport for the invidual report that I wrote and submitted as part of the assignment.**<br />
-See below for details on the application.
+Group Project. Submitted as part of my Object-Oriented Programming class.<br />
+The purpose of the project was to develop an simple window game using SFML.<br />
+I received 82% for this assignment.
 
 This is a Window application.<br />
 Developed on Visual Studio using SFML.<br />
@@ -23,3 +19,6 @@ C++ Programming Language<br />
 
 ## Screenshots showing the game developed
 ![image](https://user-images.githubusercontent.com/91070226/152667388-7b54fd27-d792-4afc-9b55-4b3cef378a5b.png)<br /><br />
+
+
+
