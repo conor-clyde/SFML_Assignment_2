@@ -1,10 +1,11 @@
 # UU2OOP-SFMLGame
-[UU Year 2 - Object-Oriented Programming] / Group Assignment - Game Developed on Visual Studio using SFML and C++
+[UU Year 2 - Object-Oriented Programming] / Group Assignment - Game (Coin Chaser) Developed on Visual Studio using SFML and C++
 
 **To run project from Visual Studio, clone the repository, then double click on the SFML_Assignment_2 solution in the Solution Explorer**
 
 Group Project. Submitted as part of my Object-Oriented Programming class.<br />
 The purpose of the project was to develop an simple window game using SFML.<br />
+The game is called Coin Chaser.<br />
 I received 82% for this assignment.
 
 This is a Window application.<br />
