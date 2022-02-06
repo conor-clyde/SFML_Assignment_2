@@ -18,7 +18,38 @@ C++ Programming Language<br />
 4. Wrote code to set the high score
 
 ## Screenshots showing the game developed
+**Upon opening game**
 ![image](https://user-images.githubusercontent.com/91070226/152667388-7b54fd27-d792-4afc-9b55-4b3cef378a5b.png)<br /><br />
+
+**Upon collecting the first coin**
+![image](https://user-images.githubusercontent.com/91070226/152668621-1d8fb6c5-e79e-4bf7-a48a-a32da9a9d08e.png)<br /><br />
+
+**Upon collecting every coin**
+![image](https://user-images.githubusercontent.com/91070226/152668645-614ebdba-36f8-4eb7-ae45-000e4718fb37.png)<br /><br />
+
+**Player moves next to escape after collecting every coin**
+![image](https://user-images.githubusercontent.com/91070226/152668662-e241c726-8c47-45d1-abbf-b66ec5e25fef.png)<br /><br />
+
+**Player passes escape after collecting every coin**
+![image](https://user-images.githubusercontent.com/91070226/152668671-cd43f5cf-acbc-482a-942c-5884db0c82d9.png)<br /><br />
+
+**Player has collected six coins and is about to crash into the water**
+![image](https://user-images.githubusercontent.com/91070226/152668682-b0e3836d-4db0-4fbf-821f-a6e38d76185d.png)<br /><br />
+
+**Player after crashing into water with six coins collected**
+![image](https://user-images.githubusercontent.com/91070226/152668689-9bae3789-9c1f-4dd2-b846-afbfce5984a0.png)<br /><br />
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
