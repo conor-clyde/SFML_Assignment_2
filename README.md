@@ -17,26 +17,26 @@ C++ Programming Language<br />
 3. Wrote code to add to the score every time the player picked up a coin
 4. Wrote code to set the high score
 
-## Screenshots showing the game developed
-**Upon opening game**
+## Screenshots showing the game developed<br />
+**Upon opening game**<br />
 ![image](https://user-images.githubusercontent.com/91070226/152667388-7b54fd27-d792-4afc-9b55-4b3cef378a5b.png)<br /><br />
 
-**Upon collecting the first coin**
+**Upon collecting the first coin**<br />
 ![image](https://user-images.githubusercontent.com/91070226/152668621-1d8fb6c5-e79e-4bf7-a48a-a32da9a9d08e.png)<br /><br />
 
-**Upon collecting every coin**
+**Upon collecting every coin**<br />
 ![image](https://user-images.githubusercontent.com/91070226/152668645-614ebdba-36f8-4eb7-ae45-000e4718fb37.png)<br /><br />
 
-**Player moves next to escape after collecting every coin**
+**Player moves next to escape after collecting every coin**<br />
 ![image](https://user-images.githubusercontent.com/91070226/152668662-e241c726-8c47-45d1-abbf-b66ec5e25fef.png)<br /><br />
 
-**Player passes escape after collecting every coin**
+**Player passes escape after collecting every coin**<br />
 ![image](https://user-images.githubusercontent.com/91070226/152668671-cd43f5cf-acbc-482a-942c-5884db0c82d9.png)<br /><br />
 
-**Player has collected six coins and is about to crash into the water**
+**Player has collected six coins and is about to crash into the water**<br />
 ![image](https://user-images.githubusercontent.com/91070226/152668682-b0e3836d-4db0-4fbf-821f-a6e38d76185d.png)<br /><br />
 
-**Player after crashing into water with six coins collected**
+**Player after crashing into water with six coins collected**<br />
 ![image](https://user-images.githubusercontent.com/91070226/152668689-9bae3789-9c1f-4dd2-b846-afbfce5984a0.png)<br /><br />
 
 
