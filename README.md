@@ -1,7 +1,7 @@
 # UU2OOP-SFMLGame
 [UU Year 2 - Object-Oriented Programming] / Group Assignment - Game (Coin Chaser) Developed on Visual Studio using SFML and C++
 
-**To run project from Visual Studio, clone the repository, then double click on the SFML_Assignment_2 solution in the Solution Explorer**
+**To run the application from Visual Studio, clone the repository, then double click on the SFML_Assignment_2 solution in the Solution Explorer**
 
 Group Project. Submitted as part of my Object-Oriented Programming class.<br />
 The purpose of the project was to develop an simple window game using SFML.<br />
@@ -13,10 +13,18 @@ Developed on Visual Studio using SFML.<br />
 C++ Programming Language<br />
 
 # My personal contribution to the project:
-1. Wrote all the code related to the player's movement of the car
-2. Added the three score counters to the top of the game
-3. Wrote code to add to the score every time the player picked up a coin
-4. Wrote code to set the high score
+1. Wrote all the code related to the player's movement of the car (this took up most of my time while working on this project)
+2. Wrote all the code related to the game's scoring system. This included showing three score counters at the top of the window, and updating these three score counters depending on what the player does.
+
+Scoring System Explained:
+- If the player collects a coin, 100 points is added to the player's current score
+- If the player crashes into the water, 500 points is taken from the current score, and then the game is reset
+- If the player reaches the escape point, 1000 points is added to the current score, and then the game is reset
+- During each game reset, the player's current score is checked if it is higher than the current high score. If it is, the high score is changed to the newest score.
+- During each game reset, the player's current score is made the previous score of the new game.
+
+Known Problems:
+- After the game is reset, the coins are not placed back on the map.
 
 ## Screenshots showing the game developed<br />
 **Upon opening game**<br />
@@ -39,18 +47,5 @@ C++ Programming Language<br />
 
 **Player after crashing into water with six coins collected**<br />
 ![image](https://user-images.githubusercontent.com/91070226/152668689-9bae3789-9c1f-4dd2-b846-afbfce5984a0.png)<br /><br />
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
