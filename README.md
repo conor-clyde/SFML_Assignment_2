@@ -1,5 +1,7 @@
 # UU2OOP-SFMLGame
-[UU Year 2 - Object-Oriented Programming] / Group Assignment - SFML Game Developed on Visual Studio using C++
+[UU Year 2 - Object-Oriented Programming] / Group Assignment - Game Developed on Visual Studio using SFML and C++
+
+**To run project from Visual Studio, clone the repository, then double click on the SFML_Assignment_2 solution in the Solution Explorer**
 
 Group Project. Submitted as part of my Object-Oriented Programming class.
 The purpose of the project was to develop an simple window game using SFML.
@@ -9,21 +11,28 @@ The purpose of the project was to develop an simple window game using SFML.
 **See LibraryAppReport for the invidual report that I wrote and submitted as part of the assignment.**<br />
 See below for details on the application.
 
-This is an Window application.<br />
+This is a Window application.<br />
 Developed on Visual Studio using SFML.<br />
 C++ Programming Language<br />
 
 # My personal contribution to the project:
-1. Development of a Firebase Realtime Database to work with the application
-2. Front-End and Back-End Development of the Home Page
-3. Front-End and Back-End Development of Campus Selection Page
-4. Front-End and Back-End Development of Campus Overview Page
-5. Front-End and Back-End Development of Settings Page
-6. Front-End and Back-End Development of Reset Password Page
-7. Front-End and Back-End Development of Splash Screen
+1. Wrote all the code related to the player's movement of the car
+2. Added the three score counters to the top of the game
+3. Wrote code to add to the score every time the player picked up a coin
+4. Wrote code to set the high score
 
-## Screenshots showing the database tables that I developed
-**Campus Table**<br /><br />
+## Screenshots showing the game developed
+![image](https://user-images.githubusercontent.com/91070226/152667388-7b54fd27-d792-4afc-9b55-4b3cef378a5b.png)<br /><br />
+
+![image](https://user-images.githubusercontent.com/91070226/152667399-d7b75d5c-b5ed-40db-ae70-9c99cce6deb0.png)<br /><br />
+
+
+
+
+
+
+
+
 ![image](https://user-images.githubusercontent.com/91070226/152444461-e07963ca-7bf7-49fb-bdec-e531f95a8232.png)<br /><br />
 
 **User Table**<br /><br />
